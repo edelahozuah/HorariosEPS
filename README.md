@@ -23,7 +23,7 @@ publica en PDF en <https://escuelapolitecnica.uah.es/es/estudiantes/horarios/>.
   - `guias.csv` / `guias.json` – una fila por plan y asignatura: curso, código, nombre (español e inglés), créditos, tipo,
     periodo, idiomas, departamento, áreas, planes que comparten la asignatura, profesores, URL de la ficha, guía en inglés,
     PDF local y fecha de aprobación de la guía.
-  - `profesores.csv` – una fila por profesor: puesto, categoría, departamento, área, correo, web, ficha y asignaturas
+  - `profesores.csv` (local, no versionado) – una fila por profesor: puesto, categoría, departamento, área, correo, web, ficha y asignaturas
     (las del plan procesado y todas las que lista su ficha en la UAH).
   - `codigos.csv` – código ↔ nombre ↔ sigla de titulación; lo genera `extraer_guias.py` y lo consume `extraer_horarios.py`.
 
