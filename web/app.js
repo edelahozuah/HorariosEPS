@@ -5,7 +5,7 @@ const D = window.HORARIOS, S = D.sesiones;
 const G = (window.GUIAS && window.GUIAS.asignaturas) || {};   // guías docentes por código (web/guias.js, opcional)
 const guia = (codigo) => (codigo && G[codigo]) || null;
 const htmlProfes = (g, enlaces = false) => g.profesores.map(p => enlaces && p.url
-  ? `<a href="${p.url}" target="_blank" rel="noopener"${p.email ? ` title="${p.email}"` : ""}>${p.nombre}</a>` : p.nombre).join(", ");
+  ? `<a href="${p.url}" target="_blank" rel="noopener" title="Ficha en www.uah.es">${p.nombre}</a>` : p.nombre).join(", ");
 const DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 const $ = (id) => document.getElementById(id);
 const uniq = (arr) => [...new Set(arr)];

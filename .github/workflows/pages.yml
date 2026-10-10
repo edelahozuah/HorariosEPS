@@ -2,7 +2,7 @@ name: Desplegar web en GitHub Pages
 on:
   push:
     branches: [main]
-    paths: ["web/**", ".github/workflows/pages.yml"]
+    paths: ["web/**", "data/**", ".github/workflows/pages.yml"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -20,6 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - name: Copiar los datos abiertos a web/data/ (sin profesores.csv)
+        run: |
+          mkdir -p web/data
+          cp data/*.csv data/*.json web/data/
+          rm -f web/data/profesores.csv
+          cp LICENSE-DATA web/data/LICENSE
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web

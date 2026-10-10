@@ -1,0 +1,21 @@
+Licencia de los datos (data/, guias/ y web/data/)
+=================================================
+
+Los ficheros de datos de este repositorio (data/*.csv, data/*.json, web/data.js, web/guias.js)
+se publican bajo la licencia Creative Commons Reconocimiento 4.0 Internacional (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/deed.es
+
+Atribución sugerida: «Horarios EPS (UAH), Enrique de la Hoz, CC BY 4.0, a partir de información
+pública de la Universidad de Alcalá», con enlace a https://github.com/edelahozuah/HorariosEPS.
+
+Los datos derivan de información pública de la Universidad de Alcalá: los horarios en PDF de la
+Escuela Politécnica Superior (https://escuelapolitecnica.uah.es/es/estudiantes/horarios/) y las
+fichas de asignaturas y guías docentes de https://www.uah.es/. Los PDF originales (pdfs/, guias/)
+son de la Universidad de Alcalá y se reproducen sin cambios como fuente; no están cubiertos por
+esta licencia.
+
+data/profesores.csv (nombres y datos de contacto de profesores, recopilados de sus fichas públicas
+en www.uah.es) no forma parte de los datos abiertos publicados en la web: se conserva en el
+repositorio sólo como apoyo al proceso de extracción y no se redistribuye en web/data/.
+
+El código (scripts/, web/*.js, web/*.html, web/*.css) se licencia aparte, bajo MIT (ver LICENSE).

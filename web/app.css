@@ -75,3 +75,7 @@ button:hover { border-color: var(--accent); }
 .lista .asig .info:hover { color: #111827; }
 .lista .asig .detalle { padding-left: 22px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .lista .asig .detalle a { color: #1d4ed8; }
+
+.pie { padding: 8px 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.6; }
+.pie a { color: #1d4ed8; }
+@media print { .pie { display: none; } }

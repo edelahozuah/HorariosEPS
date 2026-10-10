@@ -365,9 +365,12 @@ def main():
     previas_p = {p["url"]: p for p in leer_csv(DATA_DIR / "profesores.csv")}
     for url, p in profesores.items():
         q = previas_p.get(url)
-        if q:   # une las asignaturas de otros planes ya guardadas
+        if q:   # une las asignaturas de otros planes ya guardadas y conserva los datos de la ficha si no se ha vuelto a visitar
             for k in ("planes", "codigos", "asignaturas"):
                 p[k] = "; ".join(sorted(set(filter(None, (q.get(k, "") + "; " + p[k]).split("; ")))))
+            for k in campos_p:
+                if not p.get(k) and q.get(k):
+                    p[k] = q[k]
         previas_p[url] = p
     todos_p = sorted(previas_p.values(), key=lambda p: p["profesor"].split()[-2:] if len(p["profesor"].split()) > 1 else p["profesor"])
     escribir_csv(DATA_DIR / "profesores.csv", todos_p, campos_p)
@@ -398,8 +401,8 @@ def main():
         if not e["profesores"]:
             for nombre in filter(None, g["profesores"].split("; ")):
                 prof = next((p for p in por_url.values() if p["profesor"] == nombre), {})
-                e["profesores"].append({"nombre": nombre, "email": prof.get("email", ""), "url": prof.get("url", ""),
-                                        "area": prof.get("area", "")})
+                # sin correo: la app enlaza a la ficha pública de la UAH, que es donde la universidad lo publica
+                e["profesores"].append({"nombre": nombre, "url": prof.get("url", ""), "area": prof.get("area", "")})
     with open(ROOT / "web" / "guias.js", "w", encoding="utf-8") as fh:
         fh.write("window.GUIAS = ")
         json.dump({"generado": dt.date.today().isoformat(), "planes": sorted({g["plan"] for g in todas}), "asignaturas": web},
