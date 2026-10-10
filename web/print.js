@@ -105,7 +105,20 @@ function hojasPerfil() {
   })];
 }
 
-const gen = { titulacion: hojasTitulacion, aula: hojasAula, perfil: hojasPerfil }[q.tipo];
+function hojasEstudiante() {
+  let sel; try { sel = JSON.parse(q.sel); } catch { return ["<p style='color:#fff;text-align:center'>Selección no válida</p>"]; }
+  const seen = new Set();
+  const ss = S.filter(s => s.semestre == sel.sem && s.titulaciones.split("/").includes(sel.tit) && sel.asig[s.asignatura_norm]
+      && (s.grupo === sel.asig[s.asignatura_norm].g || s.grupo === sel.asig[s.asignatura_norm].p))
+    .filter(s => { const k = `${s.dia}|${s.hora_inicio}|${s.hora_fin}|${s.asignatura_norm}|${s.grupo}|${s.aulas}`; if (seen.has(k)) return false; seen.add(k); return true; });
+  return [hoja({
+    titulo: tituloTitulacion(sel.tit),
+    sub: [`CUATRIMESTRE ${ordinal(sel.sem)}`, `Curso ${ss[0]?.curso_academico || ""}`, "HORARIO PERSONAL"],
+    sesiones: ss, modo: "titulacion", pie: `Horario personal: ${Object.keys(sel.asig).length} asignaturas, ${ss.reduce((n, s) => n + s.horas, 0)} h/semana (generado ${D.generado})`,
+  })];
+}
+
+const gen = { titulacion: hojasTitulacion, aula: hojasAula, perfil: hojasPerfil, estudiante: hojasEstudiante }[q.tipo];
 const hojas = gen ? gen() : ["<p style='color:#fff;text-align:center'>Indica ?tipo=titulacion|aula|perfil</p>"];
 document.getElementById("hojas").innerHTML = hojas.join("");
 document.getElementById("info").textContent = `${hojas.length} página(s)`;

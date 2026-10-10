@@ -13,6 +13,7 @@
     <button data-view="titulacion" class="active">Por titulación</button>
     <button data-view="aula">Por aula</button>
     <button data-view="perfil">Perfiles</button>
+    <button data-view="estudiante">Estudiante</button>
   </nav>
 </header>
 
@@ -73,6 +74,32 @@
         <div id="p-solapes" class="solapes"></div>
       </aside>
       <div id="p-grid" class="grid-wrap"></div>
+    </div>
+  </section>
+
+  <!-- Vista estudiante -->
+  <section id="view-estudiante" class="view">
+    <div class="perfil-layout">
+      <aside class="panel">
+        <h2>Mi horario</h2>
+        <div class="row">
+          <select id="e-tit"></select>
+          <select id="e-sem"><option value="1">1º cuatr.</option><option value="2">2º cuatr.</option></select>
+        </div>
+        <div class="row">
+          <button id="e-auto" title="Busca grupos grande y pequeño de las asignaturas marcadas sin solapes">✨ Buscar combinación sin solapes</button>
+        </div>
+        <div class="row">
+          <button id="e-compartir" title="Copia un enlace con esta selección">🔗 Copiar enlace</button>
+          <button id="e-print" title="Hoja en formato PDF de la EPS">🖨 PDF</button>
+          <button id="e-limpiar">Limpiar</button>
+        </div>
+        <h3>Asignaturas <span id="e-n"></span></h3>
+        <input id="e-filtro" placeholder="Filtrar por nombre…">
+        <div id="e-lista" class="lista alta"></div>
+        <div id="e-solapes" class="solapes"></div>
+      </aside>
+      <div id="e-grid" class="grid-wrap"></div>
     </div>
   </section>
 </main>

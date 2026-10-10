@@ -68,6 +68,12 @@ Se puede abrir directamente `web/index.html` en el navegador o servirla con `pyt
   grupo o titulación, se dibujan juntas y se listan los solapes. Los perfiles se guardan en el navegador (localStorage) y se pueden
   exportar/importar como JSON.
 
+- **Estudiante**: elige titulación y cuatrimestre, marca asignaturas (agrupadas por curso) y, en cada una, el grupo grande
+  y el pequeño; el horario se dibuja con los solapes resaltados y listados. «Buscar combinación sin solapes» prueba
+  combinaciones de grupos (backtracking) hasta encontrar una sin conflictos, prefiriendo los grupos ya elegidos y los
+  pequeños que pertenecen al grande (1A → 1A1). La selección se guarda en el navegador y en la URL (`#est=…`), que se puede
+  copiar y compartir; el botón PDF imprime la hoja en formato EPS (`imprimir.html?tipo=estudiante&sel=…`).
+
 ## Impresión y generación de PDF
 
 `web/imprimir.html` reproduce el formato de los PDF de la EPS (A4 apaisado, logos, cabecera, tabla HORA × días,

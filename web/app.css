@@ -61,3 +61,13 @@ button:hover { border-color: var(--accent); }
 .tooltip div { margin: 1px 0; }
 
 @media (max-width: 900px) { .perfil-layout { grid-template-columns: 1fr; } }
+
+/* Vista estudiante */
+.lista.alta { max-height: 60vh; }
+.lista .curso { padding: 4px 8px; background: #f0f2f5; font-size: 11px; font-weight: 600; color: var(--muted); position: sticky; top: 0; }
+.lista .asig { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 6px 8px; border-bottom: 1px solid #eef0f3; font-size: 12px; }
+.lista .asig .nombre { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+.lista .asig .grupos { display: flex; gap: 6px; padding-left: 22px; }
+.lista .asig .grupos select { padding: 2px 4px; font-size: 11px; flex: 1; min-width: 0; }
+.lista .asig.off .grupos { display: none; }
+.lista .asig .sw { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 auto; }

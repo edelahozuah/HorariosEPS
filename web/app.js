@@ -1,7 +1,7 @@
 /* Horarios EPS – aplicación estática sobre web/data.js (generado por scripts/extraer_horarios.py) */
 (() => {
 "use strict";
-const S = window.HORARIOS.sesiones;
+const D = window.HORARIOS, S = D.sesiones;
 const DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 const $ = (id) => document.getElementById(id);
 const uniq = (arr) => [...new Set(arr)];
@@ -265,5 +265,130 @@ $("t-print-todos").addEventListener("click", () => abrirImpresion({ tipo: "titul
 $("a-print").addEventListener("click", () => abrirImpresion({ tipo: "aula", aula: $("a-aula").value, sem: $("a-sem").value }));
 $("p-print").addEventListener("click", () => abrirImpresion({ tipo: "perfil", id: perfilActual }));
 
-tInit(); aInit(); pInit();
+
+// ---------- vista estudiante ----------
+// Selección: { tit, sem, asig: { asignatura_norm: { g: grupoGrande|"", p: grupoPequeño|"" } } }
+const E = { tit: $("e-tit"), sem: $("e-sem"), lista: $("e-lista"), filtro: $("e-filtro") };
+let estSel = { tit: "", sem: 1, asig: {} };
+const LSE = "horarios-eps-estudiante";
+const siglasTit = () => uniq(S.flatMap(s => s.titulaciones.split("/"))).sort(sortNat);
+const sesTit = (tit, sem) => S.filter(s => s.semestre == sem && s.titulaciones.split("/").includes(tit));
+
+function eCatalogo() {
+  // asignaturas de la titulación y cuatrimestre con sus grupos grandes y pequeños
+  const cat = new Map();
+  sesTit(estSel.tit, estSel.sem).forEach(s => {
+    const a = cat.get(s.asignatura_norm) || { norm: s.asignatura_norm, nombre: s.asignatura, curso: s.curso, codigo: s.codigo || "", grandes: new Set(), pequenos: new Set() };
+    if (s.asignatura.toUpperCase() !== s.asignatura) a.nombre = s.asignatura;   // preferir Title Case
+    (s.tipo_grupo === "grande" ? a.grandes : a.pequenos).add(s.grupo);
+    a.curso = Math.min(a.curso, s.curso);
+    cat.set(s.asignatura_norm, a);
+  });
+  return [...cat.values()].map(a => ({ ...a, grandes: [...a.grandes].sort(sortNat), pequenos: [...a.pequenos].sort(sortNat) }))
+    .sort((a, b) => a.curso - b.curso || sortNat(a.nombre, b.nombre));
+}
+function eSesiones(sel = estSel) {
+  const out = [];
+  const ss = sesTit(sel.tit, sel.sem);
+  Object.entries(sel.asig).forEach(([norm, g]) => {
+    ss.forEach(s => { if (s.asignatura_norm === norm && ((g.g && s.grupo === g.g) || (g.p && s.grupo === g.p))) out.push(s); });
+  });
+  return dedupe(out);
+}
+function eGuardar() {
+  try { localStorage.setItem(LSE, JSON.stringify(estSel)); } catch {}
+  const h = "#est=" + encodeURIComponent(JSON.stringify(estSel));
+  history.replaceState(null, "", location.pathname + location.search + h);
+}
+function eCargar() {
+  const m = location.hash.match(/^#est=(.+)$/);
+  try { if (m) { estSel = JSON.parse(decodeURIComponent(m[1])); return true; } } catch {}
+  try { const v = localStorage.getItem(LSE); if (v) estSel = JSON.parse(v); } catch {}
+  return false;
+}
+function eInit() {
+  const tits = siglasTit();
+  fill(E.tit, tits, tits.map(t => `${t} — ${(D.titulaciones[t] || {}).nombre || ""}`.replace(/GRADO EN /, "")));
+  const desdeUrl = eCargar();
+  if (!tits.includes(estSel.tit)) { estSel.tit = tits.includes("GITT") ? "GITT" : tits[0]; estSel.asig = {}; }
+  E.tit.value = estSel.tit; E.sem.value = estSel.sem;
+  E.tit.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), asig: {} }; eGuardar(); eLista(); eDraw(); });
+  E.sem.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), asig: {} }; eGuardar(); eLista(); eDraw(); });
+  E.filtro.addEventListener("input", eLista);
+  $("e-limpiar").addEventListener("click", () => { estSel.asig = {}; eGuardar(); eLista(); eDraw(); });
+  $("e-auto").addEventListener("click", eAuto);
+  $("e-compartir").addEventListener("click", () => { eGuardar(); navigator.clipboard?.writeText(location.href).then(() => alert("Enlace copiado:\n" + location.href), () => prompt("Copia el enlace:", location.href)); });
+  $("e-print").addEventListener("click", () => abrirImpresion({ tipo: "estudiante", sel: JSON.stringify(estSel) }));
+  if (desdeUrl) document.querySelector('.tabs button[data-view="estudiante"]').click();
+  eLista(); eDraw();
+}
+function eLista() {
+  const cat = eCatalogo(), q = E.filtro.value.trim().toLowerCase();
+  E.lista.innerHTML = "";
+  let cursoAct = null;
+  cat.forEach(a => {
+    if (q && !(a.nombre + " " + a.codigo).toLowerCase().includes(q)) return;
+    if (a.curso !== cursoAct) { cursoAct = a.curso; E.lista.insertAdjacentHTML("beforeend", `<div class="curso">${a.curso}º curso</div>`); }
+    const sel = estSel.asig[a.norm];
+    const el = document.createElement("div"); el.className = "asig" + (sel ? "" : " off");
+    const opts = (lista, v, nada) => `<option value="">${nada}</option>` + lista.map(g => `<option value="${g}"${g === v ? " selected" : ""}>${g}</option>`).join("");
+    el.innerHTML = `<label class="nombre"><input type="checkbox"${sel ? " checked" : ""}><span class="sw" style="background:${color(a.norm)}"></span><span>${a.nombre}${a.codigo ? ` <span class="meta">${a.codigo}</span>` : ""}</span></label>
+      <div class="grupos"><select class="g" title="Grupo grande (teoría)">${opts(a.grandes, sel?.g, "— grande —")}</select><select class="p" title="Grupo pequeño (laboratorio)">${opts(a.pequenos, sel?.p, "— pequeño —")}</select></div>`;
+    el.querySelector("input").addEventListener("change", (ev) => {
+      if (ev.target.checked) estSel.asig[a.norm] = { g: a.grandes[0] || "", p: a.pequenos[0] || "" }; else delete estSel.asig[a.norm];
+      eGuardar(); eLista(); eDraw();
+    });
+    el.querySelector(".g").addEventListener("change", (ev) => { estSel.asig[a.norm].g = ev.target.value; eGuardar(); eDraw(); });
+    el.querySelector(".p").addEventListener("change", (ev) => { estSel.asig[a.norm].p = ev.target.value; eGuardar(); eDraw(); });
+    E.lista.appendChild(el);
+  });
+  $("e-n").textContent = `(${Object.keys(estSel.asig).length} de ${cat.length})`;
+}
+function eDraw() {
+  const ses = eSesiones();
+  const { marcados, lista } = pSolapes(ses);
+  const horas = ses.reduce((n, s) => n + s.horas, 0);
+  $("e-solapes").innerHTML = (ses.length ? `<div class="meta">${ses.length} sesiones · ${horas} h/semana</div>` : "<div class='meta'>Marca asignaturas y elige sus grupos</div>") +
+    (lista.length ? lista.map(l => `<div class="s">${l}</div>`).join("") : (ses.length ? '<div class="ok">Sin solapes</div>' : ""));
+  renderGrid($("e-grid"), ses, { solapes: marcados, etiqueta: (s) => s.aulas || s.aulas_raw || "" });
+}
+/* Búsqueda de una combinación de grupos sin solapes (backtracking sobre las asignaturas marcadas).
+   Prefiere mantener los grupos ya elegidos y que el grupo pequeño pertenezca al grande (1A -> 1A1). */
+function eAuto() {
+  const cat = eCatalogo().filter(a => estSel.asig[a.norm]);
+  if (!cat.length) { alert("Marca primero las asignaturas."); return; }
+  const ss = sesTit(estSel.tit, estSel.sem);
+  const sesDe = (norm, grupo) => grupo ? ss.filter(s => s.asignatura_norm === norm && s.grupo === grupo) : [];
+  const choca = (a, b) => a.dia === b.dia && h2n(a.hora_inicio) < fin(b) && h2n(b.hora_inicio) < fin(a);
+  const cands = cat.map(a => {
+    const act = estSel.asig[a.norm];
+    const gs = a.grandes.length ? a.grandes : [""], ps = a.pequenos.length ? a.pequenos : [""];
+    const list = [];
+    gs.forEach(g => ps.forEach(p => list.push({ g, p, ses: [...sesDe(a.norm, g), ...sesDe(a.norm, p)],
+      pref: (g === act.g ? 2 : 0) + (p === act.p ? 2 : 0) + (p && g && p.startsWith(g) ? 1 : 0) })));
+    list.sort((x, y) => y.pref - x.pref);
+    return { a, list };
+  }).sort((x, y) => x.list.length - y.list.length);
+  const elegido = [], usados = [];
+  let nodos = 0;
+  function bt(i) {
+    if (i === cands.length) return true;
+    for (const c of cands[i].list) {
+      if (++nodos > 200000) return false;
+      if (c.ses.some(s => usados.some(u => choca(s, u)))) continue;
+      elegido[i] = c; usados.push(...c.ses);
+      if (bt(i + 1)) return true;
+      usados.length -= c.ses.length;
+    }
+    return false;
+  }
+  if (bt(0)) {
+    cands.forEach((c, i) => { estSel.asig[c.a.norm] = { g: elegido[i].g, p: elegido[i].p }; });
+    eGuardar(); eLista(); eDraw();
+  } else {
+    alert("No existe ninguna combinación de grupos sin solapes para estas asignaturas" + (nodos > 200000 ? " (búsqueda interrumpida)" : "") + ".");
+  }
+}
+
+tInit(); aInit(); pInit(); eInit();
 })();
