@@ -99,5 +99,6 @@ Las asignaturas que queden sin código se listan en `avisos.txt`.
 ## Repositorio y despliegue
 
 - Código y datos: <https://github.com/edelahozuah/HorariosEPS>.
-- Aplicación desplegada: <https://edelahozuah.github.io/HorariosEPS/> (GitHub Pages sirve el contenido de `web/` desde la rama `gh-pages`).
-- Para publicar cambios: regenerar datos, hacer commit en `main` y ejecutar `scripts/publicar.sh`, que actualiza `gh-pages` con `git subtree`.
+- Aplicación desplegada: <https://edelahozuah.github.io/HorariosEPS/>. El workflow `.github/workflows/pages.yml`
+  publica `web/` en GitHub Pages automáticamente en cada push a `main` que modifique esa carpeta.
+- `scripts/publicar.sh` es la alternativa manual (rama `gh-pages` con `git subtree`), ya no necesaria.
