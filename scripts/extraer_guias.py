@@ -375,6 +375,28 @@ def main():
     escribir_csv(DATA_DIR / "codigos.csv", sorted(codigos.values(), key=lambda c: (c["asignatura"], c["codigo"])),
                  ["codigo", "asignatura", "titulaciones"])
 
+    # --- datos para la aplicación web (web/guias.js): por código de asignatura, con los profesores y sus correos
+    por_url = {p["url"]: p for p in todos_p}
+    web = {}
+    for g in todas:
+        e = web.setdefault(g["codigo"], {"asignatura": g["asignatura"], "asignatura_en": g.get("asignatura_en", ""), "planes": [],
+                                         "creditos": g["creditos"], "tipo": g["tipo"], "departamento": g["departamento"],
+                                         "areas": g["areas"], "url_ficha": g["url_ficha"], "url_guia_en": g["url_guia_en"],
+                                         "guia_pdf": g["guia_pdf"], "profesores": [],
+                                         "url_guia": f"{BASE}/es/estudios/descarga-de-ficheros/?anio={g['curso_academico']}&codAsig={g['codigo']}&codPlan={g['plan']}"
+                                                     if g["guia_pdf"] else ""})
+        e["planes"].append(g["titulacion"])
+        if not e["profesores"]:
+            for nombre in filter(None, g["profesores"].split("; ")):
+                prof = next((p for p in por_url.values() if p["profesor"] == nombre), {})
+                e["profesores"].append({"nombre": nombre, "email": prof.get("email", ""), "url": prof.get("url", ""),
+                                        "area": prof.get("area", "")})
+    with open(ROOT / "web" / "guias.js", "w", encoding="utf-8") as fh:
+        fh.write("window.GUIAS = ")
+        json.dump({"generado": dt.date.today().isoformat(), "planes": sorted({g["plan"] for g in todas}), "asignaturas": web},
+                  fh, ensure_ascii=False, separators=(",", ":"))
+        fh.write(";\n")
+
     print(f"TOTAL: {len(todas)} asignaturas en guias.csv, {len(todos_p)} profesores, {len(codigos)} códigos")
 
 

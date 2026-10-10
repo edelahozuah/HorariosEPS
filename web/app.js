@@ -2,6 +2,10 @@
 (() => {
 "use strict";
 const D = window.HORARIOS, S = D.sesiones;
+const G = (window.GUIAS && window.GUIAS.asignaturas) || {};   // guías docentes por código (web/guias.js, opcional)
+const guia = (codigo) => (codigo && G[codigo]) || null;
+const htmlProfes = (g, enlaces = false) => g.profesores.map(p => enlaces && p.url
+  ? `<a href="${p.url}" target="_blank" rel="noopener"${p.email ? ` title="${p.email}"` : ""}>${p.nombre}</a>` : p.nombre).join(", ");
 const DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
 const $ = (id) => document.getElementById(id);
 const uniq = (arr) => [...new Set(arr)];
@@ -73,13 +77,15 @@ function renderGrid(container, sesiones, opts = {}) {
 }
 
 function tooltip(e, s) {
-  const t = $("tooltip");
+  const t = $("tooltip"), g = guia(s.codigo);
   t.innerHTML = [
     `<div><b>${s.asignatura}</b>${s.codigo ? " · " + s.codigo : ""}</div>`,
     `<div>Grupo ${s.grupo} (${s.tipo_grupo}) · ${DIAS[s.dia - 1]} ${s.hora_inicio}–${s.hora_fin}</div>`,
     `<div>Aula: ${s.aulas || s.aulas_raw || "—"}</div>`,
     `<div>${s.titulaciones} · ${s.curso}º curso · ${s.semestre}º cuatr. · grupo ${s.grupo_horario}${s.semana ? " · " + s.semana : ""}</div>`,
     s.nota ? `<div>Nota: ${s.nota}</div>` : "",
+    ...(g ? [`<div style="margin-top:4px">${g.departamento || ""}${g.departamento && g.creditos ? " · " : ""}${g.creditos ? g.creditos + " ECTS" : ""}</div>`,
+             g.profesores.length ? `<div>Profesorado: ${htmlProfes(g)}</div>` : ""] : []),
     `<div style="color:#9ca3af">${s.fichero} p.${s.pagina}</div>`,
   ].join("");
   t.hidden = false;
@@ -342,18 +348,24 @@ function eLetras() {
   if (!["", ...letras].includes(estSel.letra)) estSel.letra = "";
   $("e-letra").value = estSel.letra;
 }
+const eAbiertas = new Set();   // asignaturas con el detalle (profesorado, guía) desplegado
 function eLista() {
   const cat = eCatalogo(), q = E.filtro.value.trim().toLowerCase();
   E.lista.innerHTML = "";
   let cursoAct = null;
   cat.forEach(a => {
-    if (q && !(a.nombre + " " + a.codigo).toLowerCase().includes(q)) return;
+    if (q && !(a.nombre + " " + a.codigo + " " + (guia(a.codigo)?.profesores.map(p => p.nombre).join(" ") || "")).toLowerCase().includes(q)) return;
     if (a.curso !== cursoAct) { cursoAct = a.curso; E.lista.insertAdjacentHTML("beforeend", `<div class="curso">${a.curso}º curso</div>`); }
     const sel = estSel.asig[a.norm];
     const el = document.createElement("div"); el.className = "asig" + (sel ? "" : " off");
     const opts = (lista, v, nada) => `<option value="">${nada}</option>` + lista.map(g => `<option value="${g}"${g === v ? " selected" : ""}>${g}</option>`).join("");
-    el.innerHTML = `<label class="nombre"><input type="checkbox"${sel ? " checked" : ""}><span class="sw" style="background:${color(a.norm)}"></span><span>${a.nombre}${a.codigo ? ` <span class="meta">${a.codigo}</span>` : ""}</span></label>
-      <div class="grupos"><select class="g" title="Grupo grande (teoría)">${opts(a.grandes, sel?.g, "— grande —")}</select><select class="p" title="Grupo pequeño (laboratorio)">${opts(a.pequenos, sel?.p, "— pequeño —")}</select></div>`;
+    const g = guia(a.codigo);
+    const detalle = g ? `<div class="detalle"${eAbiertas.has(a.norm) ? "" : " hidden"}>${g.departamento ? `<div>${g.departamento}${g.areas && g.areas !== "Area no especificada" ? " · " + g.areas : ""}</div>` : ""}
+        ${g.profesores.length ? `<div>Profesorado: ${htmlProfes(g, true)}</div>` : ""}
+        <div><a href="${g.url_ficha}" target="_blank" rel="noopener">Ficha UAH</a>${g.url_guia ? ` · <a href="${g.url_guia}" target="_blank" rel="noopener">Guía docente</a>` : ""}${g.url_guia_en ? ` · <a href="${g.url_guia_en}" target="_blank" rel="noopener">Guide (EN)</a>` : ""}</div></div>` : "";
+    el.innerHTML = `<label class="nombre"><input type="checkbox"${sel ? " checked" : ""}><span class="sw" style="background:${color(a.norm)}"></span><span>${a.nombre}${a.codigo ? ` <span class="meta">${a.codigo}</span>` : ""}</span>${g ? `<button type="button" class="info" title="Departamento, profesorado y guía docente">ⓘ</button>` : ""}</label>
+      <div class="grupos"><select class="g" title="Grupo grande (teoría)">${opts(a.grandes, sel?.g, "— grande —")}</select><select class="p" title="Grupo pequeño (laboratorio)">${opts(a.pequenos, sel?.p, "— pequeño —")}</select></div>${detalle}`;
+    el.querySelector(".info")?.addEventListener("click", (ev) => { ev.preventDefault(); const d = el.querySelector(".detalle"); d.hidden = !d.hidden; d.hidden ? eAbiertas.delete(a.norm) : eAbiertas.add(a.norm); });
     el.querySelector("input").addEventListener("change", (ev) => {
       if (ev.target.checked) estSel.asig[a.norm] = { g: a.grandes[0] || "", p: a.pequenos[0] || "" }; else delete estSel.asig[a.norm];
       eGuardar(); eLista(); eDraw();

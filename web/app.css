@@ -71,3 +71,7 @@ button:hover { border-color: var(--accent); }
 .lista .asig .grupos select { padding: 2px 4px; font-size: 11px; flex: 1; min-width: 0; }
 .lista .asig.off .grupos { display: none; }
 .lista .asig .sw { width: 10px; height: 10px; border-radius: 3px; flex: 0 0 auto; }
+.lista .asig .info { margin-left: auto; border: 0; background: none; color: var(--muted); cursor: pointer; font-size: 14px; padding: 0 2px; }
+.lista .asig .info:hover { color: #111827; }
+.lista .asig .detalle { padding-left: 22px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.lista .asig .detalle a { color: #1d4ed8; }

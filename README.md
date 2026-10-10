@@ -117,8 +117,12 @@ La guía docente en PDF se sirve incrustada en base64 (`mostrarProgramaAsignatur
 
 Códigos de plan admitidos (sigla de los horarios): G350 GITT, G390 GIST, G370 GIEC, G380 GIT, G781 GII, G591 GIC, G581 GISI,
 G782 INFOADE, G60 GIEAI, G610 GITI, G376 GIECAI. La pestaña «Transversales» (asignaturas de toda la UAH) se omite salvo
-con `--transversales`. Genera `data/guias.csv`, `data/guias.json`, `data/profesores.csv` y `data/codigos.csv`; después hay que
+con `--transversales`. Genera `data/guias.csv`, `data/guias.json`, `data/profesores.csv`, `data/codigos.csv` y `web/guias.js` (por código de
+asignatura: departamento, créditos, profesores con correo y ficha, enlaces a la ficha UAH y a la guía); después hay que
 ejecutar `extraer_horarios.py` para que los códigos lleguen a `sesiones.csv`, `asignaturas.csv` y `web/data.js`.
+En la app, el tooltip de cada sesión muestra departamento, créditos y profesorado, y en la vista Estudiante el botón ⓘ de
+cada asignatura despliega profesorado (con enlace a su ficha y correo) y enlaces a la ficha UAH y a la guía docente;
+el filtro busca también por profesor. Si `guias.js` falta, la app funciona igual sin esa información.
 
 Notas:
 
