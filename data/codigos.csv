@@ -1,97 +1,199 @@
 codigo,asignatura,titulaciones
-350031,Advanced Digital Electronic Systems,GIT
+350031,Advanced Digital Electronic Systems,GIEC/GIST/GIT/GITT
+350041,Advanced Programming,GITT
 380001,Advanced Programming,GIT
 380015,Ampliación de Sistemas Operativos,GIT
-350005,Análisis de Circuitos,GIT
-350020,Arquitectura de Computadores,GIT
-380000,Arquitectura de Computadores,GIT
-350010,Arquitectura de Redes I,GIT
-350015,Arquitectura de Redes II,GIT
-350016,Business Economics,GIT
-350001,Calculus I,GIT
-350006,Calculus II,GIT
-350005,Circuit Analysis,GIT
-350018,Circuit Electronics,GIT
-350004,Circuit Theory,GIT
-350023,Communication Networks,GIT
-350019,Communication Theory,GIT
-350020,Computer Architecture,GIT
-380000,Computer Architecture,GIT
-350003,Computer Systems,GIT
-350035,Comunicaciones Móviles,GIT
-390001,Comunicaciones Móviles,GIT
+390008,Ampliación de Sistemas de Telecomunicación,GIST
+350005,Análisis de Circuitos,GIEC/GIST/GIT/GITT
+350020,Arquitectura de Computadores,GIT/GITT
+380000,Arquitectura de Computadores,GIT/GITT
+350010,Arquitectura de Redes I,GIEC/GIST/GIT/GITT
+350015,Arquitectura de Redes II,GIEC/GIST/GIT/GITT
+370013,Biomedical Electronics,GIEC
+350016,Business Economics,GIEC/GIST/GIT/GITT
+350001,Calculus I,GIEC/GIST/GIT/GITT
+350006,Calculus II,GIEC/GIST/GIT/GITT
+350005,Circuit Analysis,GIEC/GIST/GIT/GITT
+350018,Circuit Electronics,GIEC/GIST/GIT/GITT
+350004,Circuit Theory,GIEC/GIST/GIT/GITT
+350034,Circuitos de Comunicación,GIST/GITT
+390000,Circuitos de Comunicación,GIST/GITT
+350034,Communication Circuits,GIST/GITT
+390000,Communication Circuits,GIST/GITT
+350023,Communication Networks,GIEC/GIST/GIT/GITT
+350019,Communication Theory,GIEC/GIST/GIT/GITT
+350029,Commutation,GITT
+350020,Computer Architecture,GIT/GITT
+380000,Computer Architecture,GIT/GITT
+350003,Computer Systems,GIEC/GIST/GIT/GITT
+370009,Computer Vision,GIEC/GITT
+350025,Comunicaciones Digitales,GIST/GITT
+390015,Comunicaciones Digitales,GIST/GITT
+350035,Comunicaciones Móviles,GIEC/GIST/GIT/GITT
+390001,Comunicaciones Móviles,GIEC/GIST/GIT/GITT
+390010,Comunicaciones por Satélite,GIST
+350033,Comunicaciones Ópticas,GIST/GITT
+390004,Comunicaciones Ópticas,GIST/GITT
+350029,Conmutación,GITT
 380004,Conmutación,GIT
 380004,Conmutation,GIT
-350001,Cálculo I,GIT
-350006,Cálculo II,GIT
+350045,Control Electrónico,GIEC/GITT
+370002,Control Electrónico,GIEC/GITT
+370006,Control Industrial,GIEC
+350001,Cálculo I,GIEC/GIST/GIT/GITT
+350006,Cálculo II,GIEC/GIST/GIT/GITT
+350032,Degree Final Project,GITT
+370005,Degree Final Project,GIEC
 380008,Degree Final Project,GIT
-350014,Digital Electronic Systems,GIT
-350007,Digital Electronics,GIT
-350016,Economía de la Empresa,GIT
-350027,Electronic Sub- Systems,GIT
-370011,Electronic Subsystems,GIT
-350011,Electrónica Básica,GIT
-350007,Electrónica Digital,GIT
-350018,Electrónica de Circuitos,GIT
-350012,Estadística,GIT
+390005,Degree Final Project,GIST
+350025,Digital Communications,GIST/GITT
+390015,Digital Communications,GIST/GITT
+350014,Digital Electronic Systems,GIEC/GIST/GIT/GITT
+350007,Digital Electronics,GIEC/GIST/GIT/GITT
+350024,Digital Signal Processing,GIST/GITT
+390017,Digital Signal Processing,GIST/GITT
+350021,Diseño Electrónico,GITT
+370010,Diseño Electrónico,GIEC
+350016,Economía de la Empresa,GIEC/GIST/GIT/GITT
+350053,Electronic Communication Systems,GIEC/GITT
+370004,Electronic Communication Systems,GIEC/GITT
+350045,Electronic Control,GIEC/GITT
+370002,Electronic Control,GIEC/GITT
+350021,Electronic Design,GITT
+370010,Electronic Design,GIEC
+350043,Electronic Instrumentation,GIEC/GITT
+370001,Electronic Instrumentation,GIEC/GITT
+350027,Electronic Sub- Systems,GIST/GIT/GITT
+370011,Electronic Subsystems,GIEC/GIST/GIT
+370003,Electronic Technologies,GIEC/GITT
+350046,Electronic Technology,GIEC/GITT
+370014,Electronics for Renewable Energy,GIEC
+370013,Electrónica Biomédica,GIEC
+350011,Electrónica Básica,GIEC/GIST/GIT/GITT
+350007,Electrónica Digital,GIEC/GIST/GIT/GITT
+350018,Electrónica de Circuitos,GIEC/GIST/GIT/GITT
+350044,Electrónica de Potencia,GIEC/GITT
+370000,Electrónica de Potencia,GIEC/GITT
+370014,Electrónica para Energías Renovables,GIEC
+350012,Estadística,GIEC/GIST/GIT/GITT
 380015,Expansion of Operating Systems,GIT
+390008,Expansion of Telecommunication Systems,GIST
+350052,External Practical Training,GITT
+370019,External Practical Training,GIEC
 380017,External Practical Training,GIT
-350011,Fundamentals of Electronics,GIT
-350002,Fundamentals of Physics I,GIT
-350008,Fundamentals of Physics II,GIT
-350002,Fundamentos Físicos I,GIT
-350008,Fundamentos Físicos II,GIT
+390014,External Practical Training,GIST
+350011,Fundamentals of Electronics,GIEC/GIST/GIT/GITT
+350002,Fundamentals of Physics I,GIEC/GIST/GIT/GITT
+350008,Fundamentals of Physics II,GIEC/GIST/GIT/GITT
+350002,Fundamentos Físicos I,GIEC/GIST/GIT/GITT
+350008,Fundamentos Físicos II,GIEC/GIST/GIT/GITT
 380010,Gestión y Administración de Redes,GIT
+350028,High Frequency Technologies,GIST/GITT
+390016,High Frequency Technologies,GIST/GITT
+390012,Image Processing and Computer Vision,GIST
+370006,Industrial Control,GIEC
 380018,Ingeniería de Redes y Servicios,GIT
+350040,Ingeniería de Tráfico,GITT
 380007,Ingeniería de Tráfico,GIT
-370021,Ingeniería del Software,GIT
-350055,Intelligent and Sustainable New Generation Systems,GIT
+370021,Ingeniería del Software,GIEC/GIST/GIT
+350043,Instrumentación Electrónica,GIEC/GITT
+370001,Instrumentación Electrónica,GIEC/GITT
+350055,Intelligent and Sustainable New Generation Systems,GIEC/GIT/GITT
 380005,"Lab. of Networks, Systems and Services",GIT
+350042,"Laboratorio de Redes, Sistemas y Servicios",GITT
 380005,"Laboratorio de Redes, Sistemas y Servicios",GIT
-350000,Linear Algebra,GIT
-350035,Mobile Communications,GIT
-390001,Mobile Communications,GIT
-350010,Network Architecture I,GIT
-350015,Network Architecture II,GIT
+350042,"Laboratory of Networks, Systems and Services",GITT
+350000,Linear Algebra,GIEC/GIST/GIT/GITT
+350035,Mobile Communications,GIEC/GIST/GIT/GITT
+390001,Mobile Communications,GIEC/GIST/GIT/GITT
+350054,Métodos Númericos y Técnicas de Optimización,GITT
+350010,Network Architecture I,GIEC/GIST/GIT/GITT
+350015,Network Architecture II,GIEC/GIST/GIT/GITT
 380018,Network and Services Engineering,GIT
 380010,Networks Management and Administration,GIT
+370008,Noise and Interference in Electronic Systems,GIEC
+350054,Numerical Methods and Optimization Techniques,GITT
+350026,Operating Systems,GITT
 380006,Operating Systems,GIT
-370007,Photonic Technologies,GIT
-350056,Practical Training,GIT
-350009,Programación,GIT
+350033,Optical Communications,GIST/GITT
+390004,Optical Communications,GIST/GITT
+370007,Photonic Technologies,GIEC/GIST/GIT
+350044,Power Electronics,GIEC/GITT
+370000,Power Electronics,GIEC/GITT
+350056,Practical Training,GIEC/GIST/GIT
+390012,Procesado de Imagen y Vision por Computador,GIST
+390007,Procesado de Voz y Audio,GIST
+350009,Programación,GIEC/GIST/GIT/GITT
+350041,Programación Avanzada,GITT
 380001,Programación Avanzada,GIT
-380012,Programación Visual,GIT
-350009,Programming,GIT
-350022,Propagación de Ondas,GIT
+380012,Programación Visual,GIEC/GIST/GIT/GITT
+350009,Programming,GIEC/GIST/GIT/GITT
+350022,Propagación de Ondas,GIEC/GIST/GIT/GITT
+350052,Prácticas Externas,GITT
+370019,Prácticas Externas,GIEC
 380017,Prácticas Externas,GIT
-350056,Prácticas Profesionales,GIT
-350023,Redes de Comunicaciones,GIT
-350039,Security,GIT
-380002,Security,GIT
-350039,Seguridad,GIT
-380002,Seguridad,GIT
+390014,Prácticas Externas,GIST
+350056,Prácticas Profesionales,GIEC/GIST/GIT
+350037,Radiación y Radiocomunicación,GITT
+390002,Radiación y Radiocomunicación,GIST/GITT
+350037,Radiation and Radiocommunication,GITT
+390002,Radiation and Radiocommunication,GIST/GITT
+390006,Radio Determination and Radar,GIST
+390006,Radiodeterminación y Radar,GIST
+350023,Redes de Comunicaciones,GIEC/GIST/GIT/GITT
+370008,Ruido e Interferencias en Sistemas Electrónicos,GIEC
+390010,Satellite Communications,GIST
+350039,Security,GIT/GITT
+380002,Security,GIT/GITT
+350039,Seguridad,GIT/GITT
+380002,Seguridad,GIT/GITT
+350038,Servicios Telemáticos,GITT
 380003,Servicios Telemáticos,GIT
-350013,Señales y Sistemas,GIT
-350013,Signals and Systems,GIT
-350014,Sistemas Electrónicos Digitales,GIT
-350031,Sistemas Electrónicos Digitales Avanzados,GIT
-350003,Sistemas Informáticos,GIT
-350055,Sistemas Inteligentes y Sostenibles de Nueva Generación,GIT
+350013,Señales y Sistemas,GIEC/GIST/GIT/GITT
+350013,Signals and Systems,GIEC/GIST/GIT/GITT
+350014,Sistemas Electrónicos Digitales,GIEC/GIST/GIT/GITT
+350031,Sistemas Electrónicos Digitales Avanzados,GIEC/GIST/GIT/GITT
+350053,Sistemas Electrónicos para Comunicaciones,GIEC/GITT
+370004,Sistemas Electrónicos para Comunicaciones,GIEC/GITT
+350003,Sistemas Informáticos,GIEC/GIST/GIT/GITT
+350055,Sistemas Inteligentes y Sostenibles de Nueva Generación,GIEC/GIT/GITT
+350026,Sistemas Operativos,GITT
 380006,Sistemas Operativos,GIT
-370021,Software Engineering,GIT
-350012,Statistics,GIT
-350027,Subsistemas Electrónicos,GIT
-370011,Subsistemas Electrónicos,GIT
-370023,Technologies of Electronic Systems,GIT
-390018,Technologies of Telecommunication Systems,GIT
-370007,Tecnologías Fotónicas,GIT
-370023,Tecnologías de Sistemas Electrónicos,GIT
-390018,Tecnologías de Sistemas de Telecomunicación,GIT
+350036,Sistemas de Telecomunicación,GITT
+390003,Sistemas de Telecomunicación,GIST
+370021,Software Engineering,GIEC/GIST/GIT
+350012,Statistics,GIEC/GIST/GIT/GITT
+350027,Subsistemas Electrónicos,GIST/GIT/GITT
+370011,Subsistemas Electrónicos,GIEC/GIST/GIT
+370023,Technologies of Electronic Systems,GIST/GIT
+380019,Technologies of Network and Telematic Services,GIEC/GIST
+390018,Technologies of Telecommunication Systems,GIEC/GIT
+350046,Tecnología Electrónica,GIEC/GITT
+370003,Tecnología Electrónica,GIEC/GITT
+370007,Tecnologías Fotónicas,GIEC/GIST/GIT
+390009,Tecnologías Inalámbricas,GIST
+350028,Tecnologías de Alta Frecuencia,GIST/GITT
+390016,Tecnologías de Alta Frecuencia,GIST/GITT
+380019,Tecnologías de Redes y Servicios Telemáticos,GIEC/GIST
+370023,Tecnologías de Sistemas Electrónicos,GIST/GIT
+390018,Tecnologías de Sistemas de Telecomunicación,GIEC/GIT
+390003,Telecommunication Systems,GIST
+350036,Telecomunication Systems,GITT
+350038,Telematic Services,GITT
 380003,Telematic Services,GIT
-350004,Teoría de Circuitos,GIT
-350019,Teoría de la Comunicación,GIT
+350004,Teoría de Circuitos,GIEC/GIST/GIT/GITT
+350019,Teoría de la Comunicación,GIEC/GIST/GIT/GITT
+350032,Trabajo Fin de Grado,GITT
+370005,Trabajo Fin de Grado,GIEC
 380008,Trabajo Fin de Grado,GIT
+390005,Trabajo Fin de Grado,GIST
+350040,Traffic Engineering,GITT
 380007,Traffic Engineering,GIT
-380012,Visual Programming,GIT
-350022,Waves Propagation,GIT
-350000,Álgebra Lineal,GIT
+350024,Tratamiento Digital de Señales,GIST/GITT
+390017,Tratamiento Digital de Señales,GIST/GITT
+370009,Visión Artificial,GIEC/GITT
+380012,Visual Programming,GIEC/GIST/GIT/GITT
+390007,Voice and Audio Processing,GIST
+350022,Waves Propagation,GIEC/GIST/GIT/GITT
+390009,Wireless Technologies,GIST
+350000,Álgebra Lineal,GIEC/GIST/GIT/GITT

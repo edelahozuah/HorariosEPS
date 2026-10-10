@@ -56,7 +56,7 @@ Campos principales de `sesiones.csv`:
 ## Limitaciones conocidas
 
 - Los PDF no indican profesorado; sólo asignatura, grupo y aula. El profesorado se obtiene aparte, de las guías docentes
-  (`scripts/extraer_guias.py`, ver más abajo); por ahora sólo para el Grado en Ingeniería Telemática.
+  (`scripts/extraer_guias.py`, ver más abajo); por ahora para los cuatro grados de telecomunicación (GITT, GIST, GIT, GIEC).
 - Los másteres (MUIT, MUII) usan otra plantilla y no se procesan.
 - Erratas de origen (`18_00/18:55`, `12:00/14:00`, `i11:00`, `2ª`) se corrigen asumiendo que cada fila es una franja de una hora.
 - GMC (Guadalajara) usa nombres de aula propios (`Aula 5`), que quedan solo en `aulas_raw`.
@@ -132,7 +132,8 @@ Notas:
 - Los grupos en inglés de los horarios usan nombres que no siempre coinciden con los oficiales de la UAH
   (`CIRCUITS THEORY` frente a `Circuit Theory`); se corrigen en `data/alias.csv`.
 - El Trabajo Fin de Grado (380008) no tiene guía en PDF; Prácticas Externas y Prácticas Profesionales la tienen sin fecha de aprobación.
-- Con G380 procesado, las 58 asignaturas de GIT presentes en los horarios tienen código (386 sesiones).
+- Con G350, G390, G380 y G370 procesados (219 asignaturas, 143 profesores), todas las asignaturas de GITT, GIST, GIT y GIEC
+  presentes en los horarios tienen código.
 
 ## Códigos de asignatura
 
