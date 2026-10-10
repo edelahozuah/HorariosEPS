@@ -157,7 +157,7 @@ Las asignaturas que queden sin código se listan en `avisos.txt`.
 - El despliegue copia `data/*.csv` y `data/*.json` a `web/data/`, de modo que cada fichero tiene URL estable, tipo MIME y
   CORS correctos en GitHub Pages, p. ej. <https://edelahozuah.github.io/HorariosEPS/data/sesiones.csv>. El pie de la app
   enlaza esos ficheros y la licencia.
-- `data/profesores.csv` (nombres y contacto de profesores, recopilados de sus fichas públicas) **no** se publica en `web/data/`
+- `data/profesores.csv` (nombres y contacto de profesores, recopilados de sus fichas públicas) **no** se versiona (está en `.gitignore`) ni se publica en `web/data/`
   ni forma parte de los datos abiertos; `web/guias.js` y la app muestran sólo el nombre con enlace a la ficha de la UAH,
   sin correo.
 

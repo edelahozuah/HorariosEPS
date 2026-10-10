@@ -15,7 +15,7 @@ son de la Universidad de Alcalá y se reproducen sin cambios como fuente; no est
 esta licencia.
 
 data/profesores.csv (nombres y datos de contacto de profesores, recopilados de sus fichas públicas
-en www.uah.es) no forma parte de los datos abiertos publicados en la web: se conserva en el
-repositorio sólo como apoyo al proceso de extracción y no se redistribuye en web/data/.
+en www.uah.es) no forma parte de los datos abiertos: no se versiona en el repositorio ni se
+redistribuye en web/data/; es un fichero de trabajo local del proceso de extracción.
 
 El código (scripts/, web/*.js, web/*.html, web/*.css) se licencia aparte, bajo MIT (ver LICENSE).
