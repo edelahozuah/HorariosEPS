@@ -95,3 +95,9 @@ cualquier variante del PDF: se normaliza igual que los horarios. Si el fichero n
 Con el fichero presente, `codigo` aparece en `franjas.csv`, `sesiones.csv`, `asignaturas.csv` y en la aplicación
 (tooltip y búsqueda de perfiles); las hojas de impresión lo muestran si se añade `&codigos=1` a la URL.
 Las asignaturas que queden sin código se listan en `avisos.txt`.
+
+## Repositorio y despliegue
+
+- Código y datos: <https://github.com/edelahozuah/HorariosEPS>.
+- Aplicación desplegada: <https://edelahozuah.github.io/HorariosEPS/> (GitHub Pages sirve el contenido de `web/` desde la rama `gh-pages`).
+- Para publicar cambios: regenerar datos, hacer commit en `main` y ejecutar `scripts/publicar.sh`, que actualiza `gh-pages` con `git subtree`.
