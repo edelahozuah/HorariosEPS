@@ -132,11 +132,12 @@ Notas:
 - Los grupos en inglés de los horarios usan nombres que no siempre coinciden con los oficiales de la UAH
   (`CIRCUITS THEORY` frente a `Circuit Theory`); se corrigen en `data/alias.csv`.
 - El Trabajo Fin de Grado (380008) no tiene guía en PDF; Prácticas Externas y Prácticas Profesionales la tienen sin fecha de aprobación.
-- Con los doce planes procesados (607 asignaturas, 385 profesores), todas las asignaturas de los horarios tienen código
-  salvo la optatividad transversal (plan G61, no procesado) y cuatro fragmentos de INFOADE y GMC que el parser no resuelve
+- Con los doce planes y la optatividad transversal (G61, con `--transversales`) procesados (783 asignaturas, 559 profesores),
+  todas las asignaturas de los horarios tienen código salvo cuatro fragmentos de INFOADE y GMC que el parser no resuelve
   (`FINANCIERAS`, `Y`, `DIRECCION ESTRATEGICA EMPRESARIAL`, `ORGANIZACION Y RECURSOS HUMANOS`).
 - `data/alias.csv` contiene además 64 abreviaturas de las ramas de informática e industrial casadas con el nombre oficial
-  (54 automáticamente, por prefijos de palabra; 10 a mano). Las entradas `... TUTORÍA` se funden con su asignatura.
+  (54 automáticamente, por prefijos de palabra; 10 a mano) y 11 de las transversales. Las entradas `... TUTORÍA` y los
+  sufijos `(1C)`/`(2C)` se funden con su asignatura.
 
 ## Códigos de asignatura
 
