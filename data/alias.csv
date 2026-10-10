@@ -3,3 +3,69 @@ CIRCUITS ELECTRONICS,Circuit Electronics
 CIRCUITS THEORY,Circuit Theory
 COMPUTING SYSTEMS,Computer Systems
 TECN. EN SIST. ELECT.,Tecnologías de Sistemas Electrónicos
+# abreviaturas de otras ramas, casadas automáticamente por prefijos de palabra con el nombre oficial de la guía
+ANALISIS Y VALORACION DE PROYECTOS DE INV,Análisis y Valoración de Proyectos de Inversión
+ARQ Y DISENO DE SISTEMAS WEB Y C S,Arquitectura y Diseño de Sistemas Web y C/s
+ARQUIT DE REDES,Arquitectura de Redes
+AUTOMATIZACION TUTORIA,Automatización
+COMP UBICUA,Computación Ubicua
+CONTROL DE CONVERTIDORES DE ELECTR POT,Control de Convertidores de Electrónica de Potencia
+DESARROLLO DE APLICACIONES PARA SIST INDUST,Desarrollo de Aplicaciones para Sistemas Industriales
+ELASTICIDAD Y RESISTENCIA DE MATER,Elasticidad y Resistencia de Materiales
+ELECTRONICA DE POTENCIA TUTORIA,Electrónica de Potencia
+ELECTRONICA PARA SISTEMAS INTELIGENTES INDUST,Electrónica para Sistemas Inteligentes Industriales
+ELEM MAQUINAS,Elementos de Máquinas
+ESTRUCTURA DE DATOS,Estructuras de Datos
+EXP EN ING QUIMICA Y AMBIENTAL,Experimentación en Ingeniería Química y Ambiental
+FUND COMERCIO ELECTRONICO,Fundamentos del Comercio Electrónico
+FUND DE ELECTRONICA PARA SISTEMAS COMPUTACIONALES,Fundamentos de Electrónica para Sistemas Computacionales
+FUND DE PROGRAMACION,Fundamentos de Programación
+FUND DEL COMERCIO ELECTRONICO,Fundamentos del Comercio Electrónico
+FUND ELECTRONICA,Fundamentos de Electrónica
+FUND MATEMATICOS,Fundamentos Matemáticos
+FUND PROGRAMACION,Fundamentos de Programación
+FUND TECN COMPUTADORES,Fundamentos de Tecnología de Computadores
+FUND TECNOLOGIA COMPUTADORES,Fundamentos de Tecnología de Computadores
+FUNDAM DE PROGRAMACION,Fundamentos de Programación
+FUNDAM PROGRAMACION,Fundamentos de Programación
+FUNDAMENTOS DE CIENCIA DE DATOS,Fundamentos de la Ciencia de los Datos
+GEST REDES Y SEG,Gestión de Redes y Seguridad
+GESTION Y DES DEL TALENTO,Gestión y Desarrollo de Talento
+GESTION Y DESARROLLO DEL TALENTO,Gestión y Desarrollo de Talento
+ING CONTROL ELECTRONICO,Ingeniería de Control Electrónico
+ING CONTROL ELECTRONICO TUTORIA,Ingeniería de Control Electrónico
+INTELIG ARTIFICIAL GENERATIVA CON GRANDES MODELOS DE LENGUAJE,Inteligencia Artificial Generativa Con Grandes Modelos de Lenguaje
+INTROD A LA CONTABILIDAD,Introducción a la Contabilidad
+METODOS MATEMATICOS APL ING IND,Métodos Matemáticos Aplicados a la Ingeniería Industrial
+MODELOS DE TECN PARA LOS SIST DE INFORMACION,Modelos de Tecnologías para los Sistemas de Información
+NL4 FUND COMERCIO ELECTRONICO,Fundamentos del Comercio Electrónico
+PARADIG DE PROGRAM,Paradigmas de Programación
+PARADIGMAS AVANZADOS DE PROG,Paradigmas Avanzados de Programación
+RESISTENCIA DE MATERIALES TUTORIA,Resistencia de Materiales
+RUIDO E INTERFERENCIAS EN SIST ELECTRONICOS,Ruido e Interferencias en Sistemas Electrónicos
+SEG EN SISTEMAS DISTRIBUIDOS,Seguridad en Sistemas Distribuidos
+SIST AUDIOVISUALES Y APLICACIONES MULTIMEDIA,Sistemas Audiovisuales y Aplicaciones Multimedia
+SIST CONTROL INTELIGENTE,Sistemas de Control Inteligente
+SIST DE INFORMACION PARA LA GESTION DE COSTES,Sistemas de Información para la Gestión de Costes
+SIST DE VISION ARTIFICIAL,Sistemas de Visión Artificial
+SIST PROD INDUSTRIAL,Sistemas de Producción Industrial
+SIST Y COMUNICACIONES,Sistemas y Comunicaciones
+SISTEMAS ELECTRONICOS DIGITALES TUTORIA,Sistemas Electrónicos Digitales
+TEC MEDIOAMBIENTALES,Tecnologías Medioambientales
+TUTORIA INSTRUMENTACION ELECTRONICA,Instrumentación Electrónica
+TUTORIAS DE ELECTRONICA DE POTENCIA,Electrónica de Potencia
+TUTORIAS DE INFORMATICA INDUSTRIAL,Informática Industrial
+TUTORIAS DE INGENIERIA DE CONTROL ELECTRONICO,Ingeniería de Control Electrónico
+TUTORIAS DE INSTRUMENTACION ELECTRONICA,Instrumentación Electrónica
+TUTORIAS DE RESISTENCIA DE MATERIALES,Resistencia de Materiales
+# casados a mano
+CIRCUIT ANALISYS,Circuit Analysis
+COMPLEXITY AND ALGORITHMS,Algorithms and Complexity
+CONTROL ENGINEERING II,Ingeniería de Control II
+ELECTRONIC CONTROL ENGINEERING,Ingeniería de Control Electrónico
+INFORMATICA GRAFICA,Informática Gráfica y Simulación 3D
+METODOS DE PROGRAMACION,Metodología de la Programación
+OPERATING SYSTEMS,Operating System
+SED AVANZADOS,Sistemas Electrónicos Digitales Avanzados
+SOFT COMPUTING,Técnicas de Soft-computing y sus Aplicaciones
+TEORIA DE NUMEROS,Teoría de Números y Aplicaciones

@@ -1,32 +1,132 @@
 codigo,asignatura,titulaciones
+581002,Accounting Information Systems,GISI
+610039,Acoustic and Vibrations,GITI
+610039,Acustica y Vibraciones,GITI
+592025,Advanced Databases,GMC
+780020,Advanced Databases,GII/GISI/INFOADE
 350031,Advanced Digital Electronic Systems,GIEC/GIST/GIT/GITT
+600032,Advanced Digital Electronic Systems,GIEAI/GIECAI
+780013,Advanced Mathemastics,GII/INFOADE
+610041,Advanced Mechanical Design,GITI
+581004,Advanced Operating Systems,GISI
+780012,Advanced Operating Systems,GIC/GII/INFOADE
 350041,Advanced Programming,GITT
 380001,Advanced Programming,GIT
+780014,Advanced Programming,GIC/GII/INFOADE
+592028,Advanced Programming Paradigms,GMC
+781004,Advanced Programming Paradigms,GII/INFOADE
+780019,Advanced Software Engineering,GII/GISI/INFOADE
+592009,Affine and Projective Geometry,GMC
+610000,Algebra,GITI
+592019,Algebraic Structures,GMC
+592018,Algorithms and Complexity,GMC
+780021,Algorithms and Complexity,GII/INFOADE
+592018,Algoritmia y Complejidad,GMC
+780021,Algoritmia y Complejidad,GII/INFOADE
 380015,Ampliación de Sistemas Operativos,GIT
+581004,Ampliación de Sistemas Operativos,GISI
 390008,Ampliación de Sistemas de Telecomunicación,GIST
-350005,Análisis de Circuitos,GIEC/GIST/GIT/GITT
+600008,Analog Electronics,GIEAI
+580005,Analysis and Assessment of Investment Projects,GISI
+340009,Analysis of Financial Operations,INFOADE
+592001,Análisis Matemático I,GMC
+592005,Análisis Matemático II,GMC
+592011,Análisis Matemático III,GMC
+350005,Análisis de Circuitos,GIEC/GIECAI/GIST/GIT/GITT
+590003,Análisis de Circuitos,GIC
+600026,Análisis de Circuitos,GIEAI
+592020,Análisis de Datos,GMC
+340009,Análisis de las Operaciones Financieras,INFOADE
+580005,Análisis y Valoración de Proyectos de Inversión,GISI
+780034,"Aplicaciones del Soft-computing en Energía, Voz e Imagen",GIC/GII/GISI
 350020,Arquitectura de Computadores,GIT/GITT
 380000,Arquitectura de Computadores,GIT/GITT
-350010,Arquitectura de Redes I,GIEC/GIST/GIT/GITT
-350015,Arquitectura de Redes II,GIEC/GIST/GIT/GITT
-370013,Biomedical Electronics,GIEC
+780011,Arquitectura de Redes,GIC/GII/INFOADE
+350010,Arquitectura de Redes I,GIEC/GIECAI/GIST/GIT/GITT
+350015,Arquitectura de Redes II,GIEC/GIECAI/GIST/GIT/GITT
+590005,Arquitectura e Ingeniería de Computadores,GIC
+780041,Arquitectura y Diseño de Sistemas Web y C/s,GIC/GII/GISI
+592038,Arquitecturas Big Data,GMC
+780041,Arquitecture and Design of Web and C/s Systems,GIC/GII/GISI
+592022,Artificial Intelligence,GMC
+780024,Artificial Intelligence,GIC/GII/INFOADE
+780033,Audiovisual Systems and Multimedia Applications,GIC/GII/GISI
+781003,Automated Planning,GII/INFOADE
+780025,Automatic Knowledge and Reasoning,GII/INFOADE
+600013,Automation,GIEAI/GIECAI
+610020,Automation,GITI
+600013,Automatización,GIEAI/GIECAI
+610020,Automatización,GITI
+610040,Automobiles and Railways,GITI
+610040,Automóviles y Ferrocarriles,GITI
+592013,Bases de Datos,GMC
+780016,Bases de Datos,GIC/GII/GISI/INFOADE
+592025,Bases de Datos Avanzadas,GMC
+780020,Bases de Datos Avanzadas,GII/GISI/INFOADE
+610021,Basic Operations in the Industry,GITI
+610042,Big Data en Energía,GITI
+610042,Big Data in Energy,GITI
+780030,Bioengineering,GIC/GII/GISI
+780030,Bioingeniería,GIC/GII/GISI
+370013,Biomedical Electronics,GIEC/GIECAI
+340000,Business Administration,INFOADE
 350016,Business Economics,GIEC/GIST/GIT/GITT
-350001,Calculus I,GIEC/GIST/GIT/GITT
-350006,Calculus II,GIEC/GIST/GIT/GITT
-350005,Circuit Analysis,GIEC/GIST/GIT/GITT
-350018,Circuit Electronics,GIEC/GIST/GIT/GITT
-350004,Circuit Theory,GIEC/GIST/GIT/GITT
+600031,Business Economics,GIEAI/GIECAI
+610006,Business Economics,GITI
+340002,Business Law,INFOADE
+590001,Business Management,GIC
+340014,Business Operations and Processes,INFOADE
+340006,Business Statistics I,INFOADE
+342002,Business Statistics II,INFOADE
+780023,Business Systems,GII/INFOADE
+340020,Business Tax System,INFOADE
+350001,Calculus I,GIEC/GIECAI/GIST/GIT/GITT
+600025,Calculus I,GIEAI
+610001,Calculus I,GITI
+350006,Calculus II,GIEC/GIECAI/GIST/GIT/GITT
+600027,Calculus II,GIEAI
+610005,Calculus II,GITI
+780043,"Calidad, Pruebas y Mantenimiento del Software",GIC/GII/GISI
+600036,Centrales Eléctricas,GIEAI
+600003,Chemistry,GIEAI/GIECAI
+610100,Chemistry (Course 0),GIEAI/GIECAI/GITI
+592039,Ciberseguridad,GMC
+610010,Ciencia de Materiales,GITI
+600007,Ciencia de los Materiales,GIEAI/GIECAI
+350005,Circuit Analysis,GIEC/GIECAI/GIST/GIT/GITT
+590003,Circuit Analysis,GIC
+600026,Circuit Analysis,GIEAI
+350018,Circuit Electronics,GIEC/GIECAI/GIST/GIT/GITT
+350004,Circuit Theory,GIEC/GIECAI/GIST/GIT/GITT
+610011,Circuitos Eléctricos,GITI
 350034,Circuitos de Comunicación,GIST/GITT
 390000,Circuitos de Comunicación,GIST/GITT
 350034,Communication Circuits,GIST/GITT
 390000,Communication Circuits,GIST/GITT
-350023,Communication Networks,GIEC/GIST/GIT/GITT
-350019,Communication Theory,GIEC/GIST/GIT/GITT
+350023,Communication Networks,GIEC/GIECAI/GIST/GIT/GITT
+350019,Communication Theory,GIEC/GIECAI/GIST/GIT/GITT
 350029,Commutation,GITT
+340011,Company Law,INFOADE
+591000,Compiladores,GIC
+591000,Compilers,GIC
+592024,Complex Variable,GMC
+592023,Computability Theory,GMC
+781002,Computación Ubicua,GII/INFOADE
+592031,Computer Algebra,GMC
 350020,Computer Architecture,GIT/GITT
 380000,Computer Architecture,GIT/GITT
-350003,Computer Systems,GIEC/GIST/GIT/GITT
-370009,Computer Vision,GIEC/GITT
+592004,Computer Fundamentals,GMC
+780011,Computer Network Architectures,GIC/GII/INFOADE
+780017,Computer Networks,GIC/GII/INFOADE
+600005,Computer Science,GIEAI
+610008,Computer Science,GITI
+780010,Computer Structure and Organization,GIC/GII/INFOADE
+350003,Computer Systems,GIEC/GIECAI/GIST/GIT/GITT
+370009,Computer Vision,GIEC/GIECAI/GITT
+600034,Computer Vision,GIEAI
+780029,Computer Vision Systems,GIC/GII/GISI
+590005,Computers Architecture and Engineering,GIC
+376100,Computing (Course 0),GIECAI
 350025,Comunicaciones Digitales,GIST/GITT
 390015,Comunicaciones Digitales,GIST/GITT
 350035,Comunicaciones Móviles,GIEC/GIST/GIT/GITT
@@ -34,144 +134,484 @@ codigo,asignatura,titulaciones
 390010,Comunicaciones por Satélite,GIST
 350033,Comunicaciones Ópticas,GIST/GITT
 390004,Comunicaciones Ópticas,GIST/GITT
+592016,Concurrent and Distributed Programming,GMC
 350029,Conmutación,GITT
 380004,Conmutación,GIT
 380004,Conmutation,GIT
+780025,Conocimiento y Razonamiento Automatizado,GII/INFOADE
+340013,Contabilidad Financiera y de Sociedades,INFOADE
+340015,Contabilidad de Costes,INFOADE
 350045,Control Electrónico,GIEC/GITT
-370002,Control Electrónico,GIEC/GITT
+370002,Control Electrónico,GIEC/GIECAI/GITT
+610026,Control Engineering,GITI
+600010,Control Engineering I,GIEAI
 370006,Control Industrial,GIEC
-350001,Cálculo I,GIEC/GIST/GIT/GITT
-350006,Cálculo II,GIEC/GIST/GIT/GITT
+600038,Control Inteligente,GIEAI/GIECAI
+590015,Control Systems for Robots,GIC/GII/GISI
+600020,Control Techniques,GIEAI/GIECAI
+600037,Control de Convertidores de Electrónica de Potencia,GIEAI/GIECAI
+600037,Control of Power Electronic Converters,GIEAI/GIECAI
+340015,Costs Accounting,INFOADE
+592032,Criptografía y Teoría de Códigos,GMC
+592032,Cryptography and Code Theory,GMC
+350001,Cálculo I,GIEC/GIECAI/GIST/GIT/GITT
+600025,Cálculo I,GIEAI
+610001,Cálculo I,GITI
+350006,Cálculo II,GIEC/GIECAI/GIST/GIT/GITT
+600027,Cálculo II,GIEAI
+610005,Cálculo II,GITI
+592020,Data Analysis,GMC
+592008,Data Structures,GMC
+780009,Data Structures,GIC/GII/GISI/INFOADE
+592013,Databases,GMC
+780016,Databases,GIC/GII/GISI/INFOADE
+592014,Declaratory Programming,GMC
 350032,Degree Final Project,GITT
 370005,Degree Final Project,GIEC
 380008,Degree Final Project,GIT
 390005,Degree Final Project,GIST
+581008,Degree Final Project,GISI
+591006,Degree Final Project,GIC
+592034,Degree Final Project,GMC
+600024,Degree Final Project,GIEAI
+610035,Degree Final Project,GITI
+781008,Degree Final Project,GII
+340011,Derecho de Sociedades,INFOADE
+340002,Derecho de la Empresa,INFOADE
+580011,Desarrollo Con Tecnologías Emergentes,GISI
+610038,Desarrollo Industrial Sostenible,GITI
+610044,Desarrollo de Aplicaciones para Sistemas Industriales,GITI
+590000,Desarrollo del Software,GIC
+580011,Development With Emerging Technologies,GISI
+610044,Development of Applications for Industrial Systems,GITI
+592017,Differential Equations,GMC
+610012,Differential Equations,GITI
+592027,Differential Geometry,GMC
 350025,Digital Communications,GIST/GITT
 390015,Digital Communications,GIST/GITT
 350014,Digital Electronic Systems,GIEC/GIST/GIT/GITT
+600030,Digital Electronic Systems,GIEAI/GIECAI
 350007,Digital Electronics,GIEC/GIST/GIT/GITT
+600028,Digital Electronics,GIEAI/GIECAI
 350024,Digital Signal Processing,GIST/GITT
 390017,Digital Signal Processing,GIST/GITT
+340095,Digital Transformation,GISI
+340016,Dirección Financiera I,INFOADE
+340019,Dirección Financiera II,INFOADE
+592006,Discrete Math,GMC
+780008,Discrete Structures,GIC/GII/GISI/INFOADE
 350021,Diseño Electrónico,GITT
-370010,Diseño Electrónico,GIEC
+370010,Diseño Electrónico,GIEC/GIECAI
+600033,Diseño Electrónico,GIEAI
+610041,Diseño Mecánico Avanzado,GITI
+342003,Econometrics,INFOADE
+342003,Econometría,INFOADE
+342000,Economic Theory I,INFOADE
+342001,Economic Theory II,INFOADE
+340003,Economía Española y Mundial,INFOADE
+340000,Economía de la Empresa,INFOADE
 350016,Economía de la Empresa,GIEC/GIST/GIT/GITT
+600031,Economía de la Empresa,GIEAI/GIECAI
+610006,Economía de la Empresa,GITI
+592017,Ecuaciones Diferenciales,GMC
+610012,Ecuaciones Diferenciales,GITI
+610015,Elasticidad y Resistencia de Materiales,GITI
+610015,Elasticity and Resistance of Materials,GITI
+600042,Electric Energy Generation From Renewable Energy Sources,GIEAI/GIECAI
+610047,Electric Traction and Electric Vehicles,GITI
+610011,Electrical Circuits,GITI
+600014,Electrical Machines,GIEAI/GIECAI
+610024,Electrical Technology I,GITI
+610027,Electrical Technology II,GITI
 350053,Electronic Communication Systems,GIEC/GITT
 370004,Electronic Communication Systems,GIEC/GITT
 350045,Electronic Control,GIEC/GITT
-370002,Electronic Control,GIEC/GITT
+370002,Electronic Control,GIEC/GIECAI/GITT
 350021,Electronic Design,GITT
-370010,Electronic Design,GIEC
+370010,Electronic Design,GIEC/GIECAI
+600033,Electronic Design,GIEAI
 350043,Electronic Instrumentation,GIEC/GITT
-370001,Electronic Instrumentation,GIEC/GITT
+370001,Electronic Instrumentation,GIEC/GIECAI/GITT
+600018,Electronic Instrumentation,GIEAI
 350027,Electronic Sub- Systems,GIST/GIT/GITT
-370011,Electronic Subsystems,GIEC/GIST/GIT
-370003,Electronic Technologies,GIEC/GITT
+370011,Electronic Subsystems,GIEC/GIECAI/GIST/GIT
+610023,Electronic Systems,GITI
+370003,Electronic Technologies,GIEC/GIECAI/GITT
 350046,Electronic Technology,GIEC/GITT
-370014,Electronics for Renewable Energy,GIEC
-370013,Electrónica Biomédica,GIEC
-350011,Electrónica Básica,GIEC/GIST/GIT/GITT
+600012,Electronic Technology,GIEAI
+610017,Electronics Fundamentals,GITI
+610045,Electronics for Industrial Intelligent Systems,GITI
+370014,Electronics for Renewable Energy,GIEC/GIECAI
+600008,Electrónica Analógica,GIEAI
+370013,Electrónica Biomédica,GIEC/GIECAI
+350011,Electrónica Básica,GIEC/GIECAI/GIST/GIT/GITT
 350007,Electrónica Digital,GIEC/GIST/GIT/GITT
-350018,Electrónica de Circuitos,GIEC/GIST/GIT/GITT
+600028,Electrónica Digital,GIEAI/GIECAI
+350018,Electrónica de Circuitos,GIEC/GIECAI/GIST/GIT/GITT
 350044,Electrónica de Potencia,GIEC/GITT
 370000,Electrónica de Potencia,GIEC/GITT
-370014,Electrónica para Energías Renovables,GIEC
+600017,Electrónica de Potencia,GIEAI/GIECAI
+610029,Electrónica de Potencia,GITI
+370014,Electrónica para Energías Renovables,GIEC/GIECAI
+610045,Electrónica para Sistemas Inteligentes Industriales,GITI
+610025,Elementos de Máquinas,GITI
+590010,Embedded Systems,GIC
+610028,Environmental Technologies,GITI
+340018,Estados Financieros,INFOADE
 350012,Estadística,GIEC/GIST/GIT/GITT
+600029,Estadística,GIEAI/GIECAI
+610016,Estadística,GITI
+780004,Estadística,GIC/GII/GISI
+340006,Estadística Empresarial I,INFOADE
+342002,Estadística Empresarial II,INFOADE
+780010,Estructura y Organización de Computadores,GIC/GII/INFOADE
+592019,Estructuras Algebraicas,GMC
+780008,Estructuras Discretas,GIC/GII/GISI/INFOADE
+592008,Estructuras de Datos,GMC
+780009,Estructuras de Datos,GIC/GII/GISI/INFOADE
+610030,Estructuras y Construcciones Industriales,GITI
 380015,Expansion of Operating Systems,GIT
 390008,Expansion of Telecommunication Systems,GIST
+610036,Experimentación en Ingeniería Química y Ambiental,GITI
+610036,Experimentation in Chemical and Environmental Engineering,GITI
+600001,Expresión Gráfica,GIEAI/GIECAI
+610002,Expresión Gráfica,GITI
 350052,External Practical Training,GITT
 370019,External Practical Training,GIEC
 380017,External Practical Training,GIT
 390014,External Practical Training,GIST
-350011,Fundamentals of Electronics,GIEC/GIST/GIT/GITT
+581007,External Practical Training,GISI
+591005,External Practical Training,GIC
+592033,External Practical Training,GMC
+600044,External Practical Training,GIEAI/GIECAI
+610034,External Practical Training,GITI
+781007,External Practical Training,GII
+340016,Financial Management I,INFOADE
+340019,Financial Management II,INFOADE
+340018,Financial Statements,INFOADE
+340013,Financial and Firm Accounting,INFOADE
+600015,Fluid Mechanics,GIEAI/GIECAI
+610018,Fluid Mechanics,GITI
+610033,Fluid Systems,GITI
+781001,Fundamentals of Business,GII/GISI
+780002,Fundamentals of Computer Technology,GIC/GII/INFOADE
+592030,Fundamentals of Data Science,GMC
+781006,Fundamentals of Data Science,GII/INFOADE
+580017,Fundamentals of Electronic Market,GIC/GII/GISI/INFOADE
+350011,Fundamentals of Electronics,GIEC/GIECAI/GIST/GIT/GITT
+591002,Fundamentals of Electronics for Computer Systems,GIC
+581001,Fundamentals of Information Systems,GISI
+780001,Fundamentals of Mathematics,GIC/GII/GISI/INFOADE
 350002,Fundamentals of Physics I,GIEC/GIST/GIT/GITT
 350008,Fundamentals of Physics II,GIEC/GIST/GIT/GITT
+780003,Fundamentals of Programming,GIC/GII/GISI/INFOADE
 350002,Fundamentos Físicos I,GIEC/GIST/GIT/GITT
 350008,Fundamentos Físicos II,GIEC/GIST/GIT/GITT
+581000,Fundamentos Físicos de la Informática,GISI
+780001,Fundamentos Matemáticos,GIC/GII/GISI/INFOADE
+592004,Fundamentos de Computadores,GMC
+610017,Fundamentos de Electrónica,GITI
+591002,Fundamentos de Electrónica para Sistemas Computacionales,GIC
+780003,Fundamentos de Programación,GIC/GII/GISI/INFOADE
+780002,Fundamentos de Tecnología de Computadores,GIC/GII/INFOADE
+781006,Fundamentos de la Ciencia de Datos,GII/INFOADE
+592030,Fundamentos de la Ciencia de los Datos,GMC
+781001,Fundamentos de la Empresa,GII/GISI
+592003,Fundamentos de la Programación,GMC
+581001,Fundamentos de los Sistemas de Información,GISI
+580017,Fundamentos del Comercio Electrónico,GIC/GII/GISI/INFOADE
+780000,Física,GIC/GII/INFOADE
+600002,Física I,GIEAI/GIECAI
+610003,Física I,GITI
+600004,Física II,GIEAI/GIECAI
+610007,Física II,GITI
+600042,Generación Eléctrica Mediante Energías Renovables,GIEAI/GIECAI
+610004,General Chemistry,GITI
+592009,Geometría Afín y Proyectiva,GMC
+592027,Geometría Diferencial,GMC
+590001,Gestión Empresarial,GIC
+580001,Gestión de Personas y Equipos,GISI
+780022,Gestión de Proyectos,GIC/GII/GISI
+591004,Gestión de Redes y Seguridad,GIC
 380010,Gestión y Administración de Redes,GIT
+410053,Gestión y Desarrollo de Talento,GIC/GII/GISI
+600001,Graphic Design,GIEAI/GIECAI
+610002,Graphic Design,GITI
 350028,High Frequency Technologies,GIST/GITT
 390016,High Frequency Technologies,GIST/GITT
+610043,Hybrid Electric Power Systems,GITI
+580006,Ict Marketing,GISI
+580007,Ict in Business,GISI
 390012,Image Processing and Computer Vision,GIST
 370006,Industrial Control,GIEC
+600041,Industrial Electrical Installations,GIEAI/GIECAI
+600011,Industrial Informatics,GIEAI/GIECAI
+610031,Industrial Organization Processes,GITI
+600022,Industrial Production Systems,GIEAI
+610022,Industrial Production Systems,GITI
+610030,Industrial Structures and Constructions,GITI
+580019,Information Systems for Cost Management,GISI
+581003,Information Systems for Process Support and Decision Making,GISI
+580009,Information and Project Organization,GISI
+600005,Informática,GIEAI
+610008,Informática,GITI
+376100,Informática (Curso 0),GIECAI
+592040,Informática Gráfica y Simulación 3D,GMC
+600011,Informática Industrial,GIEAI/GIECAI
+600009,Ingeniería Térmica,GIEAI/GIECAI
+610013,Ingeniería Térmica,GITI
+610026,Ingeniería de Control,GITI
+600020,Ingeniería de Control Electrónico,GIEAI/GIECAI
+600010,Ingeniería de Control I,GIEAI
+600016,Ingeniería de Control II,GIEAI
 380018,Ingeniería de Redes y Servicios,GIT
 350040,Ingeniería de Tráfico,GITT
 380007,Ingeniería de Tráfico,GIT
 370021,Ingeniería del Software,GIEC/GIST/GIT
+780015,Ingeniería del Software,GIC/GII/GISI/INFOADE
+780019,Ingeniería del Software Avanzada,GII/GISI/INFOADE
+600041,Instalaciones Eléctricas Industriales,GIEAI/GIECAI
 350043,Instrumentación Electrónica,GIEC/GITT
-370001,Instrumentación Electrónica,GIEC/GITT
+370001,Instrumentación Electrónica,GIEC/GIECAI/GITT
+600018,Instrumentación Electrónica,GIEAI
+592022,Inteligencia Artificial,GMC
+780024,Inteligencia Artificial,GIC/GII/INFOADE
+781010,Inteligencia Artificial Generativa Con Grandes Modelos de Lenguaje,GIC/GII/GISI
+781005,Intelligent Control Systems,GIC/GII/GISI/INFOADE
+610046,Intelligent Mobility in Industrial Environments,GITI
 350055,Intelligent and Sustainable New Generation Systems,GIEC/GIT/GITT
+340008,Introducción a la Contabilidad,INFOADE
+592100,Introducción a las Matemáticas Universitarias (Curso 0),GMC
+340008,Introduction to Accounting,INFOADE
+781011,Introduction to Quantum Mechanics and Quantum Computing,GIC/GII/GISI
 380005,"Lab. of Networks, Systems and Services",GIT
 350042,"Laboratorio de Redes, Sistemas y Servicios",GITT
 380005,"Laboratorio de Redes, Sistemas y Servicios",GIT
 350042,"Laboratory of Networks, Systems and Services",GITT
+780018,Language Processors,GII/INFOADE
+592000,Lenguaje y Razonamiento Matemáticos,GMC
 350000,Linear Algebra,GIEC/GIST/GIT/GITT
+592002,Linear Algebra,GMC
+600000,Linear Algebra and Differential Equations,GIEAI/GIECAI
+610025,Machine Elements,GITI
+610014,Machine and Mechanism Theory,GITI
+410053,Management of Development and Talent,GIC/GII/GISI
+580001,Management of Individuals and Teams,GISI
+340012,Marketing I: Basics,INFOADE
+580006,Marketing TIC,GISI
+340012,Marketing: Fundamentos,INFOADE
+592006,Matemática Discreta,GMC
+590002,Matemáticas Avanzadas,GIC
+780013,Matemáticas Avanzadas,GII/INFOADE
+782100,Matemáticas y Economía (Curso 0),INFOADE
+600007,Materials Sciences,GIEAI/GIECAI
+610010,Materials Sciences,GITI
+592001,Mathematical Analysis I,GMC
+592005,Mathematical Analysis II,GMC
+592011,Mathematical Analysis III,GMC
+592000,Mathematical Language and Reasoning,GMC
+610019,Mathematical Methods Applied to Industrial Engineering,GITI
+590002,Mathematics Advanced,GIC
+782100,Mathematics and Economics (Course 0),INFOADE
+600006,Mechanical Systems,GIEAI/GIECAI
+600015,Mecánica de Fluidos,GIEAI/GIECAI
+610018,Mecánica de Fluidos,GITI
+592007,Metodología de la Programación,GMC
 350035,Mobile Communications,GIEC/GIST/GIT/GITT
 390001,Mobile Communications,GIEC/GIST/GIT/GITT
+591003,Modelado de Sistemas Computacionales,GIC
+591003,Modeling of Computer Systems,GIC
+580008,Modelos de Tecnologías para los Sistemas de Información,GISI
+580008,Models of Technologies for Information Systems,GISI
+610046,Movilidad Inteligente en Entornos Industriales,GITI
+600014,Máquinas Eléctricas,GIEAI/GIECAI
+610019,Métodos Matemáticos Aplicados a la Ingeniería Industrial,GITI
+592012,Métodos Numéricos I,GMC
+592021,Métodos Numéricos II,GMC
 350054,Métodos Númericos y Técnicas de Optimización,GITT
-350010,Network Architecture I,GIEC/GIST/GIT/GITT
-350015,Network Architecture II,GIEC/GIST/GIT/GITT
+350010,Network Architecture I,GIEC/GIECAI/GIST/GIT/GITT
+350015,Network Architecture II,GIEC/GIECAI/GIST/GIT/GITT
+591004,Network Management and Security,GIC
 380018,Network and Services Engineering,GIT
+580003,Networks,GISI
 380010,Networks Management and Administration,GIT
-370008,Noise and Interference in Electronic Systems,GIEC
+370008,Noise and Interference in Electronic Systems,GIEAI/GIEC/GIECAI
+592012,Numerical Methods I,GMC
+592021,Numerical Methods II,GMC
 350054,Numerical Methods and Optimization Techniques,GITT
+610021,Operaciones Básicas en la Industria,GITI
+340014,Operaciones y Procesos Empresariales,INFOADE
+780007,Operating System,GIC/GII/INFOADE
 350026,Operating Systems,GITT
 380006,Operating Systems,GIT
+580000,Operating Systems,GISI
+592010,Operating Systems,GMC
 350033,Optical Communications,GIST/GITT
 390004,Optical Communications,GIST/GITT
-370007,Photonic Technologies,GIEC/GIST/GIT
+610009,Organic and Inorganic Chemistry,GITI
+580009,Organización de la Información y Proyectos,GISI
+592028,Paradigmas Avanzados de Programación,GMC
+781004,Paradigmas Avanzados de Programación,GII/INFOADE
+581005,Paradigmas de Programación,GISI
+780042,Patrones Software,GIC/GII/GISI
+590007,Percepción y Control,GIC
+590007,Perception and Control,GIC
+370007,Photonic Technologies,GIEC/GIECAI/GIST/GIT
+581000,Physical Fundamentals of Computer Engineering,GISI
+780000,Physics,GIC/GII/INFOADE
+600002,Physics I,GIEAI/GIECAI
+610003,Physics I,GITI
+600004,Physics II,GIEAI/GIECAI
+610007,Physics II,GITI
+781003,Planificación Automática,GII/INFOADE
 350044,Power Electronics,GIEC/GITT
 370000,Power Electronics,GIEC/GITT
+600017,Power Electronics,GIEAI/GIECAI
+610029,Power Electronics,GITI
+600036,Power Stations,GIEAI
 350056,Practical Training,GIEC/GIST/GIT
+592015,Probabilidad,GMC
+592015,Probability,GMC
 390012,Procesado de Imagen y Vision por Computador,GIST
 390007,Procesado de Voz y Audio,GIST
-350009,Programación,GIEC/GIST/GIT/GITT
+780018,Procesadores del Lenguaje,GII/INFOADE
+610031,Procesos de Organización Industrial,GITI
+350009,Programación,GIEC/GIECAI/GIST/GIT/GITT
+781000,Programación,GII/GISI/INFOADE
 350041,Programación Avanzada,GITT
 380001,Programación Avanzada,GIT
+780014,Programación Avanzada,GIC/GII/INFOADE
+592016,Programación Concurrente y Distribuida,GMC
+592014,Programación Declarativa,GMC
 380012,Programación Visual,GIEC/GIST/GIT/GITT
-350009,Programming,GIEC/GIST/GIT/GITT
-350022,Propagación de Ondas,GIEC/GIST/GIT/GITT
+350009,Programming,GIEC/GIECAI/GIST/GIT/GITT
+781000,Programming,GII/GISI/INFOADE
+592003,Programming Fundamentals,GMC
+592007,Programming Methodology,GMC
+581005,Programming Paradigms,GISI
+780022,Project Management,GIC/GII/GISI
+600021,Projects,GIEAI
+610032,Projects,GITI
+350022,Propagación de Ondas,GIEC/GIECAI/GIST/GIT/GITT
+600021,Proyectos,GIEAI
+610032,Proyectos,GITI
 350052,Prácticas Externas,GITT
 370019,Prácticas Externas,GIEC
 380017,Prácticas Externas,GIT
 390014,Prácticas Externas,GIST
+581007,Prácticas Externas,GISI
+591005,Prácticas Externas,GIC
+592033,Prácticas Externas,GMC
+600044,Prácticas Externas,GIEAI/GIECAI
+610034,Prácticas Externas,GITI
+781007,Prácticas Externas,GII
 350056,Prácticas Profesionales,GIEC/GIST/GIT
+600003,Química,GIEAI/GIECAI
+610100,Química (Curso 0),GIEAI/GIECAI/GITI
+610004,Química General,GITI
+610009,Química Orgánica e Inorgánica,GITI
 350037,Radiación y Radiocomunicación,GITT
 390002,Radiación y Radiocomunicación,GIST/GITT
 350037,Radiation and Radiocommunication,GITT
 390002,Radiation and Radiocommunication,GIST/GITT
 390006,Radio Determination and Radar,GIST
 390006,Radiodeterminación y Radar,GIST
-350023,Redes de Comunicaciones,GIEC/GIST/GIT/GITT
-370008,Ruido e Interferencias en Sistemas Electrónicos,GIEC
+590008,Real Time Systems,GIC
+600039,Real-time Systems,GIEAI
+580003,Redes,GISI
+780017,Redes de Computadores,GIC/GII/INFOADE
+350023,Redes de Comunicaciones,GIEC/GIECAI/GIST/GIT/GITT
+592035,Redes y Tecnologías de Internet,GMC
+600040,Regulación de Máquinas Eléctricas,GIEAI/GIECAI
+600040,Regulation of Electrical Machines,GIEAI/GIECAI
+600019,Resistencia de Materiales,GIEAI/GIECAI
+600023,Robotised Systems,GIEAI/GIECAI
+370008,Ruido e Interferencias en Sistemas Electrónicos,GIEAI/GIEC/GIECAI
+340020,Régimen Fiscal de la Empresa,INFOADE
+580015,Safety in Allocated Systems,GIC/GII/GISI/INFOADE
 390010,Satellite Communications,GIST
 350039,Security,GIT/GITT
 380002,Security,GIT/GITT
+780036,Security,GIC/GII/GISI
 350039,Seguridad,GIT/GITT
 380002,Seguridad,GIT/GITT
+780036,Seguridad,GIC/GII/GISI
+580015,Seguridad en Sistemas Distribuidos,GIC/GII/GISI/INFOADE
 350038,Servicios Telemáticos,GITT
 380003,Servicios Telemáticos,GIT
-350013,Señales y Sistemas,GIEC/GIST/GIT/GITT
-350013,Signals and Systems,GIEC/GIST/GIT/GITT
+350013,Señales y Sistemas,GIEC/GIECAI/GIST/GIT/GITT
+350013,Signals and Systems,GIEC/GIECAI/GIST/GIT/GITT
+610037,Simulación y Optimización de Procesos Químicos,GITI
+610037,Simulation and Optimization of Chemical Processes,GITI
+780033,Sistemas Audiovisuales y Aplicaciones Multimedia,GIC/GII/GISI
+610023,Sistemas Electrónicos,GITI
 350014,Sistemas Electrónicos Digitales,GIEC/GIST/GIT/GITT
+600030,Sistemas Electrónicos Digitales,GIEAI/GIECAI
 350031,Sistemas Electrónicos Digitales Avanzados,GIEC/GIST/GIT/GITT
+600032,Sistemas Electrónicos Digitales Avanzados,GIEAI/GIECAI
 350053,Sistemas Electrónicos para Comunicaciones,GIEC/GITT
 370004,Sistemas Electrónicos para Comunicaciones,GIEC/GITT
-350003,Sistemas Informáticos,GIEC/GIST/GIT/GITT
+590010,Sistemas Empotrados,GIC
+780023,Sistemas Empresariales,GII/INFOADE
+610043,Sistemas Híbridos de Energía Eléctrica,GITI
+350003,Sistemas Informáticos,GIEC/GIECAI/GIST/GIT/GITT
 350055,Sistemas Inteligentes y Sostenibles de Nueva Generación,GIEC/GIT/GITT
+600006,Sistemas Mecánicos,GIEAI/GIECAI
 350026,Sistemas Operativos,GITT
 380006,Sistemas Operativos,GIT
+580000,Sistemas Operativos,GISI
+592010,Sistemas Operativos,GMC
+780007,Sistemas Operativos,GIC/GII/INFOADE
+780012,Sistemas Operativos Avanzados,GIC/GII/INFOADE
+600023,Sistemas Robotizados,GIEAI/GIECAI
+592029,Sistemas de Control Inteligente,GMC
+781005,Sistemas de Control Inteligente,GIC/GII/GISI/INFOADE
+590015,Sistemas de Control para Robots,GIC/GII/GISI
+610033,Sistemas de Fluidos,GITI
+581002,Sistemas de Información Contable,GISI
+581003,Sistemas de Información de Apoyo a Procesos y Toma de Decisiones,GISI
+580019,Sistemas de Información para la Gestión de Costes,GISI
+600022,Sistemas de Producción Industrial,GIEAI
+610022,Sistemas de Producción Industrial,GITI
 350036,Sistemas de Telecomunicación,GITT
 390003,Sistemas de Telecomunicación,GIST
+600039,Sistemas de Tiempo Real,GIEAI
+780029,Sistemas de Visión Artificial,GIC/GII/GISI
+590008,Sistemas en Tiempo Real,GIC
+591001,Sistemas y Comunicaciones,GIC
+600038,Smart Control,GIEAI/GIECAI
+780034,"Soft- Computing Applications in Energy, Speech and Image Processing",GIC/GII/GISI
+590000,Software Development,GIC
 370021,Software Engineering,GIEC/GIST/GIT
+780015,Software Engineering,GIC/GII/GISI/INFOADE
+780042,Software Patterns,GIC/GII/GISI
+780043,"Software Quality, Testing and Maintenance",GIC/GII/GISI
+340003,Spanish and World Economy,INFOADE
 350012,Statistics,GIEC/GIST/GIT/GITT
+600029,Statistics,GIEAI/GIECAI
+610016,Statistics,GITI
+780004,Statistics,GIC/GII/GISI
+600019,Strength of Materials,GIEAI/GIECAI
 350027,Subsistemas Electrónicos,GIST/GIT/GITT
-370011,Subsistemas Electrónicos,GIEC/GIST/GIT
+370011,Subsistemas Electrónicos,GIEC/GIECAI/GIST/GIT
+610038,Sustainable Industrial Development,GITI
+600016,Systems Modelling and Simulation,GIEAI
+591001,Systems and Communications,GIC
+592029,Systems of Smart Control,GMC
+410055,Technological Trends in Logistics,GISI
 370023,Technologies of Electronic Systems,GIST/GIT
 380019,Technologies of Network and Telematic Services,GIEC/GIST
 390018,Technologies of Telecommunication Systems,GIEC/GIT
+581006,Technology in Business,GISI
 350046,Tecnología Electrónica,GIEC/GITT
-370003,Tecnología Electrónica,GIEC/GITT
-370007,Tecnologías Fotónicas,GIEC/GIST/GIT
+370003,Tecnología Electrónica,GIEC/GIECAI/GITT
+600012,Tecnología Electrónica,GIEAI
+610024,Tecnología Eléctrica I,GITI
+610027,Tecnología Eléctrica II,GITI
+581006,Tecnología en los Negocios,GISI
+370007,Tecnologías Fotónicas,GIEC/GIECAI/GIST/GIT
 390009,Tecnologías Inalámbricas,GIST
+610028,Tecnologías Medioambientales,GITI
 350028,Tecnologías de Alta Frecuencia,GIST/GITT
 390016,Tecnologías de Alta Frecuencia,GIST/GITT
 380019,Tecnologías de Redes y Servicios Telemáticos,GIEC/GIST
@@ -181,19 +621,48 @@ codigo,asignatura,titulaciones
 350036,Telecomunication Systems,GITT
 350038,Telematic Services,GITT
 380003,Telematic Services,GIT
-350004,Teoría de Circuitos,GIEC/GIST/GIT/GITT
-350019,Teoría de la Comunicación,GIEC/GIST/GIT/GITT
+410055,Tendencias Tecnológicas en Logística,GISI
+342000,Teoría Económica I,INFOADE
+342001,Teoría Económica II,INFOADE
+350004,Teoría de Circuitos,GIEC/GIECAI/GIST/GIT/GITT
+610014,Teoría de Máquinas y Mecanismos,GITI
+592042,Teoría de Números y Aplicaciones,GMC
+592023,Teoría de la Computabilidad,GMC
+350019,Teoría de la Comunicación,GIEC/GIECAI/GIST/GIT/GITT
+592041,Teoría de la Medida,GMC
+600009,Thermal Engineering,GIEAI/GIECAI
+610013,Thermal Engineering,GITI
+580007,Tic en la Empresa,GISI
+592043,Topología,GMC
 350032,Trabajo Fin de Grado,GITT
 370005,Trabajo Fin de Grado,GIEC
 380008,Trabajo Fin de Grado,GIT
 390005,Trabajo Fin de Grado,GIST
+581008,Trabajo Fin de Grado,GISI
+591006,Trabajo Fin de Grado,GIC
+592034,Trabajo Fin de Grado,GMC
+600024,Trabajo Fin de Grado,GIEAI
+610035,Trabajo Fin de Grado,GITI
+781008,Trabajo Fin de Grado,GII
+610047,Tracción Eléctrica y Vehículos Eléctricos,GITI
 350040,Traffic Engineering,GITT
 380007,Traffic Engineering,GIT
+340095,Transformación Digital,GISI
+592026,Transformadas Integrales y Discretas,GMC
 350024,Tratamiento Digital de Señales,GIST/GITT
 390017,Tratamiento Digital de Señales,GIST/GITT
-370009,Visión Artificial,GIEC/GITT
+592037,Técnicas de Soft-computing y sus Aplicaciones,GMC
+781002,Ubiquitous Computing,GII/INFOADE
+592024,Variable Compleja,GMC
+370009,Visión Artificial,GIEC/GIECAI/GITT
+600034,Visión Artificial,GIEAI
+592036,Visión por Computador,GMC
 380012,Visual Programming,GIEC/GIST/GIT/GITT
 390007,Voice and Audio Processing,GIST
-350022,Waves Propagation,GIEC/GIST/GIT/GITT
+350022,Waves Propagation,GIEC/GIECAI/GIST/GIT/GITT
 390009,Wireless Technologies,GIST
+610000,Álgebra,GITI
+592031,Álgebra Computacional,GMC
 350000,Álgebra Lineal,GIEC/GIST/GIT/GITT
+592002,Álgebra Lineal,GMC
+600000,Álgebra Lineal y Ecuaciones Diferenciales,GIEAI/GIECAI

@@ -48,7 +48,7 @@ PAUSA = 0.4   # segundos entre peticiones
 
 # Código de plan -> sigla usada en los PDF de horarios (cabecera «GRADO EN ... (G380) (GIT)»).
 SIGLAS = {"G350": "GITT", "G390": "GIST", "G370": "GIEC", "G380": "GIT", "G781": "GII", "G591": "GIC",
-          "G581": "GISI", "G782": "INFOADE", "G60": "GIEAI", "G610": "GITI", "G376": "GIECAI", "G61": "TRV"}
+          "G581": "GISI", "G782": "INFOADE", "G60": "GIEAI", "G610": "GITI", "G376": "GIECAI", "G592": "GMC", "G61": "TRV"}
 CURSOS = {"primer-curso": "1", "segundo-curso": "2", "tercer-curso": "3", "cuarto-curso": "4",
           "optativas": "OPT", "transversales": "TRV"}
 
@@ -232,8 +232,17 @@ def descargar_guia(fila):
     destino = GUIAS_DIR / fila["plan"] / f"{fila['codigo']}_{slug(fila['asignatura'])}.pdf"
     if destino.exists():
         return destino
-    r = sesion.post(f"{BASE}/system/modules/com.saga.uah.frontend/formatters/functions/mostrarProgramaAsignatura.jsp",
-                    data={"anno": fila["curso_academico"], "codigoPlan": fila["plan"], "codAsig": fila["codigo"]}, timeout=120)
+    for intento in range(3):
+        try:
+            r = sesion.post(f"{BASE}/system/modules/com.saga.uah.frontend/formatters/functions/mostrarProgramaAsignatura.jsp",
+                            data={"anno": fila["curso_academico"], "codigoPlan": fila["plan"], "codAsig": fila["codigo"]}, timeout=120)
+            r.raise_for_status()
+            break
+        except requests.RequestException as e:
+            if intento == 2:
+                print(f"  guía {fila['codigo']} no descargada: {e}", file=sys.stderr)
+                return None
+            time.sleep(3)
     time.sleep(PAUSA)
     m = re.search(r"JVBERi[A-Za-z0-9+/=\s]+", r.text)   # «%PDF» en base64
     if not m:

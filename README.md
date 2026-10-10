@@ -56,13 +56,13 @@ Campos principales de `sesiones.csv`:
 ## Limitaciones conocidas
 
 - Los PDF no indican profesorado; sólo asignatura, grupo y aula. El profesorado se obtiene aparte, de las guías docentes
-  (`scripts/extraer_guias.py`, ver más abajo); por ahora para los cuatro grados de telecomunicación (GITT, GIST, GIT, GIEC).
+  (`scripts/extraer_guias.py`, ver más abajo) para los doce grados y dobles grados de la EPS.
 - Los másteres (MUIT, MUII) usan otra plantilla y no se procesan.
 - Erratas de origen (`18_00/18:55`, `12:00/14:00`, `i11:00`, `2ª`) se corrigen asumiendo que cada fila es una franja de una hora.
 - GMC (Guadalajara) usa nombres de aula propios (`Aula 5`), que quedan solo en `aulas_raw`.
 - Quedan en `avisos.txt` los ítems sin grupo (p. ej. `Marketing: Estrategias (16:30)` en INFOADE 5º).
-- La tabla `ALIAS` de abreviaturas se ha revisado solo para Telecomunicación; en otras ramas una misma asignatura
-  puede aparecer con dos claves normalizadas si el PDF la abrevia de formas distintas.
+- La tabla `ALIAS` del código se revisó para Telecomunicación; las abreviaturas de las demás ramas se resuelven en
+  `data/alias.csv` contra los nombres oficiales de las guías docentes.
 
 ## Aplicación web (`web/`)
 
@@ -116,7 +116,7 @@ La guía docente en PDF se sirve incrustada en base64 (`mostrarProgramaAsignatur
     python3 scripts/extraer_guias.py --sin-cache     # vuelve a descargar (las páginas se guardan en cache/guias/, no versionado)
 
 Códigos de plan admitidos (sigla de los horarios): G350 GITT, G390 GIST, G370 GIEC, G380 GIT, G781 GII, G591 GIC, G581 GISI,
-G782 INFOADE, G60 GIEAI, G610 GITI, G376 GIECAI. La pestaña «Transversales» (asignaturas de toda la UAH) se omite salvo
+G782 INFOADE, G60 GIEAI, G610 GITI, G376 GIECAI, G592 GMC (Matemáticas y Computación, Guadalajara); G61 es la optatividad transversal (sólo pestaña «Transversales»). La pestaña «Transversales» (asignaturas de toda la UAH) se omite salvo
 con `--transversales`. Genera `data/guias.csv`, `data/guias.json`, `data/profesores.csv`, `data/codigos.csv` y `web/guias.js` (por código de
 asignatura: departamento, créditos, profesores con correo y ficha, enlaces a la ficha UAH y a la guía); después hay que
 ejecutar `extraer_horarios.py` para que los códigos lleguen a `sesiones.csv`, `asignaturas.csv` y `web/data.js`.
@@ -132,8 +132,11 @@ Notas:
 - Los grupos en inglés de los horarios usan nombres que no siempre coinciden con los oficiales de la UAH
   (`CIRCUITS THEORY` frente a `Circuit Theory`); se corrigen en `data/alias.csv`.
 - El Trabajo Fin de Grado (380008) no tiene guía en PDF; Prácticas Externas y Prácticas Profesionales la tienen sin fecha de aprobación.
-- Con G350, G390, G380 y G370 procesados (219 asignaturas, 143 profesores), todas las asignaturas de GITT, GIST, GIT y GIEC
-  presentes en los horarios tienen código.
+- Con los doce planes procesados (607 asignaturas, 385 profesores), todas las asignaturas de los horarios tienen código
+  salvo la optatividad transversal (plan G61, no procesado) y cuatro fragmentos de INFOADE y GMC que el parser no resuelve
+  (`FINANCIERAS`, `Y`, `DIRECCION ESTRATEGICA EMPRESARIAL`, `ORGANIZACION Y RECURSOS HUMANOS`).
+- `data/alias.csv` contiene además 64 abreviaturas de las ramas de informática e industrial casadas con el nombre oficial
+  (54 automáticamente, por prefijos de palabra; 10 a mano). Las entradas `... TUTORÍA` se funden con su asignatura.
 
 ## Códigos de asignatura
 
