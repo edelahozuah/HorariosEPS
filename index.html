@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Horarios EPS</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <h1>Horarios EPS <span class="sub">curso 2026/27</span></h1>
+  <nav class="tabs">
+    <button data-view="titulacion" class="active">Por titulación</button>
+    <button data-view="aula">Por aula</button>
+    <button data-view="perfil">Perfiles</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Vista por titulación -->
+  <section id="view-titulacion" class="view active">
+    <div class="controls">
+      <label>Rama <select id="t-rama"></select></label>
+      <label>Titulación <select id="t-tit"></select></label>
+      <label>Curso <select id="t-curso"></select></label>
+      <label>Cuatrimestre <select id="t-sem"></select></label>
+      <label id="t-semana-wrap" hidden>Semana <select id="t-semana"></select></label>
+      <label>Grupo <select id="t-grupo"></select></label>
+      <label class="chk"><input type="checkbox" id="t-grandes" checked> Grupos grandes</label>
+      <label class="chk"><input type="checkbox" id="t-pequenos" checked> Grupos pequeños</label>
+      <button id="t-print-grupo" title="Hoja de este grupo, formato PDF de la EPS">🖨 Este grupo</button>
+      <button id="t-print-todos" title="Todas las hojas del curso y cuatrimestre">🖨 Curso completo</button>
+    </div>
+    <div id="t-grid" class="grid-wrap"></div>
+  </section>
+
+  <!-- Vista por aula -->
+  <section id="view-aula" class="view">
+    <div class="controls">
+      <label>Aula <select id="a-aula"></select></label>
+      <label>Cuatrimestre <select id="a-sem"><option value="1">1º</option><option value="2">2º</option></select></label>
+      <span id="a-info" class="info"></span>
+      <button id="a-print" title="Hoja de ocupación del aula">🖨 Imprimir / PDF</button>
+    </div>
+    <div id="a-grid" class="grid-wrap"></div>
+  </section>
+
+  <!-- Vista perfiles -->
+  <section id="view-perfil" class="view">
+    <div class="perfil-layout">
+      <aside class="panel">
+        <h2>Perfil</h2>
+        <div class="row">
+          <select id="p-lista"></select>
+          <button id="p-nuevo" title="Nuevo perfil">＋</button>
+          <button id="p-borrar" title="Borrar perfil">🗑</button>
+        </div>
+        <div class="row">
+          <input id="p-nombre" placeholder="Nombre del perfil">
+          <select id="p-sem"><option value="1">1º cuatr.</option><option value="2">2º cuatr.</option></select>
+        </div>
+        <div class="row">
+          <button id="p-exportar">Exportar JSON</button>
+          <button id="p-importar">Importar JSON</button>
+          <button id="p-print" title="Hoja del perfil en formato PDF de la EPS">🖨 PDF</button>
+          <input type="file" id="p-fichero" accept="application/json" hidden>
+        </div>
+        <h3>Buscar asignaturas</h3>
+        <input id="p-buscar" placeholder="Escribe parte del nombre, grupo o titulación…">
+        <div id="p-resultados" class="lista"></div>
+        <h3>Seleccionadas <span id="p-n"></span></h3>
+        <div id="p-seleccion" class="lista"></div>
+        <div id="p-solapes" class="solapes"></div>
+      </aside>
+      <div id="p-grid" class="grid-wrap"></div>
+    </div>
+  </section>
+</main>
+
+<div id="tooltip" class="tooltip" hidden></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
