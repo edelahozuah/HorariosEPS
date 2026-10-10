@@ -51198,7 +51198,7 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "Tecn. en Sist. Elect.",
-  "asignatura_norm": "TECNOLOGIAS EN SISTEMAS ELECTRONICOS",
+  "asignatura_norm": "TECNOLOGIAS DE SISTEMAS ELECTRONICOS",
   "grupo": "4OPT",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": false,
@@ -51258,7 +51258,7 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "TECN. EN SIST. ELECT.",
-  "asignatura_norm": "TECNOLOGIAS EN SISTEMAS ELECTRONICOS",
+  "asignatura_norm": "TECNOLOGIAS DE SISTEMAS ELECTRONICOS",
   "grupo": "4OPT",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": true,
@@ -51325,7 +51325,7 @@
   "aulas": "NA2",
   "aulas_raw": "NA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51355,7 +51355,7 @@
   "aulas": "NA2",
   "aulas_raw": "NA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "380001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51385,7 +51385,7 @@
   "aulas": "NA2",
   "aulas_raw": "NA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -51415,7 +51415,7 @@
   "aulas": "EL10",
   "aulas_raw": "EL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51445,7 +51445,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51475,7 +51475,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "380000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51505,7 +51505,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51535,7 +51535,7 @@
   "aulas": "NL5",
   "aulas_raw": "NL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51565,7 +51565,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "380001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51595,7 +51595,7 @@
   "aulas": "NL5",
   "aulas_raw": "NL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51625,7 +51625,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "380001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51655,7 +51655,7 @@
   "aulas": "NL5",
   "aulas_raw": "NL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51685,7 +51685,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "380001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51715,7 +51715,7 @@
   "aulas": "OL1",
   "aulas_raw": "OL1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51745,7 +51745,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51775,7 +51775,7 @@
   "aulas": "OL2",
   "aulas_raw": "OL2",
   "nota": "(PC)",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51805,7 +51805,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51835,7 +51835,7 @@
   "aulas": "OL1",
   "aulas_raw": "OL1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51865,7 +51865,7 @@
   "aulas": "OL5",
   "aulas_raw": "OL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51895,7 +51895,7 @@
   "aulas": "OL2",
   "aulas_raw": "OL2",
   "nota": "(PC)",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51925,7 +51925,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "380003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51955,7 +51955,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -51985,7 +51985,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -52015,7 +52015,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52045,7 +52045,7 @@
   "aulas": "OL1",
   "aulas_raw": "OL1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350014",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52075,7 +52075,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "380002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52105,7 +52105,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "380004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52135,7 +52135,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52165,7 +52165,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52195,7 +52195,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52225,7 +52225,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52255,7 +52255,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52285,7 +52285,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52315,7 +52315,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "380006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52345,7 +52345,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52375,7 +52375,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380005",
   "aprobacion": "30/06/2026",
   "horas": 4
  },
@@ -52405,7 +52405,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380005",
   "aprobacion": "30/06/2026",
   "horas": 4
  },
@@ -52435,7 +52435,7 @@
   "aulas": "",
   "aulas_raw": "Aula",
   "nota": "",
-  "codigo": "",
+  "codigo": "380002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52465,7 +52465,7 @@
   "aulas": "",
   "aulas_raw": "Aula",
   "nota": "",
-  "codigo": "",
+  "codigo": "380002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52495,7 +52495,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "380018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52525,7 +52525,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52555,7 +52555,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52585,7 +52585,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52615,7 +52615,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52645,7 +52645,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "380012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52675,7 +52675,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52705,7 +52705,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52735,7 +52735,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52765,7 +52765,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52795,7 +52795,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "380007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52825,7 +52825,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "380007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52855,7 +52855,7 @@
   "aulas": "EL12",
   "aulas_raw": "EL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "380018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52885,7 +52885,7 @@
   "aulas": "EL12",
   "aulas_raw": "EL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "380018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52915,7 +52915,7 @@
   "aulas": "SA3",
   "aulas_raw": "SA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "370021",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52945,7 +52945,7 @@
   "aulas": "NL8",
   "aulas_raw": "NL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "370021",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -52975,7 +52975,7 @@
   "aulas": "SL9",
   "aulas_raw": "SL9",
   "nota": "",
-  "codigo": "",
+  "codigo": "390018",
   "aprobacion": "30/06/2026",
   "horas": 4
  },
@@ -52998,14 +52998,14 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "Tecn. En Sist. Elect.",
-  "asignatura_norm": "TECNOLOGIAS EN SISTEMAS ELECTRONICOS",
+  "asignatura_norm": "TECNOLOGIAS DE SISTEMAS ELECTRONICOS",
   "grupo": "4OPT",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": false,
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "370023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53035,7 +53035,7 @@
   "aulas": "NA6/OL6",
   "aulas_raw": "NA6/OL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "370007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53065,7 +53065,7 @@
   "aulas": "SA8",
   "aulas_raw": "SA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "390001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53095,7 +53095,7 @@
   "aulas": "SL10",
   "aulas_raw": "SL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350055",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53125,7 +53125,7 @@
   "aulas": "SL9",
   "aulas_raw": "SL9",
   "nota": "",
-  "codigo": "",
+  "codigo": "390001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53155,7 +53155,7 @@
   "aulas": "SL10",
   "aulas_raw": "SL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350055",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53178,14 +53178,14 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "TECN. EN SIST. ELECT.",
-  "asignatura_norm": "TECNOLOGIAS EN SISTEMAS ELECTRONICOS",
+  "asignatura_norm": "TECNOLOGIAS DE SISTEMAS ELECTRONICOS",
   "grupo": "4OPT",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": true,
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "370023",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -53215,7 +53215,7 @@
   "aulas": "NA6",
   "aulas_raw": "NA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "370007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -55975,7 +55975,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56005,7 +56005,7 @@
   "aulas": "NA5",
   "aulas_raw": "NA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56035,7 +56035,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56065,7 +56065,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56095,7 +56095,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56125,7 +56125,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56155,7 +56155,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56185,7 +56185,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56215,7 +56215,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56245,7 +56245,7 @@
   "aulas": "SA3/SL11",
   "aulas_raw": "SA3/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56275,7 +56275,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56305,7 +56305,7 @@
   "aulas": "SA3/SL11",
   "aulas_raw": "SA3/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56335,7 +56335,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56365,7 +56365,7 @@
   "aulas": "SA3/SL11",
   "aulas_raw": "SA3/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56395,7 +56395,7 @@
   "aulas": "EL4",
   "aulas_raw": "EL4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56425,7 +56425,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56455,7 +56455,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56485,7 +56485,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56515,7 +56515,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56545,7 +56545,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56575,7 +56575,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56605,7 +56605,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56635,7 +56635,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56665,7 +56665,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56695,7 +56695,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56725,7 +56725,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56755,7 +56755,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56785,7 +56785,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56815,7 +56815,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56845,7 +56845,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56875,7 +56875,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56905,7 +56905,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56935,7 +56935,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56965,7 +56965,7 @@
   "aulas": "OA7",
   "aulas_raw": "OA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -56995,7 +56995,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57025,7 +57025,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57055,7 +57055,7 @@
   "aulas": "SA8/SL11",
   "aulas_raw": "SA8/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57085,7 +57085,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57115,7 +57115,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57145,7 +57145,7 @@
   "aulas": "OA4",
   "aulas_raw": "OA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57175,7 +57175,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57205,7 +57205,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57235,7 +57235,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57265,7 +57265,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57295,7 +57295,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57325,7 +57325,7 @@
   "aulas": "EA6",
   "aulas_raw": "EA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57355,7 +57355,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57385,7 +57385,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57415,7 +57415,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57445,7 +57445,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57475,7 +57475,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57505,7 +57505,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57535,7 +57535,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57565,7 +57565,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57595,7 +57595,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57618,14 +57618,14 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "Circuits Theory",
-  "asignatura_norm": "CIRCUITS THEORY",
+  "asignatura_norm": "CIRCUIT THEORY",
   "grupo": "1E1",
   "tipo_grupo": "pequeño",
   "asignatura_mayusculas": false,
   "aulas": "SA5A/SL8",
   "aulas_raw": "SA5A/SL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57655,7 +57655,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57685,7 +57685,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57708,14 +57708,14 @@
   "hora_inicio": "12:00",
   "hora_fin": "13:55",
   "asignatura": "CIRCUITS THEORY",
-  "asignatura_norm": "CIRCUITS THEORY",
+  "asignatura_norm": "CIRCUIT THEORY",
   "grupo": "1E",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": true,
   "aulas": "NA2",
   "aulas_raw": "NA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57745,7 +57745,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57768,14 +57768,14 @@
   "hora_inicio": "10:00",
   "hora_fin": "11:55",
   "asignatura": "COMPUTING SYSTEMS",
-  "asignatura_norm": "COMPUTING SYSTEMS",
+  "asignatura_norm": "COMPUTER SYSTEMS",
   "grupo": "1E",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": true,
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57805,7 +57805,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57828,14 +57828,14 @@
   "hora_inicio": "15:00",
   "hora_fin": "16:55",
   "asignatura": "Computing Systems",
-  "asignatura_norm": "COMPUTING SYSTEMS",
+  "asignatura_norm": "COMPUTER SYSTEMS",
   "grupo": "1E1",
   "tipo_grupo": "pequeño",
   "asignatura_mayusculas": false,
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57865,7 +57865,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57895,7 +57895,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57925,7 +57925,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57955,7 +57955,7 @@
   "aulas": "OA1",
   "aulas_raw": "OA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -57985,7 +57985,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58015,7 +58015,7 @@
   "aulas": "OA1",
   "aulas_raw": "OA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58045,7 +58045,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350001",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58075,7 +58075,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350000",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58105,7 +58105,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58135,7 +58135,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58165,7 +58165,7 @@
   "aulas": "SA7/SL11",
   "aulas_raw": "SA7/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58195,7 +58195,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58225,7 +58225,7 @@
   "aulas": "SA7/SL11",
   "aulas_raw": "SA7/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58255,7 +58255,7 @@
   "aulas": "EL5",
   "aulas_raw": "EL5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350003",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58285,7 +58285,7 @@
   "aulas": "SA7/SL11",
   "aulas_raw": "SA7/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350004",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58315,7 +58315,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58345,7 +58345,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58375,7 +58375,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58405,7 +58405,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58435,7 +58435,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58465,7 +58465,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58495,7 +58495,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58525,7 +58525,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58555,7 +58555,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58585,7 +58585,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58615,7 +58615,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58645,7 +58645,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58675,7 +58675,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58705,7 +58705,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58735,7 +58735,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58765,7 +58765,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350016",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -58795,7 +58795,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58825,7 +58825,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58855,7 +58855,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58885,7 +58885,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58915,7 +58915,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -58945,7 +58945,7 @@
   "aulas": "NA4",
   "aulas_raw": "NA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350016",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -58975,7 +58975,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59005,7 +59005,7 @@
   "aulas": "SA7",
   "aulas_raw": "SA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59035,7 +59035,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59065,7 +59065,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59095,7 +59095,7 @@
   "aulas": "SA7",
   "aulas_raw": "SA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59125,7 +59125,7 @@
   "aulas": "SA7",
   "aulas_raw": "SA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59155,7 +59155,7 @@
   "aulas": "SA7",
   "aulas_raw": "SA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59185,7 +59185,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59215,7 +59215,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59245,7 +59245,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59275,7 +59275,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59305,7 +59305,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59335,7 +59335,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59365,7 +59365,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59395,7 +59395,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59425,7 +59425,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59455,7 +59455,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59485,7 +59485,7 @@
   "aulas": "OA6",
   "aulas_raw": "OA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59515,7 +59515,7 @@
   "aulas": "EL2",
   "aulas_raw": "EL2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59545,7 +59545,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59575,7 +59575,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59605,7 +59605,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350016",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -59635,7 +59635,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59665,7 +59665,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59695,7 +59695,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59725,7 +59725,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59755,7 +59755,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59785,7 +59785,7 @@
   "aulas": "NA3",
   "aulas_raw": "NA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59815,7 +59815,7 @@
   "aulas": "NA3",
   "aulas_raw": "NA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59845,7 +59845,7 @@
   "aulas": "NA3",
   "aulas_raw": "NA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59875,7 +59875,7 @@
   "aulas": "NA3",
   "aulas_raw": "NA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59905,7 +59905,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59935,7 +59935,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59965,7 +59965,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -59995,7 +59995,7 @@
   "aulas": "OA6",
   "aulas_raw": "OA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60025,7 +60025,7 @@
   "aulas": "EA6/SL11",
   "aulas_raw": "EA6/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60055,7 +60055,7 @@
   "aulas": "OA6",
   "aulas_raw": "OA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60085,7 +60085,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350016",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -60115,7 +60115,7 @@
   "aulas": "OA6",
   "aulas_raw": "OA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60145,7 +60145,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60175,7 +60175,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60205,7 +60205,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60235,7 +60235,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60265,7 +60265,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60295,7 +60295,7 @@
   "aulas": "SA5A/SL11",
   "aulas_raw": "SA5A/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60325,7 +60325,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60355,7 +60355,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60385,7 +60385,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60415,7 +60415,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60445,7 +60445,7 @@
   "aulas": "OA6",
   "aulas_raw": "OA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60475,7 +60475,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60505,7 +60505,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60535,7 +60535,7 @@
   "aulas": "SA1/SL11",
   "aulas_raw": "SA1/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60565,7 +60565,7 @@
   "aulas": "SA3/SL11",
   "aulas_raw": "SA3/SL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60595,7 +60595,7 @@
   "aulas": "EL8",
   "aulas_raw": "EL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60625,7 +60625,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350005",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60655,7 +60655,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350006",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60685,7 +60685,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350002",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60715,7 +60715,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350009",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60745,7 +60745,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350016",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -60775,7 +60775,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60805,7 +60805,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60835,7 +60835,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60865,7 +60865,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60895,7 +60895,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60925,7 +60925,7 @@
   "aulas": "OA1",
   "aulas_raw": "OA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60955,7 +60955,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -60985,7 +60985,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61015,7 +61015,7 @@
   "aulas": "SA8",
   "aulas_raw": "SA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61045,7 +61045,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61075,7 +61075,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61105,7 +61105,7 @@
   "aulas": "SA8",
   "aulas_raw": "SA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61135,7 +61135,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -61165,7 +61165,7 @@
   "aulas": "SA3",
   "aulas_raw": "SA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61195,7 +61195,7 @@
   "aulas": "SA3",
   "aulas_raw": "SA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61225,7 +61225,7 @@
   "aulas": "EL12",
   "aulas_raw": "EL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61255,7 +61255,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL06",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61285,7 +61285,7 @@
   "aulas": "EL12",
   "aulas_raw": "EL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61315,7 +61315,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61345,7 +61345,7 @@
   "aulas": "NA4",
   "aulas_raw": "NA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61375,7 +61375,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61405,7 +61405,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61435,7 +61435,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -61465,7 +61465,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61495,7 +61495,7 @@
   "aulas": "OA2",
   "aulas_raw": "OA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61525,7 +61525,7 @@
   "aulas": "SA6",
   "aulas_raw": "SA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61555,7 +61555,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61585,7 +61585,7 @@
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61615,7 +61615,7 @@
   "aulas": "SA6",
   "aulas_raw": "SA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61645,7 +61645,7 @@
   "aulas": "EA6/OL8",
   "aulas_raw": "EA6/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61675,7 +61675,7 @@
   "aulas": "EA6/OL8",
   "aulas_raw": "EA6/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61705,7 +61705,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61735,7 +61735,7 @@
   "aulas": "EA6/OL8",
   "aulas_raw": "EA6/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61765,7 +61765,7 @@
   "aulas": "EA6/OL8",
   "aulas_raw": "EA6/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61795,7 +61795,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61825,7 +61825,7 @@
   "aulas": "SA1/OL12",
   "aulas_raw": "SA1/OL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61855,7 +61855,7 @@
   "aulas": "NA8",
   "aulas_raw": "NA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61885,7 +61885,7 @@
   "aulas": "SA1/OL12",
   "aulas_raw": "SA1/OL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61915,7 +61915,7 @@
   "aulas": "NA8",
   "aulas_raw": "NA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -61945,7 +61945,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -61975,7 +61975,7 @@
   "aulas": "EA2",
   "aulas_raw": "EA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62005,7 +62005,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62035,7 +62035,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62065,7 +62065,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62095,7 +62095,7 @@
   "aulas": "SA4",
   "aulas_raw": "SA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62125,7 +62125,7 @@
   "aulas": "EA7",
   "aulas_raw": "EA7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62155,7 +62155,7 @@
   "aulas": "EL12",
   "aulas_raw": "EL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62185,7 +62185,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL06",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62215,7 +62215,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62245,7 +62245,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62275,7 +62275,7 @@
   "aulas": "SA1",
   "aulas_raw": "SA1",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62305,7 +62305,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62335,7 +62335,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62365,7 +62365,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62395,7 +62395,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62425,7 +62425,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -62455,7 +62455,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350012",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62485,7 +62485,7 @@
   "aulas": "SA2/OL8",
   "aulas_raw": "SA2/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62515,7 +62515,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62545,7 +62545,7 @@
   "aulas": "NA3",
   "aulas_raw": "NA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62575,7 +62575,7 @@
   "aulas": "SA8",
   "aulas_raw": "SA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62605,7 +62605,7 @@
   "aulas": "SA2/OL8",
   "aulas_raw": "SA2/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62635,7 +62635,7 @@
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62665,7 +62665,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62695,7 +62695,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62725,7 +62725,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62755,7 +62755,7 @@
   "aulas": "EL6",
   "aulas_raw": "EL6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62785,7 +62785,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62815,7 +62815,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62845,7 +62845,7 @@
   "aulas": "EL2",
   "aulas_raw": "EL2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350008",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62875,7 +62875,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -62905,7 +62905,7 @@
   "aulas": "SA5A",
   "aulas_raw": "SA5A",
   "nota": "",
-  "codigo": "",
+  "codigo": "350013",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62935,7 +62935,7 @@
   "aulas": "EA1B/OL10",
   "aulas_raw": "EA1B/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62965,7 +62965,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "→ V 10-12 EL11",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -62995,7 +62995,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350011",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63025,7 +63025,7 @@
   "aulas": "SA6",
   "aulas_raw": "SA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350010",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63055,7 +63055,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63085,7 +63085,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63115,7 +63115,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -63145,7 +63145,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63175,7 +63175,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -63205,7 +63205,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63235,7 +63235,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63265,7 +63265,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63295,7 +63295,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63325,7 +63325,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63355,7 +63355,7 @@
   "aulas": "EA3/PL14/PL15",
   "aulas_raw": "EA3/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63385,7 +63385,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63415,7 +63415,7 @@
   "aulas": "EA3/PL14/PL15",
   "aulas_raw": "EA3/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63445,7 +63445,7 @@
   "aulas": "EA8",
   "aulas_raw": "EA8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63475,7 +63475,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63505,7 +63505,7 @@
   "aulas": "EA7/OL8",
   "aulas_raw": "EA7/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63535,7 +63535,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63565,7 +63565,7 @@
   "aulas": "OL7",
   "aulas_raw": "OL7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63595,7 +63595,7 @@
   "aulas": "EA8/OL8",
   "aulas_raw": "EA8/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63625,7 +63625,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63655,7 +63655,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63685,7 +63685,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63715,7 +63715,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -63745,7 +63745,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63775,7 +63775,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63805,7 +63805,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63835,7 +63835,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63865,7 +63865,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63895,7 +63895,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -63925,7 +63925,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63955,7 +63955,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -63985,7 +63985,7 @@
   "aulas": "OL7",
   "aulas_raw": "OL7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64015,7 +64015,7 @@
   "aulas": "EA4",
   "aulas_raw": "EA4",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64045,7 +64045,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64075,7 +64075,7 @@
   "aulas": "SA8/PL14/PL15",
   "aulas_raw": "SA8/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64105,7 +64105,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64135,7 +64135,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64165,7 +64165,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64195,7 +64195,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64225,7 +64225,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64255,7 +64255,7 @@
   "aulas": "SA8/PL14/PL15",
   "aulas_raw": "SA8/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64285,7 +64285,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64315,7 +64315,7 @@
   "aulas": "SA8/PL14/PL15",
   "aulas_raw": "SA8/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64345,7 +64345,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64375,7 +64375,7 @@
   "aulas": "EA3",
   "aulas_raw": "EA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64405,7 +64405,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64435,7 +64435,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64465,7 +64465,7 @@
   "aulas": "SA1/OL8",
   "aulas_raw": "SA1/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64495,7 +64495,7 @@
   "aulas": "OL7",
   "aulas_raw": "OL7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64525,7 +64525,7 @@
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64555,7 +64555,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64585,7 +64585,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64615,7 +64615,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -64645,7 +64645,7 @@
   "aulas": "SA6",
   "aulas_raw": "SA6",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64675,7 +64675,7 @@
   "aulas": "EA5",
   "aulas_raw": "EA5",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -64705,7 +64705,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64735,7 +64735,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64765,7 +64765,7 @@
   "aulas": "OL7",
   "aulas_raw": "OL7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64795,7 +64795,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64825,7 +64825,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64855,7 +64855,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 1
  },
@@ -64885,7 +64885,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64915,7 +64915,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -64945,7 +64945,7 @@
   "aulas": "SA2",
   "aulas_raw": "SA2",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -64975,7 +64975,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65005,7 +65005,7 @@
   "aulas": "",
   "aulas_raw": "lab",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65035,7 +65035,7 @@
   "aulas": "SA3",
   "aulas_raw": "SA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65065,7 +65065,7 @@
   "aulas": "EA3/OL8",
   "aulas_raw": "EA3/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65095,7 +65095,7 @@
   "aulas": "OL12",
   "aulas_raw": "OL12",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65125,7 +65125,7 @@
   "aulas": "SA3/PL14/PL15",
   "aulas_raw": "SA3/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65155,7 +65155,7 @@
   "aulas": "OL8",
   "aulas_raw": "OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65185,7 +65185,7 @@
   "aulas": "SA3/PL14/PL15",
   "aulas_raw": "SA3/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65215,7 +65215,7 @@
   "aulas": "OL7",
   "aulas_raw": "OL7",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65245,7 +65245,7 @@
   "aulas": "SA3",
   "aulas_raw": "SA3",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65275,7 +65275,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65305,7 +65305,7 @@
   "aulas": "OL7/OL10",
   "aulas_raw": "OL7/OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65335,7 +65335,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65358,14 +65358,14 @@
   "hora_inicio": "12:00",
   "hora_fin": "13:55",
   "asignatura": "Circuits Electronics",
-  "asignatura_norm": "CIRCUITS ELECTRONICS",
+  "asignatura_norm": "CIRCUIT ELECTRONICS",
   "grupo": "2E1",
   "tipo_grupo": "pequeño",
   "asignatura_mayusculas": false,
   "aulas": "SA5B/OL8",
   "aulas_raw": "SA5B/OL8",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65395,7 +65395,7 @@
   "aulas": "SA5B/PL14/PL15",
   "aulas_raw": "SA5B/PL14/PL15",
   "nota": "",
-  "codigo": "",
+  "codigo": "350022",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65425,7 +65425,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -65455,7 +65455,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65485,7 +65485,7 @@
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65515,7 +65515,7 @@
   "aulas": "OL10",
   "aulas_raw": "OL10",
   "nota": "",
-  "codigo": "",
+  "codigo": "350007",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65538,14 +65538,14 @@
   "hora_inicio": "12:00",
   "hora_fin": "14:55",
   "asignatura": "CIRCUITS ELECTRONICS",
-  "asignatura_norm": "CIRCUITS ELECTRONICS",
+  "asignatura_norm": "CIRCUIT ELECTRONICS",
   "grupo": "2E",
   "tipo_grupo": "grande",
   "asignatura_mayusculas": true,
   "aulas": "SA5B",
   "aulas_raw": "SA5B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350018",
   "aprobacion": "30/06/2026",
   "horas": 3
  },
@@ -65575,7 +65575,7 @@
   "aulas": "EA1B",
   "aulas_raw": "EA1B",
   "nota": "",
-  "codigo": "",
+  "codigo": "350019",
   "aprobacion": "30/06/2026",
   "horas": 2
  },
@@ -65605,7 +65605,7 @@
   "aulas": "EL11",
   "aulas_raw": "EL11",
   "nota": "",
-  "codigo": "",
+  "codigo": "350015",
   "aprobacion": "30/06/2026",
   "horas": 2
  }

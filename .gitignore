@@ -3,3 +3,4 @@ __pycache__/
 salida/
 .playwright-mcp/
 data/codigos_plantilla.csv
+cache/

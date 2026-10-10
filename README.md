@@ -7,6 +7,8 @@ publica en PDF en <https://escuelapolitecnica.uah.es/es/estudiantes/horarios/>.
 
 - `pdfs/` – los PDF originales descargados de la web (curso 2026/27).
 - `scripts/extraer_horarios.py` – script de extracción (`pdfplumber`, Python 3).
+- `scripts/extraer_guias.py` – guías docentes, departamentos y profesorado desde www.uah.es (`requests`, `bs4`); ver «Guías docentes».
+- `guias/<plan>/` – guías docentes en PDF descargadas de www.uah.es (`<código>_<asignatura>.pdf`).
   - `python3 scripts/extraer_horarios.py --descargar` lee la web, guarda `data/fuentes.csv` y baja los PDF.
   - `python3 scripts/extraer_horarios.py` regenera `data/` a partir de `pdfs/` y `data/fuentes.csv`.
   - `python3 scripts/extraer_horarios.py --solo GITT GIST` procesa solo los ficheros cuyo nombre contenga esas cadenas.
@@ -17,7 +19,13 @@ publica en PDF en <https://escuelapolitecnica.uah.es/es/estudiantes/horarios/>.
   - `asignaturas.csv` – catálogo de asignaturas: nombre normalizado, variantes de escritura, grupos grandes y pequeños, aulas y horas/semana.
   - `aulas.csv` – catálogo de aulas: edificio (letra inicial), tipo (A = aula, L = laboratorio), horas/semana por cuatrimestre, titulaciones y asignaturas.
   - `avisos.txt` – texto que el parser no supo interpretar, para revisión manual.
-  - `alias.csv` (opcional, no incluido) – pares `variante,canónico` para ampliar la tabla de abreviaturas sin tocar el código.
+  - `alias.csv` – pares `variante,canónico` para ampliar la tabla de abreviaturas sin tocar el código (p. ej. `CIRCUITS THEORY` → `Circuit Theory`).
+  - `guias.csv` / `guias.json` – una fila por plan y asignatura: curso, código, nombre (español e inglés), créditos, tipo,
+    periodo, idiomas, departamento, áreas, planes que comparten la asignatura, profesores, URL de la ficha, guía en inglés,
+    PDF local y fecha de aprobación de la guía.
+  - `profesores.csv` – una fila por profesor: puesto, categoría, departamento, área, correo, web, ficha y asignaturas
+    (las del plan procesado y todas las que lista su ficha en la UAH).
+  - `codigos.csv` – código ↔ nombre ↔ sigla de titulación; lo genera `extraer_guias.py` y lo consume `extraer_horarios.py`.
 
 ## Modelo de datos
 
@@ -47,7 +55,8 @@ Campos principales de `sesiones.csv`:
 
 ## Limitaciones conocidas
 
-- Los PDF no indican profesorado; sólo asignatura, grupo y aula.
+- Los PDF no indican profesorado; sólo asignatura, grupo y aula. El profesorado se obtiene aparte, de las guías docentes
+  (`scripts/extraer_guias.py`, ver más abajo); por ahora sólo para el Grado en Ingeniería Telemática.
 - Los másteres (MUIT, MUII) usan otra plantilla y no se procesan.
 - Erratas de origen (`18_00/18:55`, `12:00/14:00`, `i11:00`, `2ª`) se corrigen asumiendo que cada fila es una franja de una hora.
 - GMC (Guadalajara) usa nombres de aula propios (`Aula 5`), que quedan solo en `aulas_raw`.
@@ -93,12 +102,40 @@ Las hojas se generan en el navegador a partir de `web/data.js`; si una hoja tien
   Parámetros de `imprimir.html`: `?tipo=titulacion&tit=GIST&curso=3&sem=1[&grupo=3B][&semana=…]`,
   `?tipo=aula&aula=EA6[&sem=1]`, `?tipo=perfil&id=<id>` (perfil guardado en el navegador).
 
+## Guías docentes y profesorado (`scripts/extraer_guias.py`)
+
+La web de cada grado (p. ej. <https://www.uah.es/es/estudios/estudios-oficiales/grados/Grado-en-Ingenieria-Telematica/>)
+carga por AJAX una tabla de asignaturas por curso; cada asignatura tiene una ficha
+(`/es/estudios/estudios-oficiales/grados/asignatura/<Nombre>-<código>/`) con departamento, áreas, planes en que se imparte
+y una pestaña «Profesores», y cada profesor una ficha con puesto, categoría, departamento, correo y asignaturas.
+La guía docente en PDF se sirve incrustada en base64 (`mostrarProgramaAsignatura.jsp`). El script recorre todo eso:
+
+    python3 scripts/extraer_guias.py                 # plan G380 (Grado en Ingeniería Telemática), sin PDF
+    python3 scripts/extraer_guias.py --pdf           # además descarga las guías a guias/G380/
+    python3 scripts/extraer_guias.py G380 G350 G390  # varios planes; los CSV se fusionan plan a plan
+    python3 scripts/extraer_guias.py --sin-cache     # vuelve a descargar (las páginas se guardan en cache/guias/, no versionado)
+
+Códigos de plan admitidos (sigla de los horarios): G350 GITT, G390 GIST, G370 GIEC, G380 GIT, G781 GII, G591 GIC, G581 GISI,
+G782 INFOADE, G60 GIEAI, G610 GITI, G376 GIECAI. La pestaña «Transversales» (asignaturas de toda la UAH) se omite salvo
+con `--transversales`. Genera `data/guias.csv`, `data/guias.json`, `data/profesores.csv` y `data/codigos.csv`; después hay que
+ejecutar `extraer_horarios.py` para que los códigos lleguen a `sesiones.csv`, `asignaturas.csv` y `web/data.js`.
+
+Notas:
+
+- Las guías en PDF no listan el profesorado («Consultar página web»); de ellas sólo se extraen la fecha de aprobación y el idioma.
+- Una misma asignatura puede tener varios códigos (p. ej. `Arquitectura de Computadores` 350020 en GITT y 380000 en GIT;
+  `Seguridad` 380002 en castellano y 350039 en inglés). Por eso `codigos.csv` lleva la columna `titulaciones`.
+- Los grupos en inglés de los horarios usan nombres que no siempre coinciden con los oficiales de la UAH
+  (`CIRCUITS THEORY` frente a `Circuit Theory`); se corrigen en `data/alias.csv`.
+- El Trabajo Fin de Grado (380008) no tiene guía en PDF; Prácticas Externas y Prácticas Profesionales la tienen sin fecha de aprobación.
+- Con G380 procesado, las 58 asignaturas de GIT presentes en los horarios tienen código (386 sesiones).
+
 ## Códigos de asignatura
 
 Los PDF no los incluyen. Se cargan de `data/codigos.csv` (columnas `codigo`, `asignatura`, y opcionalmente `titulaciones`
 con siglas separadas por `/` cuando el código depende de la titulación). `asignatura` puede ser el nombre normalizado o
-cualquier variante del PDF: se normaliza igual que los horarios. Si el fichero no existe, el script genera
-`data/codigos_plantilla.csv` con las 358 asignaturas detectadas para rellenar la columna `codigo`.
+cualquier variante del PDF: se normaliza igual que los horarios. Lo genera `extraer_guias.py`; si el fichero no existe,
+`extraer_horarios.py` genera `data/codigos_plantilla.csv` con las asignaturas detectadas para rellenar la columna `codigo` a mano.
 Con el fichero presente, `codigo` aparece en `franjas.csv`, `sesiones.csv`, `asignaturas.csv` y en la aplicación
 (tooltip y búsqueda de perfiles); las hojas de impresión lo muestran si se añade `&codigos=1` a la URL.
 Las asignaturas que queden sin código se listan en `avisos.txt`.
