@@ -269,7 +269,8 @@ $("p-print").addEventListener("click", () => abrirImpresion({ tipo: "perfil", id
 // ---------- vista estudiante ----------
 // Selección: { tit, sem, asig: { asignatura_norm: { g: grupoGrande|"", p: grupoPequeño|"" } } }
 const E = { tit: $("e-tit"), sem: $("e-sem"), lista: $("e-lista"), filtro: $("e-filtro") };
-let estSel = { tit: "", sem: 1, asig: {} };
+let estSel = { tit: "", sem: 1, letra: "", asig: {} };   // letra: "" = cualquier grupo, "B" = solo grupos 1B, 1B1, 1B2…
+const letraDe = (g) => (g.match(/^\d([A-Z])/) || [])[1] || "";
 const LSE = "horarios-eps-estudiante";
 const siglasTit = () => uniq(S.flatMap(s => s.titulaciones.split("/"))).sort(sortNat);
 const sesTit = (tit, sem) => S.filter(s => s.semestre == sem && s.titulaciones.split("/").includes(tit));
@@ -284,7 +285,8 @@ function eCatalogo() {
     a.curso = Math.min(a.curso, s.curso);
     cat.set(s.asignatura_norm, a);
   });
-  return [...cat.values()].map(a => ({ ...a, grandes: [...a.grandes].sort(sortNat), pequenos: [...a.pequenos].sort(sortNat) }))
+  const L = estSel.letra, ok = (g) => !L || letraDe(g) === L;
+  return [...cat.values()].map(a => ({ ...a, grandes: [...a.grandes].filter(ok).sort(sortNat), pequenos: [...a.pequenos].filter(ok).sort(sortNat) }))
     .sort((a, b) => a.curso - b.curso || sortNat(a.nombre, b.nombre));
 }
 function eSesiones(sel = estSel) {
@@ -312,8 +314,20 @@ function eInit() {
   const desdeUrl = eCargar();
   if (!tits.includes(estSel.tit)) { estSel.tit = tits.includes("GITT") ? "GITT" : tits[0]; estSel.asig = {}; }
   E.tit.value = estSel.tit; E.sem.value = estSel.sem;
-  E.tit.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), asig: {} }; eGuardar(); eLista(); eDraw(); });
-  E.sem.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), asig: {} }; eGuardar(); eLista(); eDraw(); });
+  E.tit.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), letra: "", asig: {} }; eGuardar(); eLetras(); eLista(); eDraw(); });
+  E.sem.addEventListener("change", () => { estSel = { tit: E.tit.value, sem: Number(E.sem.value), letra: "", asig: {} }; eGuardar(); eLetras(); eLista(); eDraw(); });
+  $("e-letra").addEventListener("change", () => {
+    estSel.letra = $("e-letra").value;
+    // reajustar los grupos ya elegidos que no sean de la letra
+    const cat = Object.fromEntries(eCatalogo().map(a => [a.norm, a]));
+    Object.entries(estSel.asig).forEach(([norm, g]) => {
+      const a = cat[norm]; if (!a) return;
+      if (g.g && !a.grandes.includes(g.g)) g.g = a.grandes[0] || "";
+      if (g.p && !a.pequenos.includes(g.p)) g.p = a.pequenos[0] || "";
+    });
+    eGuardar(); eLista(); eDraw();
+  });
+  eLetras();
   E.filtro.addEventListener("input", eLista);
   $("e-limpiar").addEventListener("click", () => { estSel.asig = {}; eGuardar(); eLista(); eDraw(); });
   $("e-auto").addEventListener("click", eAuto);
@@ -321,6 +335,12 @@ function eInit() {
   $("e-print").addEventListener("click", () => abrirImpresion({ tipo: "estudiante", sel: JSON.stringify(estSel) }));
   if (desdeUrl) document.querySelector('.tabs button[data-view="estudiante"]').click();
   eLista(); eDraw();
+}
+function eLetras() {
+  const letras = uniq(sesTit(estSel.tit, estSel.sem).map(s => letraDe(s.grupo)).filter(Boolean)).sort();
+  fill($("e-letra"), ["", ...letras], ["Grupo: cualquiera", ...letras.map(l => `Grupo: solo ${l} (${l}, ${l}1, ${l}2…)`)]);
+  if (!["", ...letras].includes(estSel.letra)) estSel.letra = "";
+  $("e-letra").value = estSel.letra;
 }
 function eLista() {
   const cat = eCatalogo(), q = E.filtro.value.trim().toLowerCase();
