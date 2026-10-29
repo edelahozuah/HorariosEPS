@@ -132,3 +132,29 @@ button:hover { border-color: var(--accent); }
 .x-avisos { margin-top: 10px; font-size: 11px; color: var(--muted); line-height: 1.5; }
 .x-avisos a { color: var(--accent); }
 .panel input[type=date] { width: 100%; }
+
+/* Vista planificar prueba */
+.panel input#f-buscar { width: 100%; }
+#f-seleccion { margin-top: 6px; border-color: var(--accent); }
+.x-mes td.f-verde { background: #bbf7d0; }
+.x-mes td.f-naranja { background: #fed7aa; }
+.x-mes td.f-rojo { background: #fecaca; }
+.x-mes td.nolect { background: repeating-linear-gradient(45deg, #f3f4f6 0 4px, #e5e7eb 4px 8px); color: var(--muted); }
+.x-mes td.f-verde, .x-mes td.f-naranja, .x-mes td.f-rojo { cursor: pointer; }
+.f-n { font-size: 22px; font-weight: 700; }
+.f-n.verde { color: #15803d; } .f-n.naranja { color: #c2410c; } .f-n.rojo { color: var(--danger); }
+.f-estado { padding: 6px 10px; border-radius: 6px; margin: 4px 0 8px; font-size: 13px; }
+.f-estado.f-verde { background: #dcfce7; } .f-estado.f-naranja { background: #ffedd5; } .f-estado.f-rojo { background: var(--danger-bg); }
+.f-linea { margin: 6px 0 2px; }
+.f-barra { position: relative; height: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+.f-seg { position: absolute; top: 0; bottom: 0; }
+.f-seg.libre { background: #86efac; }
+.f-seg.clase { background: rgba(107, 114, 128, .45); border-left: 1px solid #fff; }
+.f-seg.prueba { background: rgba(220, 38, 38, .7); }
+.f-marcas { position: relative; height: 14px; font-size: 10px; color: var(--muted); }
+.f-marcas span { position: absolute; transform: translateX(-50%); }
+.f-marcas span:first-child { transform: none; } .f-marcas span:last-child { transform: translateX(-100%); }
+.f-ley { display: inline-block; width: 12px; height: 10px; border-radius: 2px; margin: 0 3px 0 10px; vertical-align: middle; }
+.f-ley.libre { background: #86efac; } .f-ley.clase { background: rgba(107, 114, 128, .45); } .f-ley.prueba { background: rgba(220, 38, 38, .7); }
+.x-dia h4 + .g-tabla, .x-dia .g-tabla + h4 { margin-top: 8px; }
+.x-dia h4 { margin-top: 10px; }

@@ -16,6 +16,7 @@
     <button data-view="estudiante">Estudiante</button>
     <button data-view="gestor">Solapamientos</button>
     <button data-view="pruebas">Pruebas</button>
+    <button data-view="planificar">Planificar prueba</button>
   </nav>
 </header>
 
@@ -172,6 +173,52 @@
         <div id="x-resumen" class="g-resumen"></div>
         <div id="x-meses" class="x-meses"></div>
         <div id="x-lista"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vista planificar: franjas libres para poner una prueba (sin clases ni otras pruebas) -->
+  <section id="view-planificar" class="view">
+    <div class="perfil-layout">
+      <aside class="panel">
+        <h2>Planificar una prueba</h2>
+        <h3>Asignaturas <span id="f-n"></span></h3>
+        <input id="f-buscar" placeholder="Nombre, código o titulación (p. ej. «redes GIT»)…">
+        <div id="f-resultados" class="lista"></div>
+        <div id="f-seleccion" class="lista"></div>
+        <h3>Con qué se compara</h3>
+        <div class="row">
+          <select id="f-alcance" title="Clases y pruebas de qué cursos de la titulación se tienen en cuenta">
+            <option value="curso">Mismo curso</option>
+            <option value="contiguos">Cursos contiguos (anterior, mismo y siguiente)</option>
+          </select>
+        </div>
+        <div class="row">
+          <select id="f-grupos" title="Grupos de horario cuyas clases se tienen en cuenta">
+            <option value="asig">Grupos de horario de la asignatura (misma letra)</option>
+            <option value="todos">Todos los grupos de horario</option>
+          </select>
+        </div>
+        <div class="row chks">
+          <label title="Laboratorios y prácticas: sólo afectan a parte del grupo"><input type="checkbox" id="f-pequenos"> Clases de grupos pequeños</label>
+          <label title="La prueba puede hacerse en el horario de clase de la propia asignatura"><input type="checkbox" id="f-propia"> Usar las clases de la propia asignatura</label>
+        </div>
+        <h3>Prueba</h3>
+        <div class="row">
+          <label class="campo">Duración <select id="f-dur"></select></label>
+          <label class="campo">Entre <select id="f-hini"></select></label>
+          <label class="campo">y <select id="f-hfin"></select></label>
+        </div>
+        <div class="row">
+          <label class="campo">Desde <input type="date" id="f-desde"></label>
+          <label class="campo">Hasta <input type="date" id="f-hasta"></label>
+        </div>
+        <div class="row"><button id="f-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button></div>
+      </aside>
+      <div>
+        <div id="f-resumen" class="g-resumen"></div>
+        <div id="f-meses" class="x-meses"></div>
+        <div id="f-detalle"></div>
       </div>
     </div>
   </section>

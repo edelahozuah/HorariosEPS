@@ -89,6 +89,21 @@ Se puede abrir directamente `web/index.html` en el navegador o servirla con `pyt
   Un mapa semanal (hora × día) da el número de asignaturas por hora para la selección; un clic en una celda elige esa hora y
   mayúsculas + clic amplía la franja en el mismo día. Se pueden excluir grupos grandes, pequeños o tutorías. La consulta se
   guarda en el navegador y «Copiar enlace» la comparte (`#ges=…`).
+- **Pruebas**: calendario de pruebas de evaluación (ver «Calendarios de pruebas»). Se eligen fechas, tipos de prueba y
+  titulaciones o cursos; un calendario mensual da el número de pruebas por día y marca las coincidencias: en rojo, pruebas
+  de asignaturas distintas cuyas horas se solapan; en ámbar, varias el mismo día cuando alguna no tiene hora. Por defecto se
+  comparan sólo las pruebas de una misma titulación y curso; «entre todo lo seleccionado» compara todas. Un clic en un día
+  lo muestra en detalle. El panel lista los avisos de la web (calendarios cuyo enlace iCal no es el del calendario empotrado).
+  La consulta se guarda en el navegador y en el enlace (`#pru=…`). Si `pruebas.js` falta, la pestaña no aparece.
+- **Planificar prueba**: para poner una prueba nueva. Se buscan y añaden la asignatura o asignaturas (en una o varias
+  titulaciones) y se elige con qué se compara: el mismo curso o los cursos contiguos (anterior y siguiente), los grupos de
+  horario con la misma letra que los de la asignatura (o todos; si un curso no tiene esa letra, se usan todos sus grupos),
+  con o sin las clases de grupos pequeños, y si la prueba puede ocupar las clases de la propia asignatura. Con la duración
+  y el horario del día (8:00–21:00 por defecto), cada día del rango se colorea: **verde** si hay franjas libres de clases y
+  de pruebas; **naranja** si las hay pero ese día hay pruebas sin hora (habría franjas si esas pruebas se hacen fuera de
+  ellas); **rojo** si no hay ninguna; gris si no es lectivo (fin de semana, festivo o vacaciones). Al pulsar un día se ven
+  las franjas libres, una barra con la ocupación del día y la lista de clases y pruebas. Las clases dependen del periodo:
+  en clases del 1º o 2º cuatrimestre se usan los horarios de ese cuatrimestre; en exámenes no hay clases. Enlace `#plan=…`.
 
 ## Impresión y generación de PDF
 
@@ -168,6 +183,12 @@ lectores compatibles con iCAL» la URL del `.ics`.
 
 - `data/calendarios.csv` – inventario: una fila por página y `.ics` (titulaciones, curso, plataforma, origen, nombre del
   calendario, eventos del curso, pruebas y avisos).
+- `data/periodos.csv` (a mano) – periodos del calendario académico de la UAH para los grados (clases y exámenes de cada
+  cuatrimestre, Navidad, Semana Santa), tomados del PDF «Calendario Académico 2026-2027» de
+  <https://antigua.uah.es/es/calendario-academico/>. Hay que actualizarlo cada curso.
+- `data/no_lectivos.csv` – festivos y vacaciones: el calendario de Google «Festivos et al. EPS-UAH» (empotrado en las
+  páginas de GITI) más los periodos no lectivos de `periodos.csv`. Periodos y días no lectivos van también en
+  `web/pruebas.js` para la vista «Planificar prueba». No incluye las fiestas locales de Guadalajara (GMC).
 - `data/pruebas.csv` / `pruebas.json` y `web/pruebas.js` – una fila por prueba: titulaciones y curso del calendario, fecha,
   `hora_inicio`/`hora_fin` (vacías si es de día completo, `dia_completo` = 1), asignatura y código, semestre, texto de la
   prueba, siglas (`PEI1`, `PL2`, `TC1+TCL1`…), `tipo` (intermedia, laboratorio, entrega, final, extraordinaria,

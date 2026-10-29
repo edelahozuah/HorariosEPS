@@ -554,6 +554,29 @@ function gDraw() {
     "</tbody></table>";
 }
 
+// ---------- calendario mensual (vistas Pruebas y Planificar) ----------
+// Un bloque por mes, semanas de lunes a domingo. celda(f) -> { txt, cls, style, title, clic }; alClic(f) al pulsar un día.
+function calendarioMeses(cont, desde, hasta, celda, alClic, leyenda) {
+  let html = "";
+  if (desde && hasta && desde <= hasta) {
+    const d0 = new Date(desde + "T12:00"), d1 = new Date(hasta + "T12:00");
+    for (let m = new Date(d0.getFullYear(), d0.getMonth(), 1, 12); m <= d1 && html.length < 300000; m.setMonth(m.getMonth() + 1)) {
+      const y = m.getFullYear(), mo = m.getMonth(), nd = new Date(y, mo + 1, 0).getDate(), hueco = (new Date(y, mo, 1).getDay() + 6) % 7;
+      let celdas = "<td></td>".repeat(hueco);
+      for (let d = 1; d <= nd; d++) {
+        const f = `${y}-${String(mo + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`, fuera = f < desde || f > hasta;
+        const c = fuera ? {} : celda(f);
+        celdas += `<td data-f="${c.clic ? f : ""}" class="${fuera ? "fuera" : ""} ${c.cls || ""}${f === hoyISO() ? " hoy" : ""}" style="${c.style || ""}"` +
+          ` title="${fechaLarga(f)}${c.title ? ": " + c.title : ""}"><span class="d">${d}</span>${c.txt !== undefined && c.txt !== "" ? `<b>${c.txt}</b>` : ""}</td>`;
+        if ((hueco + d) % 7 === 0) celdas += "</tr><tr>";
+      }
+      html += `<table class="x-mes"><caption>${MESES[mo]} ${y}</caption><thead><tr>${["L", "M", "X", "J", "V", "S", "D"].map(x => `<th>${x}</th>`).join("")}</tr></thead><tbody><tr>${celdas}</tr></tbody></table>`;
+    }
+  }
+  cont.innerHTML = html + (leyenda ? `<div class="meta">${leyenda}</div>` : "");
+  cont.querySelectorAll("td[data-f]").forEach(td => { if (td.dataset.f) td.addEventListener("click", () => alClic(td.dataset.f)); });
+}
+
 // ---------- vista pruebas: calendario de pruebas de evaluación (web/pruebas.js, opcional) ----------
 // Consulta: { desde, hasta (AAAA-MM-DD), sel: ["GITT|3", ...], tipos: [...], modo: "grupo" | "todo", solo, dia }
 const PR = (window.PRUEBAS && window.PRUEBAS.pruebas) || [];
@@ -649,27 +672,14 @@ function xDraw() {
     ` · <span class="x-sol">${nSolapes}</span> solape${nSolapes === 1 ? "" : "s"} de horario · ${diasCoinc} día${diasCoinc === 1 ? "" : "s"} con coincidencias</div>` +
     `<div class="meta">Del ${fechaLarga(xCons.desde)} de ${xCons.desde.slice(0, 4)} al ${fechaLarga(xCons.hasta)} de ${xCons.hasta.slice(0, 4)}. Datos de los calendarios de la EPS (fechas tentativas), generados el ${window.PRUEBAS.generado}.</div>`;
 
-  // calendario: un mes por bloque, semanas de lunes a domingo
   const max = Math.max(1, ...[...porDia.values()].map(l => l.length));
-  let html = "";
-  if (xCons.desde <= xCons.hasta) {
-    const d0 = new Date(xCons.desde + "T12:00"), d1 = new Date(xCons.hasta + "T12:00");
-    for (let m = new Date(d0.getFullYear(), d0.getMonth(), 1, 12); m <= d1 && html.length < 200000; m.setMonth(m.getMonth() + 1)) {
-      const y = m.getFullYear(), mo = m.getMonth(), nd = new Date(y, mo + 1, 0).getDate(), hueco = (new Date(y, mo, 1).getDay() + 6) % 7;
-      let celdas = "<td></td>".repeat(hueco);
-      for (let d = 1; d <= nd; d++) {
-        const f = `${y}-${String(mo + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`, l = porDia.get(f) || [], c = coinc.get(f);
-        const fuera = f < xCons.desde || f > xCons.hasta;
-        const cls = [fuera ? "fuera" : "", c && c.pares.some(x => x.nivel === "solape") ? "sol" : c && c.pares.length ? "mismo" : "", f === xCons.dia ? "act" : "", f === hoyISO() ? "hoy" : ""].join(" ");
-        celdas += `<td data-f="${l.length ? f : ""}" class="${cls}" style="${l.length && !fuera ? `background:rgba(29,78,216,${(0.08 + 0.45 * l.length / max).toFixed(2)})` : ""}"` +
-          ` title="${fechaLarga(f)}: ${l.length} prueba(s)${c && c.pares.length ? ` · ${c.pares.length} coincidencia(s)` : ""}"><span class="d">${d}</span>${l.length && !fuera ? `<b>${l.length}</b>` : ""}</td>`;
-        if ((hueco + d) % 7 === 0) celdas += "</tr><tr>";
-      }
-      html += `<table class="x-mes"><caption>${MESES[mo]} ${y}</caption><thead><tr>${["L", "M", "X", "J", "V", "S", "D"].map(x => `<th>${x}</th>`).join("")}</tr></thead><tbody><tr>${celdas}</tr></tbody></table>`;
-    }
-  }
-  $("x-meses").innerHTML = html + '<div class="meta">Nº de pruebas por día. Borde rojo: pruebas que se solapan en horario; ámbar: varias el mismo día (alguna sin hora). Clic en un día para verlo; otra vez para verlos todos.</div>';
-  $("x-meses").querySelectorAll("td[data-f]").forEach(td => { if (td.dataset.f) td.addEventListener("click", () => { xCons.dia = xCons.dia === td.dataset.f ? "" : td.dataset.f; xDraw(); }); });
+  calendarioMeses($("x-meses"), xCons.desde, xCons.hasta, (f) => {
+    const l = porDia.get(f) || [], c = coinc.get(f);
+    return { clic: l.length > 0, txt: l.length || "", style: l.length ? `background:rgba(29,78,216,${(0.08 + 0.45 * l.length / max).toFixed(2)})` : "",
+      cls: (c && c.pares.some(x => x.nivel === "solape") ? "sol" : c && c.pares.length ? "mismo" : "") + (f === xCons.dia ? " act" : ""),
+      title: `${l.length} prueba(s)${c && c.pares.length ? ` · ${c.pares.length} coincidencia(s)` : ""}` };
+  }, (f) => { xCons.dia = xCons.dia === f ? "" : f; xDraw(); },
+  "Nº de pruebas por día. Borde rojo: pruebas que se solapan en horario; ámbar: varias el mismo día (alguna sin hora). Clic en un día para verlo; otra vez para verlos todos.");
 
   // lista por día
   let dias = [...porDia.keys()].sort();
@@ -691,5 +701,189 @@ function xDraw() {
   $("x-todos")?.addEventListener("click", (e) => { e.preventDefault(); xCons.dia = ""; xDraw(); });
 }
 
-tInit(); aInit(); pInit(); eInit(); gInit(); xInit();
+// ---------- vista planificar: franjas libres para una prueba (sin clases ni otras pruebas) ----------
+// Consulta: { asig: ["GIT|ARQUITECTURA DE COMPUTADORES", ...], alcance: "curso" | "contiguos", grupos: "asig" | "todos",
+//             pequenos, propia, dur (h), hIni, hFin, desde, hasta, dia }
+const PERIODOS = (window.PRUEBAS && window.PRUEBAS.periodos) || [], NOLECT = (window.PRUEBAS && window.PRUEBAS.no_lectivos) || {};
+const LSF = "horarios-eps-planificar";
+let fCons = { asig: [], alcance: "curso", grupos: "asig", pequenos: true, propia: true, dur: 2, hIni: 8, hFin: 21, desde: "", hasta: "", dia: "" };
+const durTxt = () => ({ 0.5: "30 min", 1.5: "1 h 30", 2.5: "2 h 30" })[fCons.dur] || `${fCons.dur} h`;
+const fmtH = (x) => `${Math.floor(x + 1e-6)}:${String(Math.round((x - Math.floor(x + 1e-6)) * 60)).padStart(2, "0")}`;
+// periodo del calendario académico de una fecha (clases, exámenes…); en clases, el cuatrimestre cuyos horarios rigen
+const periodoDe = (f) => PERIODOS.find(p => p.periodo !== "no_lectivo" && p.desde <= f && f <= p.hasta) || null;
+const NOMBRE_PERIODO = { clases: "clases", examenes_ordinaria: "exámenes (ordinaria)", examenes_extraordinaria: "exámenes (extraordinaria)" };
+
+// catálogo de asignaturas por titulación (una sigla) a partir de los horarios
+const catAsig = new Map();
+S.forEach(s => s.titulaciones.split("/").forEach(t => {
+  const k = `${t}|${s.asignatura_norm}`;
+  const a = catAsig.get(k) || { clave: k, tit: t, norm: s.asignatura_norm, nombre: s.asignatura, codigo: s.codigo || "", curso: s.curso, sems: new Set(), letras: new Set() };
+  if (s.asignatura.toUpperCase() !== s.asignatura) a.nombre = s.asignatura.replace(/\s*TUTOR[IÍ]A\s*/i, "");
+  a.curso = Math.min(a.curso, s.curso); a.sems.add(s.semestre);
+  if (letraDe(s.grupo_horario)) a.letras.add(letraDe(s.grupo_horario));
+  catAsig.set(k, a);
+}));
+catAsig.forEach(a => { const g = guia(a.codigo); if (g && g.asignatura) a.nombre = g.asignatura; });
+
+function fGuardar() { try { localStorage.setItem(LSF, JSON.stringify(fCons)); } catch {} }
+function fCargar() {
+  const m = location.hash.match(/^#plan=(.+)$/);
+  try { if (m) { Object.assign(fCons, JSON.parse(decodeURIComponent(m[1]))); return true; } } catch {}
+  try { const v = localStorage.getItem(LSF); if (v) Object.assign(fCons, JSON.parse(v)); } catch {}
+  return false;
+}
+function fInit() {
+  if (!PR.length) { document.querySelector('.tabs button[data-view="planificar"]').hidden = true; return; }
+  fill($("f-dur"), ["0.5", "1", "1.5", "2", "2.5", "3", "4"], ["30 min", "1 h", "1 h 30", "2 h", "2 h 30", "3 h", "4 h"]);
+  const horas = []; for (let h = 8; h <= 22; h++) horas.push(String(h));
+  fill($("f-hini"), horas.slice(0, -1), horas.slice(0, -1).map(h => h + ":00"));
+  fill($("f-hfin"), horas.slice(1), horas.slice(1).map(h => h + ":00"));
+  const desdeUrl = fCargar();
+  fCons.asig = fCons.asig.filter(k => catAsig.has(k));
+  if (!fCons.desde) fCons.desde = hoyISO();
+  if (!fCons.hasta) {   // hasta el final de los exámenes ordinarios del cuatrimestre en curso (o el siguiente)
+    const ex = PERIODOS.filter(p => p.periodo === "examenes_ordinaria" && p.hasta >= fCons.desde).sort((a, b) => a.hasta.localeCompare(b.hasta))[0];
+    fCons.hasta = ex ? ex.hasta : PR.map(p => p.fecha).sort().pop();
+  }
+  fControles(); fSeleccion();
+  const leer = () => {
+    fCons.alcance = $("f-alcance").value; fCons.grupos = $("f-grupos").value;
+    fCons.pequenos = $("f-pequenos").checked; fCons.propia = $("f-propia").checked;
+    fCons.dur = Number($("f-dur").value); fCons.hIni = Number($("f-hini").value); fCons.hFin = Number($("f-hfin").value);
+    if (fCons.hFin <= fCons.hIni) fCons.hFin = fCons.hIni + 1;
+    fCons.desde = $("f-desde").value || hoyISO(); fCons.hasta = $("f-hasta").value || fCons.desde;
+    fControles(); fGuardar(); fDraw();
+  };
+  ["f-alcance", "f-grupos", "f-pequenos", "f-propia", "f-dur", "f-hini", "f-hfin", "f-desde", "f-hasta"].forEach(id => $(id).addEventListener("change", leer));
+  $("f-buscar").addEventListener("input", fBuscar);
+  $("f-compartir").addEventListener("click", () => {
+    history.replaceState(null, "", location.pathname + location.search + "#plan=" + encodeURIComponent(JSON.stringify(fCons)));
+    navigator.clipboard?.writeText(location.href).then(() => alert("Enlace copiado:\n" + location.href), () => prompt("Copia el enlace:", location.href));
+  });
+  if (desdeUrl) document.querySelector('.tabs button[data-view="planificar"]').click();
+  fBuscar(); fDraw();
+}
+function fControles() {
+  $("f-alcance").value = fCons.alcance; $("f-grupos").value = fCons.grupos; $("f-pequenos").checked = fCons.pequenos; $("f-propia").checked = fCons.propia;
+  $("f-dur").value = String(fCons.dur); $("f-hini").value = fCons.hIni; $("f-hfin").value = fCons.hFin;
+  $("f-desde").value = fCons.desde; $("f-hasta").value = fCons.hasta;
+}
+const etiquetaAsig = (a) => `${a.nombre}${a.codigo ? ` <span class="meta">${a.codigo}</span>` : ""}<br><span class="meta">${a.tit} · ${a.curso}º · ${[...a.sems].sort().map(x => x + "º cuatr.").join(", ")}</span>`;
+function fBuscar() {
+  const q = $("f-buscar").value.trim().toLowerCase(), cont = $("f-resultados");
+  if (!q) { cont.innerHTML = '<div class="item meta">Escribe para buscar y pulsa para añadir. Puedes añadir la misma asignatura en varias titulaciones.</div>'; return; }
+  const pal = q.split(/\s+/), sel = new Set(fCons.asig);
+  const res = [...catAsig.values()].filter(a => pal.every(p => `${a.nombre} ${a.norm} ${a.codigo} ${a.tit} ${a.curso}º`.toLowerCase().includes(p)))
+    .sort((a, b) => sortNat(a.nombre, b.nombre) || sortNat(a.tit, b.tit)).slice(0, 60);
+  cont.innerHTML = "";
+  res.forEach(a => {
+    const el = document.createElement("div"); el.className = "item";
+    el.innerHTML = `<span class="sw" style="background:${color(a.norm)}"></span><span class="txt">${etiquetaAsig(a)}</span><button>${sel.has(a.clave) ? "Quitar" : "Añadir"}</button>`;
+    el.addEventListener("click", () => { fToggle(a.clave); fBuscar(); });
+    cont.appendChild(el);
+  });
+  if (!res.length) cont.innerHTML = '<div class="item meta">Sin resultados</div>';
+}
+function fToggle(k) {
+  fCons.asig = fCons.asig.includes(k) ? fCons.asig.filter(x => x !== k) : [...fCons.asig, k];
+  fCons.dia = ""; fGuardar(); fSeleccion(); fDraw();
+}
+function fSeleccion() {
+  const cont = $("f-seleccion"); cont.innerHTML = "";
+  fCons.asig.forEach(k => {
+    const a = catAsig.get(k), el = document.createElement("div"); el.className = "item";
+    el.innerHTML = `<span class="sw" style="background:${color(a.norm)}"></span><span class="txt">${etiquetaAsig(a)}</span><button>Quitar</button>`;
+    el.addEventListener("click", () => { fToggle(k); fBuscar(); });
+    cont.appendChild(el);
+  });
+  cont.hidden = !fCons.asig.length;
+  $("f-n").textContent = `(${fCons.asig.length})`;
+}
+// cohortes afectadas: titulación|curso (con los contiguos si se pide) y, por cohorte, letras de grupo de horario
+function fCohortes() {
+  const coh = new Map();   // "GIT|3" -> Set(letras) ("*" = todos los grupos)
+  fCons.asig.map(k => catAsig.get(k)).forEach(a => {
+    const cursos = fCons.alcance === "contiguos" ? [a.curso - 1, a.curso, a.curso + 1] : [a.curso];
+    cursos.filter(c => cursosDe(a.tit).includes(c)).forEach(c => {
+      const k = `${a.tit}|${c}`, s = coh.get(k) || new Set();
+      // misma letra que los grupos de la asignatura; si el curso no tiene ninguno con esas letras, todos sus grupos
+      const letrasCurso = new Set(S.filter(x => x.curso === c && x.titulaciones.split("/").includes(a.tit)).map(x => letraDe(x.grupo_horario)));
+      if (fCons.grupos === "todos" || ![...a.letras].some(l => letrasCurso.has(l))) s.add("*"); else a.letras.forEach(l => s.add(l));
+      coh.set(k, s);
+    });
+  });
+  return coh;
+}
+// ocupación de un día: clases (según el cuatrimestre en clases) y pruebas de las cohortes; franjas libres
+function fDia(f, coh) {
+  const dow = new Date(f + "T12:00").getDay(), dia = (dow + 6) % 7 + 1;
+  const per = periodoDe(f), propias = new Set(fCons.asig.map(k => catAsig.get(k).norm));
+  const r = { f, nolect: dia > 5 ? (dia === 6 ? "sábado" : "domingo") : NOLECT[f] || "", per, clases: [], pruebas: [], sinHora: [], libres: [] };
+  if (r.nolect) return r;
+  if (per && per.periodo === "clases") {
+    r.clases = dedupe(S.filter(s => s.semestre == per.cuatrimestre && s.dia === dia
+      && (fCons.pequenos || s.tipo_grupo !== "pequeño") && !(fCons.propia && propias.has(s.asignatura_norm))
+      && s.titulaciones.split("/").some(t => { const l = coh.get(`${t}|${s.curso}`); return l && (l.has("*") || l.has(letraDe(s.grupo_horario)) || !letraDe(s.grupo_horario)); })));
+  }
+  PR.filter(p => p.fecha === f && p.titulaciones.split("/").some(t => coh.has(`${t}|${p.curso}`)))
+    .forEach(p => (p.dia_completo ? r.sinHora : r.pruebas).push(p));
+  // huecos de al menos la duración pedida entre hIni y hFin
+  const ocup = [...r.clases.map(s => [h2n(s.hora_inicio), fin(s)]), ...r.pruebas.map(p => [h2n(p.hora_inicio), h2n(p.hora_fin)])]
+    .map(([a, b]) => [Math.max(a, fCons.hIni), Math.min(b, fCons.hFin)]).filter(([a, b]) => b > a).sort((x, y) => x[0] - y[0]);
+  let t = fCons.hIni;
+  ocup.forEach(([a, b]) => { if (a - t >= fCons.dur - 1e-6) r.libres.push([t, a]); t = Math.max(t, b); });
+  if (fCons.hFin - t >= fCons.dur - 1e-6) r.libres.push([t, fCons.hFin]);
+  r.estado = !r.libres.length ? "rojo" : r.sinHora.length ? "naranja" : "verde";
+  return r;
+}
+function fDraw() {
+  if (!fCons.asig.length) {
+    $("f-resumen").innerHTML = '<div class="meta">Busca y añade la asignatura (o asignaturas) para la que quieres poner la prueba.</div>';
+    $("f-meses").innerHTML = ""; $("f-detalle").innerHTML = ""; return;
+  }
+  const coh = fCohortes(), dias = new Map();
+  for (let d = new Date(fCons.desde + "T12:00"), d1 = new Date(fCons.hasta + "T12:00"); d <= d1 && dias.size < 400; d.setDate(d.getDate() + 1)) {
+    const f = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+    dias.set(f, fDia(f, coh));
+  }
+  const n = { verde: 0, naranja: 0, rojo: 0 };
+  dias.forEach(r => { if (r.estado) n[r.estado]++; });
+  $("f-resumen").innerHTML = `<div class="g-cifra"><span class="f-n verde">${n.verde}</span> días con franjas libres · <span class="f-n naranja">${n.naranja}</span> con pruebas sin hora · <span class="f-n rojo">${n.rojo}</span> sin franjas</div>` +
+    `<div class="meta">Prueba de ${durTxt()} entre las ${fCons.hIni}:00 y las ${fCons.hFin}:00. Se comparan las clases y pruebas de ` +
+    [...coh].map(([k, l]) => `${k.replace("|", " ")}º${l.has("*") ? "" : ` (grupos ${[...l].sort().join(", ")})`}`).join(", ") +
+    `. Clases según los horarios publicados y el calendario académico de la UAH (clases: ${PERIODOS.filter(p => p.periodo === "clases").map(p => `${p.cuatrimestre}º cuatr. ${p.desde.slice(8)}/${p.desde.slice(5, 7)}–${p.hasta.slice(8)}/${p.hasta.slice(5, 7)}`).join(", ")}).</div>`;
+  calendarioMeses($("f-meses"), fCons.desde, fCons.hasta, (f) => {
+    const r = dias.get(f);
+    if (!r) return {};
+    if (r.nolect) return { cls: "nolect", title: r.nolect };
+    return { clic: true, cls: `f-${r.estado}${f === fCons.dia ? " act" : ""}`, txt: r.libres.length || "",
+      title: `${r.libres.length} franja(s) libre(s) · ${r.clases.length} clase(s) · ${r.pruebas.length + r.sinHora.length} prueba(s)${r.per ? " · " + NOMBRE_PERIODO[r.per.periodo] : ""}` };
+  }, (f) => { fCons.dia = fCons.dia === f ? "" : f; fDraw(); },
+  "Verde: hay franjas libres (sin clases ni pruebas); naranja: hay franjas libres si las pruebas sin hora de ese día se hacen fuera de ellas; rojo: sin franjas; gris: no lectivo. El número es el de franjas libres. Clic en un día para ver el detalle.");
+  const r = dias.get(fCons.dia);
+  $("f-detalle").innerHTML = r && !r.nolect ? fDetalle(r) : '<div class="meta">Pulsa un día del calendario para ver sus franjas libres, clases y pruebas.</div>';
+}
+function fDetalle(r) {
+  const span = fCons.hFin - fCons.hIni, pos = (a, b) => `left:${((a - fCons.hIni) / span * 100).toFixed(2)}%;width:${((b - a) / span * 100).toFixed(2)}%`;
+  const recorta = (a, b) => [Math.max(a, fCons.hIni), Math.min(b, fCons.hFin)];
+  const marcas = []; for (let h = fCons.hIni; h <= fCons.hFin; h++) marcas.push(`<span style="left:${((h - fCons.hIni) / span * 100).toFixed(2)}%">${h}</span>`);
+  const barras = [
+    ...r.libres.map(([a, b]) => `<div class="f-seg libre" style="${pos(a, b)}" title="Libre ${fmtH(a)}–${fmtH(b)}"></div>`),
+    ...r.clases.map(s => recorta(h2n(s.hora_inicio), fin(s))).filter(([a, b]) => b > a).map(([a, b]) => `<div class="f-seg clase" style="${pos(a, b)}"></div>`),
+    ...r.pruebas.map(p => recorta(h2n(p.hora_inicio), h2n(p.hora_fin))).filter(([a, b]) => b > a).map(([a, b]) => `<div class="f-seg prueba" style="${pos(a, b)}"></div>`),
+  ].join("");
+  const estado = { verde: "Hay franjas libres", naranja: "Hay franjas libres si las pruebas sin hora se hacen fuera de ellas", rojo: "No hay franjas libres" }[r.estado];
+  return `<div class="x-dia"><h4>${fechaLarga(r.f)} <span class="meta">· ${r.per ? NOMBRE_PERIODO[r.per.periodo] + (r.per.cuatrimestre ? ` del ${r.per.cuatrimestre}º cuatrimestre` : "") : "fuera de los periodos de clases y exámenes"}</span></h4>
+    <div class="f-estado f-${r.estado}">${estado}${r.libres.length ? ": " + r.libres.map(([a, b]) => `<b>${fmtH(a)}–${fmtH(b)}</b>`).join(", ") : ""}</div>
+    <div class="f-linea"><div class="f-barra">${barras}</div><div class="f-marcas">${marcas.join("")}</div></div>
+    <div class="meta"><span class="f-ley libre"></span> libre (al menos ${durTxt()}) <span class="f-ley clase"></span> clase <span class="f-ley prueba"></span> prueba con hora</div>` +
+    (r.sinHora.length ? `<h4>Pruebas sin hora</h4><table class="g-tabla"><tbody>${r.sinHora.map(p => `<tr class="x-mismo"><td>${p.asignatura || "—"}</td><td>${p.prueba}${p.descripcion ? ` <span class="meta">· ${p.descripcion.slice(0, 80)}</span>` : ""}</td><td>${p.titulaciones} ${p.curso}º</td></tr>`).join("")}</tbody></table>` : "") +
+    (r.pruebas.length ? `<h4>Pruebas</h4><table class="g-tabla"><tbody>${r.pruebas.map(p => `<tr class="x-sol"><td>${p.hora_inicio}–${p.hora_fin}</td><td>${p.asignatura || "—"}</td><td>${p.prueba}</td><td>${p.titulaciones} ${p.curso}º</td></tr>`).join("")}</tbody></table>` : "") +
+    (r.clases.length ? `<h4>Clases (${r.clases.length})</h4><table class="g-tabla"><thead><tr><th>Hora</th><th>Asignatura</th><th>Grupo</th><th>Aula</th><th>Hoja</th></tr></thead><tbody>` +
+      r.clases.slice().sort((a, b) => h2n(a.hora_inicio) - h2n(b.hora_inicio) || sortNat(a.grupo, b.grupo)).map(s =>
+        `<tr><td>${s.hora_inicio}–${s.hora_fin}</td><td><span class="sw" style="background:${color(s.asignatura_norm)}"></span>${s.asignatura}</td><td>${s.grupo} <span class="meta">${s.tipo_grupo}</span></td><td>${s.aulas || s.aulas_raw || "—"}</td><td>${s.titulaciones} ${s.curso}º ${s.grupo_horario}</td></tr>`).join("") + "</tbody></table>" :
+      `<div class="meta">${r.per && r.per.periodo === "clases" ? "Sin clases de estos cursos y grupos este día." : "Sin clases (periodo sin docencia)."}</div>`) + "</div>";
+}
+
+tInit(); aInit(); pInit(); eInit(); gInit(); xInit(); fInit();
 })();

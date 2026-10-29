@@ -1,0 +1,9 @@
+curso_academico,periodo,cuatrimestre,desde,hasta,descripcion
+2026/2027,clases,1,2026-09-07,2026-12-18,Clases del 1er cuatrimestre (grados)
+2026/2027,examenes_ordinaria,1,2027-01-08,2027-01-21,Exámenes convocatoria ordinaria del 1er cuatrimestre (grados)
+2026/2027,clases,2,2027-01-25,2027-05-14,Clases del 2º cuatrimestre (grados)
+2026/2027,examenes_ordinaria,2,2027-05-17,2027-05-29,Exámenes convocatoria ordinaria del 2º cuatrimestre (grados)
+2026/2027,examenes_extraordinaria,1,2027-06-10,2027-06-23,Exámenes convocatoria extraordinaria del 1er cuatrimestre (grados)
+2026/2027,examenes_extraordinaria,2,2027-06-24,2027-07-07,Exámenes convocatoria extraordinaria del 2º cuatrimestre (grados)
+2026/2027,no_lectivo,,2026-12-21,2027-01-07,Navidad
+2026/2027,no_lectivo,,2027-03-22,2027-03-29,Semana Santa

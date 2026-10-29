@@ -12,6 +12,7 @@ Uso:
 
 Salida:
     data/calendarios.csv   una fila por enlace «Calendario»: titulación(es), curso, página, URL del .ics y nº de eventos
+    data/no_lectivos.csv   festivos y vacaciones (calendario «Festivos et al. EPS-UAH» y periodos no lectivos de data/periodos.csv)
     data/pruebas.csv/json  una fila por prueba: fecha, horas (o día completo), asignatura, código, prueba, sigla, tipo…
     web/pruebas.js         lo mismo para la aplicación web
 """
@@ -370,6 +371,23 @@ def pruebas_de(cal, texto, semestres, catalogo, desde, hasta):
     return nombre_cal, n, out, descartes
 
 
+def no_lectivos_de(texto, desde, hasta):
+    """Días de un calendario de festivos (p. ej. «Festivos et al. EPS-UAH»): [(fecha, motivo)]."""
+    out = []
+    for ev in propiedades(texto)[1]:
+        if "DTSTART" not in ev:
+            continue
+        ini, dia_completo = fecha_ics(*ev["DTSTART"])
+        fin = fecha_ics(*ev["DTEND"])[0] if "DTEND" in ev else ini
+        dias = max(1, (fin - ini).days) if dia_completo else 1
+        for i0 in repeticiones(ev, ini, dia_completo, desde, hasta):
+            f0 = i0 if dia_completo else i0.date()
+            for k in range(dias):
+                if desde <= f0 + dt.timedelta(days=k) <= hasta:
+                    out.append(((f0 + dt.timedelta(days=k)).isoformat(), desescapar(ev.get("SUMMARY", ({}, ""))[1])))
+    return out
+
+
 def escribir_csv(path, filas, campos):
     with open(path, "w", encoding="utf-8", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=campos, extrasaction="ignore")
@@ -400,7 +418,7 @@ def main():
 
     catalogo = Catalogo(); catalogo.cargar()
     cals = inventario(usar_cache)
-    pruebas, descartados = [], []
+    pruebas, descartados, no_lectivos = [], [], set()
     for c in cals:
         if not c.get("ics"):
             print(f"  sin .ics: {c['pagina']}", file=sys.stderr)
@@ -413,12 +431,29 @@ def main():
             continue
         c["nombre"], c["eventos"], ps, desc = pruebas_de(c, texto, semestres, catalogo, desde, hasta)
         descartados += [(c["pagina"], d) for d in desc]
+        if re.search(r"festivos", c["nombre"], re.I):
+            no_lectivos.update(no_lectivos_de(texto, desde, hasta))
+            c["aviso"] = (c.get("aviso", "") + " festivos: se usan como días no lectivos").strip()
+            continue
         if c["titulaciones"] == "BONO" or re.search(r"calendario acad", c["nombre"], re.I):
             c["aviso"] = (c.get("aviso", "") + " no es de pruebas: se omite").strip()
             continue
         c["pruebas"] = len(ps)
         pruebas += ps
     pruebas.sort(key=lambda p: (p["fecha"], p["hora_inicio"], p["titulaciones"], str(p["curso"]), p["asignatura"]))
+    # periodos de clases y exámenes del calendario académico de la UAH (data/periodos.csv, a mano) y días no lectivos
+    periodos = [r for r in csv.DictReader(open(DATA_DIR / "periodos.csv", encoding="utf-8"))] if (DATA_DIR / "periodos.csv").exists() else []
+    periodos = [r for r in periodos if r["curso_academico"] == args.curso]
+    for r in periodos:
+        if r["periodo"] == "no_lectivo":
+            d = dt.date.fromisoformat(r["desde"])
+            while d <= dt.date.fromisoformat(r["hasta"]):
+                no_lectivos.add((d.isoformat(), r["descripcion"])); d += dt.timedelta(days=1)
+    nl = {}
+    for f, motivo in sorted(no_lectivos):
+        nl.setdefault(f, []).append(motivo)
+    nl = {f: "; ".join(dict.fromkeys(m)) for f, m in nl.items()}
+    escribir_csv(DATA_DIR / "no_lectivos.csv", [{"fecha": f, "motivo": m} for f, m in nl.items()], ["fecha", "motivo"])
 
     escribir_csv(DATA_DIR / "calendarios.csv", cals, ["titulaciones", "curso", "pagina", "url_pagina", "plataforma", "origen", "ics",
                                                        "nombre", "eventos", "pruebas", "aviso"])
@@ -433,7 +468,8 @@ def main():
         fh.write("window.PRUEBAS = ")
         json.dump({"generado": dt.date.today().isoformat(), "curso_academico": args.curso,
                    "calendarios": [{k: c.get(k, "") for k in ("titulaciones", "curso", "url_pagina", "nombre", "pruebas", "aviso")} for c in cals],
-                   "pruebas": web}, fh, ensure_ascii=False, separators=(",", ":"))
+                   "periodos": [{k: r[k] for k in ("periodo", "cuatrimestre", "desde", "hasta", "descripcion")} for r in periodos],
+                   "no_lectivos": nl, "pruebas": web}, fh, ensure_ascii=False, separators=(",", ":"))
 
     sin_cod = sorted({f"{p['titulaciones']} {p['curso']}º: {p['prueba']}" for p in pruebas if not p["codigo"]})
     print(f"{len({c['pagina'] for c in cals})} páginas, {sum(1 for c in cals if c.get('ics'))} calendarios .ics, "
