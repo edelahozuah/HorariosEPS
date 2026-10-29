@@ -422,5 +422,135 @@ function eAuto() {
   }
 }
 
-tInit(); aInit(); pInit(); eInit();
+// ---------- vista gestor: asignaturas que coinciden en una franja ----------
+// Consulta: { sem, dia, desde, hasta (horas enteras), sel: ["GITT|2", ...], grandes, pequenos, tutorias }
+const LSG = "horarios-eps-gestor";
+const H_MIN = 8, H_MAX = Math.max(21, ...S.map(s => Math.ceil(fin(s))));
+const esTutoria = (s) => /TUTOR[IÍ]A/i.test(s.asignatura + " " + s.nota);
+const cursosDe = (tit) => uniq(S.filter(s => s.titulaciones.split("/").includes(tit)).map(s => s.curso)).sort();
+let gCons = { sem: 1, dia: 1, desde: 9, hasta: 11, sel: [], grandes: true, pequenos: true, tutorias: true };
+
+function gGuardar() { try { localStorage.setItem(LSG, JSON.stringify(gCons)); } catch {} }
+function gCargar() {
+  const m = location.hash.match(/^#ges=(.+)$/);
+  try { if (m) { Object.assign(gCons, JSON.parse(decodeURIComponent(m[1]))); return true; } } catch {}
+  try { const v = localStorage.getItem(LSG); if (v) Object.assign(gCons, JSON.parse(v)); } catch {}
+  return false;
+}
+// sesiones del cuatrimestre de las titulaciones-curso marcadas y tipos de grupo elegidos (sin franja)
+function gSesiones() {
+  const sel = new Set(gCons.sel);
+  return S.filter(s => s.semestre == gCons.sem && s.titulaciones.split("/").some(t => sel.has(`${t}|${s.curso}`))
+    && (gCons.grandes || s.tipo_grupo !== "grande") && (gCons.pequenos || s.tipo_grupo !== "pequeño")
+    && (gCons.tutorias || !esTutoria(s)));
+}
+const enFranja = (s, dia, desde, hasta) => s.dia === dia && h2n(s.hora_inicio) < hasta && desde < fin(s);
+
+function gInit() {
+  const horas = []; for (let h = H_MIN; h <= H_MAX; h++) horas.push(h);
+  fill($("g-dia"), ["1", "2", "3", "4", "5"], DIAS);
+  fill($("g-desde"), horas.slice(0, -1).map(String), horas.slice(0, -1).map(h => `${h}:00`));
+  fill($("g-hasta"), horas.slice(1).map(String), horas.slice(1).map(h => `${h}:00`));
+  const desdeUrl = gCargar();
+  if (!gCons.sel.length) gCons.sel = ["GITT|1"];
+  gTits(); gControles();
+  const leer = () => {
+    gCons.sem = Number($("g-sem").value); gCons.dia = Number($("g-dia").value);
+    gCons.desde = Number($("g-desde").value); gCons.hasta = Number($("g-hasta").value);
+    if (gCons.hasta <= gCons.desde) { if (document.activeElement === $("g-hasta")) gCons.desde = gCons.hasta - 1; else gCons.hasta = gCons.desde + 1; }
+    gCons.grandes = $("g-grandes").checked; gCons.pequenos = $("g-pequenos").checked; gCons.tutorias = $("g-tutorias").checked;
+    gControles(); gGuardar(); gDraw();
+  };
+  ["g-sem", "g-dia", "g-desde", "g-hasta", "g-grandes", "g-pequenos", "g-tutorias"].forEach(id => $(id).addEventListener("change", leer));
+  $("g-todas").addEventListener("click", () => { gCons.sel = siglasTit().flatMap(t => cursosDe(t).map(c => `${t}|${c}`)); gTits(); gGuardar(); gDraw(); });
+  $("g-ninguna").addEventListener("click", () => { gCons.sel = []; gTits(); gGuardar(); gDraw(); });
+  $("g-compartir").addEventListener("click", () => {
+    history.replaceState(null, "", location.pathname + location.search + "#ges=" + encodeURIComponent(JSON.stringify(gCons)));
+    navigator.clipboard?.writeText(location.href).then(() => alert("Enlace copiado:\n" + location.href), () => prompt("Copia el enlace:", location.href));
+  });
+  if (desdeUrl) document.querySelector('.tabs button[data-view="gestor"]').click();
+  gDraw();
+}
+function gControles() {
+  $("g-sem").value = gCons.sem; $("g-dia").value = gCons.dia; $("g-desde").value = gCons.desde; $("g-hasta").value = gCons.hasta;
+  $("g-grandes").checked = gCons.grandes; $("g-pequenos").checked = gCons.pequenos; $("g-tutorias").checked = gCons.tutorias;
+}
+// lista de titulaciones con una casilla por curso; la casilla de la titulación marca o desmarca todos sus cursos
+function gTits() {
+  const cont = $("g-tits"), sel = new Set(gCons.sel);
+  cont.innerHTML = "";
+  siglasTit().forEach(t => {
+    const cursos = cursosDe(t), n = cursos.filter(c => sel.has(`${t}|${c}`)).length;
+    const el = document.createElement("div"); el.className = "g-tit";
+    el.innerHTML = `<label class="nombre" title="${(D.titulaciones[t] || {}).nombre || ""}"><input type="checkbox" class="todo"${n === cursos.length ? " checked" : ""}> <b>${t}</b></label>
+      <span class="cursos">${cursos.map(c => `<label><input type="checkbox" data-c="${c}"${sel.has(`${t}|${c}`) ? " checked" : ""}>${c}º</label>`).join("")}</span>`;
+    el.querySelector(".todo").indeterminate = n > 0 && n < cursos.length;
+    el.querySelector(".todo").addEventListener("change", (ev) => {
+      gCons.sel = gCons.sel.filter(k => !k.startsWith(t + "|"));
+      if (ev.target.checked) gCons.sel.push(...cursos.map(c => `${t}|${c}`));
+      gTits(); gGuardar(); gDraw();
+    });
+    el.querySelectorAll("[data-c]").forEach(cb => cb.addEventListener("change", () => {
+      const k = `${t}|${cb.dataset.c}`;
+      gCons.sel = gCons.sel.filter(x => x !== k); if (cb.checked) gCons.sel.push(k);
+      gTits(); gGuardar(); gDraw();
+    }));
+    cont.appendChild(el);
+  });
+  $("g-n").textContent = `(${gCons.sel.length})`;
+}
+function gDraw() {
+  const ss = gSesiones();
+  const { dia, desde, hasta } = gCons;
+  // mapa semanal: asignaturas distintas por hora y día; clic = elegir esa hora, mayúsculas+clic = ampliar la franja
+  const mapa = [];
+  for (let h = H_MIN; h < H_MAX; h++) mapa.push([1, 2, 3, 4, 5].map(d => uniq(ss.filter(s => enFranja(s, d, h, h + 1)).map(s => s.asignatura_norm)).length));
+  const max = Math.max(1, ...mapa.flat());
+  $("g-mapa").innerHTML = `<table class="g-mapa"><thead><tr><th></th>${DIAS.map(d => `<th>${d}</th>`).join("")}</tr></thead><tbody>` +
+    mapa.map((fila, i) => { const h = H_MIN + i; return `<tr><th>${h}:00</th>` + fila.map((n, j) => {
+      const act = j + 1 === dia && h >= desde && h < hasta;
+      return `<td data-d="${j + 1}" data-h="${h}" class="${act ? "act" : ""}" style="${n ? `background:rgba(220,38,38,${(0.1 + 0.6 * n / max).toFixed(2)})` : ""}" title="${DIAS[j]} ${h}:00–${h + 1}:00: ${n} asignatura(s)">${n || ""}</td>`;
+    }).join("") + "</tr>"; }).join("") + "</tbody></table>" +
+    '<div class="meta">Asignaturas distintas por hora para la selección. Clic en una celda: elige esa hora; mayúsculas + clic: amplía la franja en el mismo día.</div>';
+  $("g-mapa").querySelectorAll("td").forEach(td => td.addEventListener("click", (ev) => {
+    const d = Number(td.dataset.d), h = Number(td.dataset.h);
+    if (ev.shiftKey && d === gCons.dia) { gCons.desde = Math.min(gCons.desde, h); gCons.hasta = Math.max(gCons.hasta, h + 1); }
+    else { gCons.dia = d; gCons.desde = h; gCons.hasta = h + 1; }
+    gControles(); gGuardar(); gDraw();
+  }));
+
+  // detalle de la franja: asignatura -> grupo/horario/aula -> hojas de horario (titulación, curso, grupo) donde aparece
+  const fr = ss.filter(s => enFranja(s, dia, desde, hasta));
+  const asigs = new Map();
+  fr.forEach(s => {
+    const a = asigs.get(s.asignatura_norm) || { nombre: s.asignatura_norm, codigo: s.codigo || "", grupos: new Map() };
+    if (s.asignatura.toUpperCase() !== s.asignatura) a.nombre = s.asignatura.replace(/\s*TUTOR[IÍ]A\s*/i, "");
+    const k = `${s.grupo}|${s.hora_inicio}|${s.hora_fin}|${s.aulas || s.aulas_raw}`;
+    const g = a.grupos.get(k) || { s, hojas: new Set(), tutoria: false };
+    g.hojas.add(`${s.titulaciones} ${s.curso}º ${s.grupo_horario}${s.semana ? " (" + s.semana + ")" : ""}`);
+    g.tutoria = g.tutoria || esTutoria(s);
+    a.grupos.set(k, g); asigs.set(s.asignatura_norm, a);
+  });
+  const lista = [...asigs.values()].sort((a, b) => sortNat(a.nombre, b.nombre));
+  const nGrupos = lista.reduce((n, a) => n + a.grupos.size, 0);
+  // recuento por titulación y curso marcados
+  const porTC = new Map();
+  fr.forEach(s => s.titulaciones.split("/").forEach(t => {
+    const k = `${t}|${s.curso}`; if (!gCons.sel.includes(k)) return;
+    (porTC.get(k) || porTC.set(k, new Set()).get(k)).add(s.asignatura_norm);
+  }));
+  const franja = `${DIAS[dia - 1]} ${desde}:00–${hasta}:00 · ${gCons.sem}º cuatrimestre`;
+  $("g-resumen").innerHTML = !gCons.sel.length ? '<div class="meta">Marca al menos una titulación o curso.</div>' :
+    `<div class="g-cifra"><b>${lista.length}</b> asignatura${lista.length === 1 ? "" : "s"} coinciden · ${nGrupos} grupo${nGrupos === 1 ? "" : "s"}</div><div class="meta">${franja}</div>` +
+    (porTC.size ? `<div class="g-chips">${[...porTC].sort((a, b) => sortNat(a[0], b[0])).map(([k, v]) => `<span>${k.replace("|", " ")}º: <b>${v.size}</b></span>`).join("")}</div>` : "");
+  $("g-resultado").innerHTML = !lista.length ? (gCons.sel.length ? `<div class="empty">Ninguna asignatura en ${franja}</div>` : "") :
+    `<table class="g-tabla"><thead><tr><th>Asignatura</th><th>Grupo</th><th>Horario</th><th>Aula</th><th>Hojas de horario</th></tr></thead><tbody>` +
+    lista.map(a => [...a.grupos.values()].sort((x, y) => sortNat(x.s.grupo, y.s.grupo)).map((g, i) => `<tr>` +
+      (i === 0 ? `<td rowspan="${a.grupos.size}"><span class="sw" style="background:${color(g.s.asignatura_norm)}"></span>${a.nombre}${a.codigo ? ` <span class="meta">${a.codigo}</span>` : ""}</td>` : "") +
+      `<td>${g.s.grupo} <span class="meta">${g.s.tipo_grupo}${g.tutoria ? " · tutoría" : ""}</span></td><td>${g.s.hora_inicio}–${g.s.hora_fin}</td>` +
+      `<td>${g.s.aulas || g.s.aulas_raw || "—"}</td><td>${[...g.hojas].sort(sortNat).join(", ")}</td></tr>`).join("")).join("") +
+    "</tbody></table>";
+}
+
+tInit(); aInit(); pInit(); eInit(); gInit();
 })();

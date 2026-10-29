@@ -79,3 +79,31 @@ button:hover { border-color: var(--accent); }
 .pie { padding: 8px 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; line-height: 1.6; }
 .pie a { color: #1d4ed8; }
 @media print { .pie { display: none; } }
+
+/* Vista gestor (solapamientos en una franja) */
+.panel .row .campo { display: flex; flex-direction: column; font-size: 12px; color: var(--muted); gap: 2px; }
+.panel .row.chks { font-size: 12px; }
+.panel .row.chks label { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; margin-right: 8px; }
+.g-tit { display: flex; align-items: center; gap: 8px; padding: 4px 8px; border-bottom: 1px solid #eef0f3; font-size: 12px; }
+.g-tit .nombre { display: flex; align-items: center; gap: 4px; min-width: 78px; cursor: pointer; }
+.g-tit .cursos { display: flex; gap: 6px; }
+.g-tit .cursos label { display: flex; align-items: center; gap: 2px; cursor: pointer; }
+.g-resumen { margin-bottom: 10px; }
+.g-resumen .meta, #g-mapa .meta { color: var(--muted); font-size: 12px; }
+.g-cifra { font-size: 16px; }
+.g-cifra b { font-size: 22px; color: var(--danger); }
+.g-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 12px; }
+.g-chips span { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1px 8px; }
+#g-mapa { margin-bottom: 14px; }
+.g-mapa { border-collapse: collapse; background: var(--panel); font-size: 12px; min-width: 520px; }
+.g-mapa th { padding: 3px 8px; font-weight: 600; color: var(--muted); background: #f0f2f5; border: 1px solid var(--line); }
+.g-mapa tbody th { text-align: right; font-weight: normal; }
+.g-mapa td { width: 90px; height: 24px; text-align: center; border: 1px solid var(--line); cursor: pointer; font-weight: 600; }
+.g-mapa td:hover { outline: 2px solid var(--accent); outline-offset: -2px; }
+.g-mapa td.act { outline: 3px solid var(--accent); outline-offset: -3px; }
+.g-tabla { width: 100%; border-collapse: collapse; background: var(--panel); font-size: 12px; border: 1px solid var(--line); }
+.g-tabla th { text-align: left; padding: 5px 8px; background: #f0f2f5; border-bottom: 1px solid var(--line); }
+.g-tabla td { padding: 4px 8px; border-bottom: 1px solid #eef0f3; vertical-align: top; }
+.g-tabla td[rowspan] { border-right: 1px solid #eef0f3; font-weight: 600; }
+.g-tabla .sw { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; }
+.g-tabla .meta { color: var(--muted); font-weight: normal; font-size: 11px; }

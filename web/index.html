@@ -14,6 +14,7 @@
     <button data-view="aula">Por aula</button>
     <button data-view="perfil">Perfiles</button>
     <button data-view="estudiante">Estudiante</button>
+    <button data-view="gestor">Solapamientos</button>
   </nav>
 </header>
 
@@ -103,6 +104,40 @@
         <div id="e-solapes" class="solapes"></div>
       </aside>
       <div id="e-grid" class="grid-wrap"></div>
+    </div>
+  </section>
+
+  <!-- Vista gestor: asignaturas que coinciden en una franja -->
+  <section id="view-gestor" class="view">
+    <div class="perfil-layout">
+      <aside class="panel">
+        <h2>Solapamientos en una franja</h2>
+        <div class="row">
+          <select id="g-sem"><option value="1">1º cuatr.</option><option value="2">2º cuatr.</option></select>
+          <select id="g-dia"></select>
+        </div>
+        <div class="row">
+          <label class="campo">Desde <select id="g-desde"></select></label>
+          <label class="campo">Hasta <select id="g-hasta"></select></label>
+        </div>
+        <div class="row chks">
+          <label><input type="checkbox" id="g-grandes" checked> Grandes</label>
+          <label><input type="checkbox" id="g-pequenos" checked> Pequeños</label>
+          <label><input type="checkbox" id="g-tutorias" checked> Tutorías</label>
+        </div>
+        <h3>Titulaciones y cursos <span id="g-n"></span></h3>
+        <div class="row">
+          <button id="g-todas">Todas</button>
+          <button id="g-ninguna">Ninguna</button>
+          <button id="g-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button>
+        </div>
+        <div id="g-tits" class="lista alta"></div>
+      </aside>
+      <div>
+        <div id="g-resumen" class="g-resumen"></div>
+        <div id="g-mapa" class="grid-wrap"></div>
+        <div id="g-resultado"></div>
+      </div>
     </div>
   </section>
 </main>

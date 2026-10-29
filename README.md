@@ -83,6 +83,12 @@ Se puede abrir directamente `web/index.html` en el navegador o servirla con `pyt
   pequeños que pertenecen al grande (1A → 1A1). El selector «Grupo: solo B» restringe todos los grupos, grandes y
   pequeños, a los de una misma letra (1B, 1B1, 1B2…), tanto en los desplegables como en la búsqueda automática. La selección se guarda en el navegador y en la URL (`#est=…`), que se puede
   copiar y compartir; el botón PDF imprime la hoja en formato EPS (`imprimir.html?tipo=estudiante&sel=…`).
+- **Solapamientos** (para gestores): se eligen cuatrimestre, día y franja (desde/hasta) y se marcan titulaciones o cursos
+  concretos (la casilla de la titulación marca todos sus cursos). Muestra cuántas asignaturas distintas coinciden en la franja,
+  el recuento por titulación y curso, y la lista de asignaturas con grupo, horario, aula y hojas de horario en que aparecen.
+  Un mapa semanal (hora × día) da el número de asignaturas por hora para la selección; un clic en una celda elige esa hora y
+  mayúsculas + clic amplía la franja en el mismo día. Se pueden excluir grupos grandes, pequeños o tutorías. La consulta se
+  guarda en el navegador y «Copiar enlace» la comparte (`#ges=…`).
 
 ## Impresión y generación de PDF
 
