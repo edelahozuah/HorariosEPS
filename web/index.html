@@ -15,6 +15,7 @@
     <button data-view="perfil">Perfiles</button>
     <button data-view="estudiante">Estudiante</button>
     <button data-view="gestor">Solapamientos</button>
+    <button data-view="pruebas">Pruebas</button>
   </nav>
 </header>
 
@@ -140,6 +141,40 @@
       </div>
     </div>
   </section>
+
+  <!-- Vista pruebas: calendario de pruebas de evaluación y coincidencias -->
+  <section id="view-pruebas" class="view">
+    <div class="perfil-layout">
+      <aside class="panel">
+        <h2>Pruebas de evaluación <span id="x-curso" class="meta"></span></h2>
+        <div class="row">
+          <label class="campo">Desde <input type="date" id="x-desde"></label>
+          <label class="campo">Hasta <input type="date" id="x-hasta"></label>
+        </div>
+        <div class="row chks" id="x-tipos"></div>
+        <div class="row">
+          <select id="x-modo" title="Qué pruebas se comparan entre sí">
+            <option value="grupo">Coincidencias dentro de cada titulación y curso</option>
+            <option value="todo">Coincidencias entre todo lo seleccionado</option>
+          </select>
+        </div>
+        <div class="row chks"><label><input type="checkbox" id="x-solo"> Sólo días con coincidencias</label></div>
+        <h3>Titulaciones y cursos <span id="x-n"></span></h3>
+        <div class="row">
+          <button id="x-todas">Todas</button>
+          <button id="x-ninguna">Ninguna</button>
+          <button id="x-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button>
+        </div>
+        <div id="x-tits" class="lista alta"></div>
+        <div id="x-avisos" class="x-avisos"></div>
+      </aside>
+      <div>
+        <div id="x-resumen" class="g-resumen"></div>
+        <div id="x-meses" class="x-meses"></div>
+        <div id="x-lista"></div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="pie">
@@ -147,7 +182,7 @@
   <a href="data/sesiones.csv">sesiones.csv</a> · <a href="data/sesiones.json">sesiones.json</a> ·
   <a href="data/asignaturas.csv">asignaturas.csv</a> · <a href="data/aulas.csv">aulas.csv</a> ·
   <a href="data/guias.csv">guias.csv</a> · <a href="data/guias.json">guias.json</a> · <a href="data/codigos.csv">codigos.csv</a> ·
-  <a href="data/fuentes.csv">fuentes.csv</a> · <a href="data/LICENSE">licencia</a> ·
+  <a href="data/fuentes.csv">fuentes.csv</a> · <a href="data/pruebas.csv">pruebas.csv</a> · <a href="data/calendarios.csv">calendarios.csv</a> · <a href="data/LICENSE">licencia</a> ·
   <a href="https://github.com/edelahozuah/HorariosEPS">código y documentación (MIT)</a>
 </footer>
 
@@ -155,6 +190,7 @@
 
 <script src="data.js"></script>
 <script src="guias.js"></script>
+<script src="pruebas.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

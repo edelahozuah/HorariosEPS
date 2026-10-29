@@ -475,28 +475,30 @@ function gControles() {
   $("g-sem").value = gCons.sem; $("g-dia").value = gCons.dia; $("g-desde").value = gCons.desde; $("g-hasta").value = gCons.hasta;
   $("g-grandes").checked = gCons.grandes; $("g-pequenos").checked = gCons.pequenos; $("g-tutorias").checked = gCons.tutorias;
 }
-// lista de titulaciones con una casilla por curso; la casilla de la titulación marca o desmarca todos sus cursos
-function gTits() {
-  const cont = $("g-tits"), sel = new Set(gCons.sel);
+// lista de titulaciones con una casilla por curso; la casilla de la titulación marca o desmarca todos sus cursos.
+// tits: siglas; cursos(t): cursos de la titulación; sel: claves "SIGLA|curso" marcadas; cambio(nuevaSel): al marcar/desmarcar
+function checklistTits(cont, tits, cursos, sel, cambio) {
+  const marcadas = new Set(sel);
   cont.innerHTML = "";
-  siglasTit().forEach(t => {
-    const cursos = cursosDe(t), n = cursos.filter(c => sel.has(`${t}|${c}`)).length;
+  tits.forEach(t => {
+    const cs = cursos(t), n = cs.filter(c => marcadas.has(`${t}|${c}`)).length;
     const el = document.createElement("div"); el.className = "g-tit";
-    el.innerHTML = `<label class="nombre" title="${(D.titulaciones[t] || {}).nombre || ""}"><input type="checkbox" class="todo"${n === cursos.length ? " checked" : ""}> <b>${t}</b></label>
-      <span class="cursos">${cursos.map(c => `<label><input type="checkbox" data-c="${c}"${sel.has(`${t}|${c}`) ? " checked" : ""}>${c}º</label>`).join("")}</span>`;
-    el.querySelector(".todo").indeterminate = n > 0 && n < cursos.length;
+    el.innerHTML = `<label class="nombre" title="${(D.titulaciones[t] || {}).nombre || ""}"><input type="checkbox" class="todo"${n === cs.length ? " checked" : ""}> <b>${t}</b></label>
+      <span class="cursos">${cs.map(c => `<label><input type="checkbox" data-c="${c}"${marcadas.has(`${t}|${c}`) ? " checked" : ""}>${c}º</label>`).join("")}</span>`;
+    el.querySelector(".todo").indeterminate = n > 0 && n < cs.length;
     el.querySelector(".todo").addEventListener("change", (ev) => {
-      gCons.sel = gCons.sel.filter(k => !k.startsWith(t + "|"));
-      if (ev.target.checked) gCons.sel.push(...cursos.map(c => `${t}|${c}`));
-      gTits(); gGuardar(); gDraw();
+      const resto = sel.filter(k => !k.startsWith(t + "|"));
+      cambio(ev.target.checked ? [...resto, ...cs.map(c => `${t}|${c}`)] : resto);
     });
     el.querySelectorAll("[data-c]").forEach(cb => cb.addEventListener("change", () => {
       const k = `${t}|${cb.dataset.c}`;
-      gCons.sel = gCons.sel.filter(x => x !== k); if (cb.checked) gCons.sel.push(k);
-      gTits(); gGuardar(); gDraw();
+      cambio(cb.checked ? [...sel, k] : sel.filter(x => x !== k));
     }));
     cont.appendChild(el);
   });
+}
+function gTits() {
+  checklistTits($("g-tits"), siglasTit(), cursosDe, gCons.sel, (sel) => { gCons.sel = sel; gTits(); gGuardar(); gDraw(); });
   $("g-n").textContent = `(${gCons.sel.length})`;
 }
 function gDraw() {
@@ -552,5 +554,142 @@ function gDraw() {
     "</tbody></table>";
 }
 
-tInit(); aInit(); pInit(); eInit(); gInit();
+// ---------- vista pruebas: calendario de pruebas de evaluación (web/pruebas.js, opcional) ----------
+// Consulta: { desde, hasta (AAAA-MM-DD), sel: ["GITT|3", ...], tipos: [...], modo: "grupo" | "todo", solo, dia }
+const PR = (window.PRUEBAS && window.PRUEBAS.pruebas) || [];
+const LSX = "horarios-eps-pruebas";
+const TIPOS_PRUEBA = ["intermedia", "laboratorio", "entrega", "final", "extraordinaria", "presentación", "otra"];
+const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+const DIAS7 = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+const hoyISO = () => new Date().toISOString().slice(0, 10);
+const fechaLarga = (f) => { const d = new Date(f + "T12:00"); return `${DIAS7[(d.getDay() + 6) % 7]} ${d.getDate()} de ${MESES[d.getMonth()]}`; };
+const siglasPr = () => uniq(PR.flatMap(p => p.titulaciones.split("/"))).sort(sortNat);
+const cursosPr = (t) => uniq(PR.filter(p => p.titulaciones.split("/").includes(t)).map(p => p.curso)).sort();
+const asigPr = (p) => p.codigo || p.asignatura || p.prueba;    // misma asignatura -> no es coincidencia
+let xCons = { desde: "", hasta: "", sel: [], tipos: TIPOS_PRUEBA.slice(), modo: "grupo", solo: false, dia: "" };
+
+function xGuardar() { try { localStorage.setItem(LSX, JSON.stringify(xCons)); } catch {} }
+function xCargar() {
+  const m = location.hash.match(/^#pru=(.+)$/);
+  try { if (m) { Object.assign(xCons, JSON.parse(decodeURIComponent(m[1]))); return true; } } catch {}
+  try { const v = localStorage.getItem(LSX); if (v) Object.assign(xCons, JSON.parse(v)); } catch {}
+  return false;
+}
+// cohortes (titulación|curso marcadas) a las que afecta una prueba
+const cohortes = (p, sel) => p.titulaciones.split("/").map(t => `${t}|${p.curso}`).filter(k => sel.has(k));
+
+function xInit() {
+  if (!PR.length) { document.querySelector('.tabs button[data-view="pruebas"]').hidden = true; return; }
+  const fechas = PR.map(p => p.fecha).sort();
+  $("x-curso").textContent = window.PRUEBAS.curso_academico || "";
+  const desdeUrl = xCargar();
+  if (!xCons.desde) xCons.desde = hoyISO() > fechas[0] ? hoyISO() : fechas[0];
+  if (!xCons.hasta) xCons.hasta = fechas[fechas.length - 1];
+  if (!xCons.sel.length) xCons.sel = siglasPr().flatMap(t => cursosPr(t).map(c => `${t}|${c}`));
+  $("x-tipos").innerHTML = TIPOS_PRUEBA.map(t => `<label><input type="checkbox" value="${t}"> ${t}</label>`).join("");
+  xTits(); xControles();
+  const leer = () => {
+    xCons.desde = $("x-desde").value || fechas[0]; xCons.hasta = $("x-hasta").value || fechas[fechas.length - 1];
+    xCons.tipos = [...$("x-tipos").querySelectorAll("input:checked")].map(i => i.value);
+    xCons.modo = $("x-modo").value; xCons.solo = $("x-solo").checked; xCons.dia = "";
+    xGuardar(); xDraw();
+  };
+  ["x-desde", "x-hasta", "x-modo", "x-solo"].forEach(id => $(id).addEventListener("change", leer));
+  $("x-tipos").addEventListener("change", leer);
+  $("x-todas").addEventListener("click", () => { xCons.sel = siglasPr().flatMap(t => cursosPr(t).map(c => `${t}|${c}`)); xTits(); xGuardar(); xDraw(); });
+  $("x-ninguna").addEventListener("click", () => { xCons.sel = []; xTits(); xGuardar(); xDraw(); });
+  $("x-compartir").addEventListener("click", () => {
+    history.replaceState(null, "", location.pathname + location.search + "#pru=" + encodeURIComponent(JSON.stringify(xCons)));
+    navigator.clipboard?.writeText(location.href).then(() => alert("Enlace copiado:\n" + location.href), () => prompt("Copia el enlace:", location.href));
+  });
+  // calendarios publicados con problemas (enlace iCal que no es el del calendario empotrado, sin calendario…)
+  const av = (window.PRUEBAS.calendarios || []).filter(c => c.aviso && !/no es de pruebas/.test(c.aviso));
+  $("x-avisos").innerHTML = av.length ? `<h3>Avisos de la web (${av.length})</h3>` + av.map(c =>
+    `<div><a href="${c.url_pagina}" target="_blank" rel="noopener">${c.titulaciones} ${c.curso ? c.curso + "º" : ""}</a>: ${c.aviso}</div>`).join("") : "";
+  if (desdeUrl) document.querySelector('.tabs button[data-view="pruebas"]').click();
+  xDraw();
+}
+function xControles() {
+  $("x-desde").value = xCons.desde; $("x-hasta").value = xCons.hasta; $("x-modo").value = xCons.modo; $("x-solo").checked = xCons.solo;
+  $("x-tipos").querySelectorAll("input").forEach(i => { i.checked = xCons.tipos.includes(i.value); });
+}
+function xTits() {
+  checklistTits($("x-tits"), siglasPr(), cursosPr, xCons.sel, (sel) => { xCons.sel = sel; xTits(); xGuardar(); xDraw(); });
+  $("x-n").textContent = `(${xCons.sel.length})`;
+}
+/* Coincidencias de un día entre pruebas de asignaturas distintas que comparten titulación y curso (modo "grupo")
+   o de toda la selección (modo "todo"): "solape" si las horas se pisan, "mismo día" si alguna no tiene hora. */
+function xCoincidencias(ps, sel) {
+  const marca = new Map(), pares = [];
+  for (let i = 0; i < ps.length; i++) for (let j = i + 1; j < ps.length; j++) {
+    const a = ps[i], b = ps[j];
+    if (asigPr(a) === asigPr(b)) continue;
+    const comunes = xCons.modo === "todo" ? cohortes(a, sel) : cohortes(a, sel).filter(k => cohortes(b, sel).includes(k));
+    if (!comunes.length) continue;
+    let nivel;
+    if (a.dia_completo || b.dia_completo) nivel = "mismo día";
+    else if (h2n(a.hora_inicio) < h2n(b.hora_fin) && h2n(b.hora_inicio) < h2n(a.hora_fin)) nivel = "solape";
+    else continue;
+    pares.push({ a, b, nivel, comunes });
+    [a, b].forEach(p => { if (marca.get(p.id) !== "solape") marca.set(p.id, nivel); });
+  }
+  return { marca, pares };
+}
+function xDraw() {
+  const sel = new Set(xCons.sel), tipos = new Set(xCons.tipos);
+  const ps = PR.filter(p => p.fecha >= xCons.desde && p.fecha <= xCons.hasta && tipos.has(p.tipo) && cohortes(p, sel).length);
+  const porDia = new Map();
+  ps.forEach(p => (porDia.get(p.fecha) || porDia.set(p.fecha, []).get(p.fecha)).push(p));
+  const coinc = new Map();
+  porDia.forEach((l, f) => coinc.set(f, xCoincidencias(l, sel)));
+  const diasCoinc = [...coinc].filter(([, c]) => c.pares.length).length;
+  const nSolapes = [...coinc.values()].reduce((n, c) => n + c.pares.filter(x => x.nivel === "solape").length, 0);
+  $("x-resumen").innerHTML = !xCons.sel.length ? '<div class="meta">Marca al menos una titulación o curso.</div>' :
+    `<div class="g-cifra"><b>${ps.length}</b> prueba${ps.length === 1 ? "" : "s"} en ${porDia.size} día${porDia.size === 1 ? "" : "s"}` +
+    ` · <span class="x-sol">${nSolapes}</span> solape${nSolapes === 1 ? "" : "s"} de horario · ${diasCoinc} día${diasCoinc === 1 ? "" : "s"} con coincidencias</div>` +
+    `<div class="meta">Del ${fechaLarga(xCons.desde)} de ${xCons.desde.slice(0, 4)} al ${fechaLarga(xCons.hasta)} de ${xCons.hasta.slice(0, 4)}. Datos de los calendarios de la EPS (fechas tentativas), generados el ${window.PRUEBAS.generado}.</div>`;
+
+  // calendario: un mes por bloque, semanas de lunes a domingo
+  const max = Math.max(1, ...[...porDia.values()].map(l => l.length));
+  let html = "";
+  if (xCons.desde <= xCons.hasta) {
+    const d0 = new Date(xCons.desde + "T12:00"), d1 = new Date(xCons.hasta + "T12:00");
+    for (let m = new Date(d0.getFullYear(), d0.getMonth(), 1, 12); m <= d1 && html.length < 200000; m.setMonth(m.getMonth() + 1)) {
+      const y = m.getFullYear(), mo = m.getMonth(), nd = new Date(y, mo + 1, 0).getDate(), hueco = (new Date(y, mo, 1).getDay() + 6) % 7;
+      let celdas = "<td></td>".repeat(hueco);
+      for (let d = 1; d <= nd; d++) {
+        const f = `${y}-${String(mo + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`, l = porDia.get(f) || [], c = coinc.get(f);
+        const fuera = f < xCons.desde || f > xCons.hasta;
+        const cls = [fuera ? "fuera" : "", c && c.pares.some(x => x.nivel === "solape") ? "sol" : c && c.pares.length ? "mismo" : "", f === xCons.dia ? "act" : "", f === hoyISO() ? "hoy" : ""].join(" ");
+        celdas += `<td data-f="${l.length ? f : ""}" class="${cls}" style="${l.length && !fuera ? `background:rgba(29,78,216,${(0.08 + 0.45 * l.length / max).toFixed(2)})` : ""}"` +
+          ` title="${fechaLarga(f)}: ${l.length} prueba(s)${c && c.pares.length ? ` · ${c.pares.length} coincidencia(s)` : ""}"><span class="d">${d}</span>${l.length && !fuera ? `<b>${l.length}</b>` : ""}</td>`;
+        if ((hueco + d) % 7 === 0) celdas += "</tr><tr>";
+      }
+      html += `<table class="x-mes"><caption>${MESES[mo]} ${y}</caption><thead><tr>${["L", "M", "X", "J", "V", "S", "D"].map(x => `<th>${x}</th>`).join("")}</tr></thead><tbody><tr>${celdas}</tr></tbody></table>`;
+    }
+  }
+  $("x-meses").innerHTML = html + '<div class="meta">Nº de pruebas por día. Borde rojo: pruebas que se solapan en horario; ámbar: varias el mismo día (alguna sin hora). Clic en un día para verlo; otra vez para verlos todos.</div>';
+  $("x-meses").querySelectorAll("td[data-f]").forEach(td => { if (td.dataset.f) td.addEventListener("click", () => { xCons.dia = xCons.dia === td.dataset.f ? "" : td.dataset.f; xDraw(); }); });
+
+  // lista por día
+  let dias = [...porDia.keys()].sort();
+  if (xCons.dia) dias = dias.filter(f => f === xCons.dia);
+  else if (xCons.solo) dias = dias.filter(f => coinc.get(f).pares.length);
+  $("x-lista").innerHTML = (xCons.dia ? `<div class="meta"><a href="#" id="x-todos">← todos los días</a></div>` : "") + dias.map(f => {
+    const l = porDia.get(f).slice().sort((a, b) => (a.hora_inicio || "99").localeCompare(b.hora_inicio || "99") || sortNat(a.titulaciones, b.titulaciones));
+    const c = coinc.get(f);
+    return `<div class="x-dia"><h4>${fechaLarga(f)} <span class="meta">· ${l.length} prueba${l.length === 1 ? "" : "s"}</span></h4>
+      <table class="g-tabla"><thead><tr><th>Hora</th><th>Asignatura</th><th>Prueba</th><th>Titulación</th><th>Tipo</th></tr></thead><tbody>` +
+      l.map(p => { const m = c.marca.get(p.id); return `<tr class="${m === "solape" ? "x-sol" : m ? "x-mismo" : ""}" title="${(p.descripcion || "").replace(/"/g, "&quot;")}">
+        <td>${p.dia_completo ? '<span class="meta">sin hora</span>' : `${p.hora_inicio}–${p.hora_fin}`}</td>
+        <td>${p.asignatura ? `<span class="sw" style="background:${color(p.asignatura.toUpperCase())}"></span>${p.asignatura}${p.codigo ? ` <span class="meta">${p.codigo}</span>` : ""}` : '<span class="meta">—</span>'}</td>
+        <td>${p.prueba}${p.descripcion ? ` <span class="meta">· ${p.descripcion.slice(0, 80)}</span>` : ""}</td>
+        <td>${p.titulaciones} ${p.curso}º</td><td>${p.tipo}</td></tr>`; }).join("") + "</tbody></table>" +
+      (c.pares.length ? `<div class="solapes">${c.pares.map(x => `<div class="${x.nivel === "solape" ? "s" : "s mismo"}">${x.nivel === "solape" ? "Solape" : "Mismo día"} (${x.comunes.map(k => k.replace("|", " ") + "º").join(", ")}): ` +
+        `${x.a.asignatura || x.a.prueba}${x.a.hora_inicio ? " " + x.a.hora_inicio : ""} ↔ ${x.b.asignatura || x.b.prueba}${x.b.hora_inicio ? " " + x.b.hora_inicio : ""}</div>`).join("")}</div>` : "") + "</div>";
+  }).join("") + (!dias.length && xCons.sel.length ? '<div class="empty">Sin pruebas con estos filtros</div>' : "");
+  $("x-todos")?.addEventListener("click", (e) => { e.preventDefault(); xCons.dia = ""; xDraw(); });
+}
+
+tInit(); aInit(); pInit(); eInit(); gInit(); xInit();
 })();

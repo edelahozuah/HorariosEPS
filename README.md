@@ -155,6 +155,40 @@ Con el fichero presente, `codigo` aparece en `franjas.csv`, `sesiones.csv`, `asi
 (tooltip y búsqueda de perfiles); las hojas de impresión lo muestran si se añade `&codigos=1` a la URL.
 Las asignaturas que queden sin código se listan en `avisos.txt`.
 
+## Calendarios de pruebas (`scripts/extraer_pruebas.py`)
+
+La página <https://escuelapolitecnica.uah.es/es/estudiantes/calendario-academico/> enlaza un «Calendario» por titulación y
+curso. Cada página empotra un calendario de Outlook (teleco, informática, GMC, GIECAI, MUIT) o de Google (industriales,
+MUII; en GIEAI y GITI uno por asignatura, mezclando clases y pruebas) e indica bajo «Cómo integrar los calendarios en
+lectores compatibles con iCAL» la URL del `.ics`.
+
+    python3 scripts/extraer_pruebas.py              # curso académico actual; páginas y .ics en cache/calendarios/
+    python3 scripts/extraer_pruebas.py --sin-cache  # vuelve a descargar
+    python3 scripts/extraer_pruebas.py --curso 2025/2026 -v   # otro curso; -v lista los eventos descartados
+
+- `data/calendarios.csv` – inventario: una fila por página y `.ics` (titulaciones, curso, plataforma, origen, nombre del
+  calendario, eventos del curso, pruebas y avisos).
+- `data/pruebas.csv` / `pruebas.json` y `web/pruebas.js` – una fila por prueba: titulaciones y curso del calendario, fecha,
+  `hora_inicio`/`hora_fin` (vacías si es de día completo, `dia_completo` = 1), asignatura y código, semestre, texto de la
+  prueba, siglas (`PEI1`, `PL2`, `TC1+TCL1`…), `tipo` (intermedia, laboratorio, entrega, final, extraordinaria,
+  presentación, otra), descripción y ubicación. No hay aulas.
+
+Notas:
+
+- Se toma como fuente el calendario empotrado (lo que ve el estudiante). En algunas páginas el enlace iCal del texto es el de
+  otra (GIECAI 1º y 4º, GMC 2º, 3º y 4º); se avisa en `calendarios.csv` y en la app. Se ignoran el ejemplo
+  `.../public/basic.ics` y los enlaces «safelinks».
+- 1º y 2º de teleco son comunes (`GITT/GIST/GIEC/GIT`), como en los horarios.
+- Se descartan fiestas, vacaciones, clases y «Periodo de exámenes»; en los calendarios de Google sólo se conservan los eventos
+  con aspecto de prueba (PEI, PL, examen, entrega…). Se omiten el «Calendario Académico» de Google y el de Bonocréditos.
+  Si una prueba figura dos veces el mismo día (de día completo y con hora), se queda la que tiene hora.
+- Las repeticiones (`RRULE`, con `EXDATE`) se expanden; las horas son de Madrid.
+- La asignatura sale del nombre del calendario en Google («1C1-610000 ÁLGEBRA») y del texto del evento en Outlook, casado con
+  las guías y los horarios de la titulación y curso: código explícito, `data/alias.csv`, nombre completo (también en inglés),
+  abreviaturas por prefijos («Estruct. Datos», «E. Potencia») y siglas («TDS», «SPI»). Las que no casan se listan al
+  ejecutar; se resuelven añadiendo una línea a `data/alias.csv`.
+- Las fechas son tentativas: conviene regenerar los datos periódicamente.
+
 ## Datos abiertos y licencia
 
 - Código (`scripts/`, `web/*.js|html|css`): licencia MIT (`LICENSE`).
