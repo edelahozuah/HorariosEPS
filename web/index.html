@@ -14,9 +14,7 @@
     <button data-view="aula">Por aula</button>
     <button data-view="perfil">Perfiles</button>
     <button data-view="estudiante">Estudiante</button>
-    <button data-view="gestor">Solapamientos</button>
-    <button data-view="pruebas">Pruebas</button>
-    <button data-view="planificar">Planificar prueba</button>
+    <button data-view="gestion">Gestión</button>
   </nav>
 </header>
 
@@ -109,116 +107,82 @@
     </div>
   </section>
 
-  <!-- Vista gestor: asignaturas que coinciden en una franja -->
-  <section id="view-gestor" class="view">
+  <!-- Gestión: un ámbito común (asignaturas, titulaciones y cursos, grupos) y tres vistas -->
+  <section id="view-gestion" class="view">
     <div class="perfil-layout">
       <aside class="panel">
-        <h2>Solapamientos en una franja</h2>
+        <h2>Ámbito</h2>
+        <div id="am-resumen" class="am-resumen"></div>
+        <h3>Asignaturas de referencia <span id="am-na"></span></h3>
+        <input id="am-buscar" placeholder="Añadir: nombre, código o titulación (p. ej. «redes GIT»)…">
+        <div id="am-resultados" class="lista" hidden></div>
+        <div id="am-asig" class="lista"></div>
+        <h3>Titulaciones y cursos <span id="am-n"></span></h3>
         <div class="row">
-          <select id="g-sem"><option value="1">1º cuatr.</option><option value="2">2º cuatr.</option></select>
-          <select id="g-dia"></select>
+          <button id="am-todas">Todas</button>
+          <button id="am-ninguna">Ninguna</button>
         </div>
-        <div class="row">
-          <label class="campo">Desde <select id="g-desde"></select></label>
-          <label class="campo">Hasta <select id="g-hasta"></select></label>
-        </div>
+        <div id="am-tits" class="lista alta"></div>
         <div class="row chks">
-          <label><input type="checkbox" id="g-grandes" checked> Grandes</label>
-          <label><input type="checkbox" id="g-pequenos" checked> Pequeños</label>
-          <label><input type="checkbox" id="g-tutorias" checked> Tutorías</label>
+          <label title="Añade el curso anterior y el siguiente de cada titulación marcada"><input type="checkbox" id="am-contiguos"> Incluir cursos contiguos</label>
         </div>
-        <h3>Titulaciones y cursos <span id="g-n"></span></h3>
-        <div class="row">
-          <button id="g-todas">Todas</button>
-          <button id="g-ninguna">Ninguna</button>
-          <button id="g-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button>
-        </div>
-        <div id="g-tits" class="lista alta"></div>
+        <h3>Grupos de horario</h3>
+        <div id="am-letras" class="row chks"></div>
+        <div class="row"><button id="am-compartir" title="Copia un enlace con el ámbito, la vista y sus opciones">🔗 Copiar enlace</button></div>
       </aside>
       <div>
-        <div id="g-resumen" class="g-resumen"></div>
-        <div id="g-mapa" class="grid-wrap"></div>
-        <div id="g-resultado"></div>
-      </div>
-    </div>
-  </section>
+        <nav class="subtabs">
+          <button data-sub="semana" title="Qué asignaturas coinciden en una franja de la semana">Semana tipo</button>
+          <button data-sub="calendario" title="Pruebas de evaluación por día y sus coincidencias">Calendario de pruebas</button>
+          <button data-sub="hueco" title="Días y franjas sin clases ni pruebas para poner una prueba">Buscar hueco</button>
+        </nav>
 
-  <!-- Vista pruebas: calendario de pruebas de evaluación y coincidencias -->
-  <section id="view-pruebas" class="view">
-    <div class="perfil-layout">
-      <aside class="panel">
-        <h2>Pruebas de evaluación <span id="x-curso" class="meta"></span></h2>
-        <div class="row">
-          <label class="campo">Desde <input type="date" id="x-desde"></label>
-          <label class="campo">Hasta <input type="date" id="x-hasta"></label>
+        <div id="sub-semana" class="sub">
+          <div class="controls">
+            <label>Cuatrimestre <select id="s-sem"><option value="1">1º</option><option value="2">2º</option></select></label>
+            <label>Día <select id="s-dia"></select></label>
+            <label>Desde <select id="s-desde"></select></label>
+            <label>Hasta <select id="s-hasta"></select></label>
+            <label class="chk"><input type="checkbox" id="s-grandes"> Grandes</label>
+            <label class="chk"><input type="checkbox" id="s-pequenos"> Pequeños</label>
+            <label class="chk"><input type="checkbox" id="s-tutorias"> Tutorías</label>
+          </div>
+          <div id="s-resumen" class="g-resumen"></div>
+          <div id="s-mapa" class="grid-wrap"></div>
+          <div id="s-resultado"></div>
         </div>
-        <div class="row chks" id="x-tipos"></div>
-        <div class="row">
-          <select id="x-modo" title="Qué pruebas se comparan entre sí">
-            <option value="grupo">Coincidencias dentro de cada titulación y curso</option>
-            <option value="todo">Coincidencias entre todo lo seleccionado</option>
-          </select>
-        </div>
-        <div class="row chks"><label><input type="checkbox" id="x-solo"> Sólo días con coincidencias</label></div>
-        <h3>Titulaciones y cursos <span id="x-n"></span></h3>
-        <div class="row">
-          <button id="x-todas">Todas</button>
-          <button id="x-ninguna">Ninguna</button>
-          <button id="x-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button>
-        </div>
-        <div id="x-tits" class="lista alta"></div>
-        <div id="x-avisos" class="x-avisos"></div>
-      </aside>
-      <div>
-        <div id="x-resumen" class="g-resumen"></div>
-        <div id="x-meses" class="x-meses"></div>
-        <div id="x-lista"></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Vista planificar: franjas libres para poner una prueba (sin clases ni otras pruebas) -->
-  <section id="view-planificar" class="view">
-    <div class="perfil-layout">
-      <aside class="panel">
-        <h2>Planificar una prueba</h2>
-        <h3>Asignaturas <span id="f-n"></span></h3>
-        <input id="f-buscar" placeholder="Nombre, código o titulación (p. ej. «redes GIT»)…">
-        <div id="f-resultados" class="lista"></div>
-        <div id="f-seleccion" class="lista"></div>
-        <h3>Con qué se compara</h3>
-        <div class="row">
-          <select id="f-alcance" title="Clases y pruebas de qué cursos de la titulación se tienen en cuenta">
-            <option value="curso">Mismo curso</option>
-            <option value="contiguos">Cursos contiguos (anterior, mismo y siguiente)</option>
-          </select>
+        <div id="sub-calendario" class="sub">
+          <div class="controls">
+            <label>Desde <input type="date" id="c-desde"></label>
+            <label>Hasta <input type="date" id="c-hasta"></label>
+            <label>Comparar <select id="c-modo">
+              <option value="grupo">dentro de cada titulación y curso</option>
+              <option value="todo">entre todo el ámbito</option>
+            </select></label>
+            <label class="chk"><input type="checkbox" id="c-solo"> Sólo días con coincidencias</label>
+          </div>
+          <div class="controls chks" id="c-tipos"></div>
+          <div id="c-resumen" class="g-resumen"></div>
+          <div id="c-meses" class="x-meses"></div>
+          <div id="c-lista"></div>
+          <div id="c-avisos" class="x-avisos"></div>
         </div>
-        <div class="row">
-          <select id="f-grupos" title="Grupos de horario cuyas clases se tienen en cuenta">
-            <option value="asig">Grupos de horario de la asignatura (misma letra)</option>
-            <option value="todos">Todos los grupos de horario</option>
-          </select>
+
+        <div id="sub-hueco" class="sub">
+          <div class="controls">
+            <label>Duración <select id="h-dur"></select></label>
+            <label>Entre <select id="h-hini"></select></label>
+            <label>y <select id="h-hfin"></select></label>
+            <label>Desde <input type="date" id="h-desde"></label>
+            <label>Hasta <input type="date" id="h-hasta"></label>
+            <label class="chk" title="Laboratorios y prácticas: sólo afectan a parte del grupo"><input type="checkbox" id="h-pequenos"> Clases de grupos pequeños</label>
+            <label class="chk" title="La prueba puede hacerse en el horario de clase de las asignaturas de referencia"><input type="checkbox" id="h-propia"> Usar las clases de las asignaturas de referencia</label>
+          </div>
+          <div id="h-resumen" class="g-resumen"></div>
+          <div id="h-meses" class="x-meses"></div>
+          <div id="h-detalle"></div>
         </div>
-        <div class="row chks">
-          <label title="Laboratorios y prácticas: sólo afectan a parte del grupo"><input type="checkbox" id="f-pequenos"> Clases de grupos pequeños</label>
-          <label title="La prueba puede hacerse en el horario de clase de la propia asignatura"><input type="checkbox" id="f-propia"> Usar las clases de la propia asignatura</label>
-        </div>
-        <h3>Prueba</h3>
-        <div class="row">
-          <label class="campo">Duración <select id="f-dur"></select></label>
-          <label class="campo">Entre <select id="f-hini"></select></label>
-          <label class="campo">y <select id="f-hfin"></select></label>
-        </div>
-        <div class="row">
-          <label class="campo">Desde <input type="date" id="f-desde"></label>
-          <label class="campo">Hasta <input type="date" id="f-hasta"></label>
-        </div>
-        <div class="row"><button id="f-compartir" title="Copia un enlace con esta consulta">🔗 Copiar enlace</button></div>
-      </aside>
-      <div>
-        <div id="f-resumen" class="g-resumen"></div>
-        <div id="f-meses" class="x-meses"></div>
-        <div id="f-detalle"></div>
       </div>
     </div>
   </section>

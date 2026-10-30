@@ -227,15 +227,17 @@ GENERICAS = {"PRUEBA", "PRUEBAS", "EXAMEN", "EVALUACION", "INTERMEDIA", "LABORAT
 
 class Catalogo:
     def __init__(self):
-        self.por_tc, self.por_tit, self.por_codigo = {}, {}, {}
+        self.por_tc, self.por_tit, self.por_codigo, self.plan = {}, {}, {}, {}   # plan: sigla -> código de plan (GIT -> G380)
 
-    def _alta(self, tit, curso, codigo, nombre, nombre_en=""):
+    def _alta(self, tit, curso, codigo, nombre, nombre_en="", de_guia=False):
         k = eh.nombre_canonico(nombre)
         c = self.por_codigo.get(codigo) if codigo else None
         if not c:
-            c = {"codigo": codigo, "nombre": nombre, "clave": k, "nombres": []}
+            c = {"codigo": codigo, "nombre": nombre, "clave": k, "nombres": [], "tits": set()}
             if codigo:
                 self.por_codigo[codigo] = c
+        if de_guia:
+            c["tits"].add(tit)   # titulaciones cuya guía docente usa este código
         for nm in (nombre, nombre_en):
             kk = eh.nombre_canonico(nm) if nm else ""
             if kk and kk not in [x["clave"] for x in c["nombres"]]:
@@ -248,9 +250,10 @@ class Catalogo:
     def cargar(self):
         with open(DATA_DIR / "guias.csv", encoding="utf-8") as fh:
             for g in csv.DictReader(fh):
+                self.plan.setdefault(g["titulacion"], g["plan"])
                 cursos = [g["curso"]] if g["curso"].isdigit() else (["3", "4", "5"] if g["curso"] == "OPT" else [""])
                 for cu in cursos:
-                    self._alta(g["titulacion"], cu, g["codigo"], g["asignatura"], g["asignatura_en"])
+                    self._alta(g["titulacion"], cu, g["codigo"], g["asignatura"], g["asignatura_en"], de_guia=True)
         with open(DATA_DIR / "sesiones.csv", encoding="utf-8") as fh:
             for s in csv.DictReader(fh):
                 for t in s["titulaciones"].split("/"):
@@ -263,6 +266,10 @@ class Catalogo:
         if m and m.group(1) in self.por_codigo:
             return self.por_codigo[m.group(1)]
         tits = titulaciones.split("/")
+        # a igualdad (asignaturas compartidas con un código por plan), el código numerado como el plan de la titulación
+        # (GITT, plan G350: 350020; GIT, plan G380: 380000) y, si no, uno cuya guía docente sea de la titulación
+        prefijos = tuple(self.plan[t][1:] for t in tits if self.plan.get(t))
+        propio = lambda c: (bool(prefijos) and c["codigo"].startswith(prefijos), bool(c["tits"] & set(tits)))
         niveles = [[c for t in tits for c in self.por_tc.get((t, str(curso)), {}).values()],
                    [c for t in tits for c in self.por_tit.get(t, {}).values()]]
         T = eh.clave(texto)
@@ -277,7 +284,7 @@ class Catalogo:
             completos = [(len(n["clave"]), c) for c in cands for n in c["nombres"]
                          if n["clave"] in alias or re.search(r"\b%s\b" % re.escape(n["clave"]), T)]
             if completos:
-                return max(completos, key=lambda x: x[0])[1]
+                return max(completos, key=lambda x: (x[0], propio(x[1])))[1]
             # 2) abreviaturas y nombres parciales: palabras seguidas del texto que son prefijo de palabras seguidas del
             #    nombre («Estruct. Datos», «Arquitectura y Diseño de Sistemas»); vale si cubre el nombre entero, dos
             #    palabras con 8 letras o una palabra distintiva; gana la que más letras cubre si no hay empate
@@ -300,11 +307,11 @@ class Catalogo:
                 mejor = max(x[0] for x in puntos.values())
                 ganan = [c for n, c in puntos.values() if n == mejor]
                 if len({c["clave"] for c in ganan}) == 1:   # una asignatura (quizá con un código por plan)
-                    return ganan[0]
+                    return max(ganan, key=propio)
             # 3) siglas (iniciales de las palabras significativas), en mayúsculas en el original: «TDS», «PV-PEI»
             sg = {c["codigo"] or c["clave"]: c for c in cands for n in c["nombres"] if len(n["siglas"]) >= 2 and n["siglas"] in orig}
-            if len(sg) == 1:
-                return next(iter(sg.values()))
+            if len({c["clave"] for c in sg.values()}) == 1:
+                return max(sg.values(), key=propio)
         return None
 
 

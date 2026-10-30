@@ -83,27 +83,32 @@ Se puede abrir directamente `web/index.html` en el navegador o servirla con `pyt
   pequeños que pertenecen al grande (1A → 1A1). El selector «Grupo: solo B» restringe todos los grupos, grandes y
   pequeños, a los de una misma letra (1B, 1B1, 1B2…), tanto en los desplegables como en la búsqueda automática. La selección se guarda en el navegador y en la URL (`#est=…`), que se puede
   copiar y compartir; el botón PDF imprime la hoja en formato EPS (`imprimir.html?tipo=estudiante&sel=…`).
-- **Solapamientos** (para gestores): se eligen cuatrimestre, día y franja (desde/hasta) y se marcan titulaciones o cursos
-  concretos (la casilla de la titulación marca todos sus cursos). Muestra cuántas asignaturas distintas coinciden en la franja,
-  el recuento por titulación y curso, y la lista de asignaturas con grupo, horario, aula y hojas de horario en que aparecen.
-  Un mapa semanal (hora × día) da el número de asignaturas por hora para la selección; un clic en una celda elige esa hora y
-  mayúsculas + clic amplía la franja en el mismo día. Se pueden excluir grupos grandes, pequeños o tutorías. La consulta se
-  guarda en el navegador y «Copiar enlace» la comparte (`#ges=…`).
-- **Pruebas**: calendario de pruebas de evaluación (ver «Calendarios de pruebas»). Se eligen fechas, tipos de prueba y
-  titulaciones o cursos; un calendario mensual da el número de pruebas por día y marca las coincidencias: en rojo, pruebas
-  de asignaturas distintas cuyas horas se solapan; en ámbar, varias el mismo día cuando alguna no tiene hora. Por defecto se
-  comparan sólo las pruebas de una misma titulación y curso; «entre todo lo seleccionado» compara todas. Un clic en un día
-  lo muestra en detalle. El panel lista los avisos de la web (calendarios cuyo enlace iCal no es el del calendario empotrado).
-  La consulta se guarda en el navegador y en el enlace (`#pru=…`). Si `pruebas.js` falta, la pestaña no aparece.
-- **Planificar prueba**: para poner una prueba nueva. Se buscan y añaden la asignatura o asignaturas (en una o varias
-  titulaciones) y se elige con qué se compara: el mismo curso o los cursos contiguos (anterior y siguiente), los grupos de
-  horario con la misma letra que los de la asignatura (o todos; si un curso no tiene esa letra, se usan todos sus grupos),
-  con o sin las clases de grupos pequeños, y si la prueba puede ocupar las clases de la propia asignatura. Con la duración
-  y el horario del día (8:00–21:00 por defecto), cada día del rango se colorea: **verde** si hay franjas libres de clases y
-  de pruebas; **naranja** si las hay pero ese día hay pruebas sin hora (habría franjas si esas pruebas se hacen fuera de
-  ellas); **rojo** si no hay ninguna; gris si no es lectivo (fin de semana, festivo o vacaciones). Al pulsar un día se ven
-  las franjas libres, una barra con la ocupación del día y la lista de clases y pruebas. Las clases dependen del periodo:
-  en clases del 1º o 2º cuatrimestre se usan los horarios de ese cuatrimestre; en exámenes no hay clases. Enlace `#plan=…`.
+- **Gestión**: herramientas para gestores sobre un **ámbito** común, definido en el panel lateral:
+  - *asignaturas de referencia*: se buscan por nombre, código o titulación; al añadir una se marcan su titulación y curso
+    y sus letras de grupo de horario (al quitarla se desmarcan si ninguna otra los usa);
+  - *titulaciones y cursos* (la casilla de la titulación marca todos sus cursos) y, opcionalmente, *cursos contiguos*
+    (anterior y siguiente de cada uno);
+  - *grupos de horario* por letra (A, B…, con sus subgrupos) o todos; si un curso no tiene ninguna de las letras elegidas,
+    cuentan todos sus grupos. Las pruebas no indican grupo: cuentan todas las de cada titulación y curso.
+
+  Sobre ese ámbito hay tres vistas, cada una con sus opciones:
+  - **Semana tipo**: cuatrimestre, día y franja; cuántas asignaturas distintas coinciden, recuento por titulación y curso y
+    lista con grupo, horario, aula y hojas de horario. Un mapa semanal (hora × día) da el número de asignaturas por hora;
+    clic en una celda elige esa hora y mayúsculas + clic amplía la franja. Filtros de grupos grandes, pequeños y tutorías.
+  - **Calendario de pruebas** (ver «Calendarios de pruebas»): fechas y tipos de prueba; un calendario mensual da el número
+    de pruebas por día y marca las coincidencias entre asignaturas distintas: en rojo, horas que se solapan; en ámbar, varias
+    el mismo día cuando alguna no tiene hora. Se compara dentro de cada titulación y curso o entre todo el ámbito. Las
+    pruebas de las asignaturas de referencia llevan ★. Debajo, los avisos de la web de la EPS (enlaces iCal erróneos).
+  - **Buscar hueco**: para poner una prueba. Con la duración y el horario del día (8:00–21:00 por defecto), cada día se
+    colorea: **verde** si hay franjas libres de clases y de pruebas; **naranja** si las hay pero ese día hay pruebas sin hora
+    (habría franjas si se hacen fuera de ellas); **rojo** si no hay ninguna; gris si no es lectivo (fin de semana, festivo o
+    vacaciones). Al pulsar un día se ven las franjas libres, una barra con la ocupación del día y las clases y pruebas. Las
+    clases dependen del periodo (`data/periodos.csv`): en clases de un cuatrimestre, sus horarios; en exámenes, ninguna.
+    Opciones: contar o no los grupos pequeños y permitir las clases de las asignaturas de referencia.
+
+  Las fechas son comunes al calendario y a la búsqueda de huecos. El estado (ámbito, vista y opciones) se guarda en el
+  navegador y «Copiar enlace» lo comparte (`#gestion=…`); los enlaces de versiones anteriores (`#ges=`, `#pru=`, `#plan=`)
+  siguen funcionando. Sin `pruebas.js` sólo está la semana tipo.
 
 ## Impresión y generación de PDF
 
@@ -204,6 +209,9 @@ Notas:
   con aspecto de prueba (PEI, PL, examen, entrega…). Se omiten el «Calendario Académico» de Google y el de Bonocréditos.
   Si una prueba figura dos veces el mismo día (de día completo y con hora), se queda la que tiene hora.
 - Las repeticiones (`RRULE`, con `EXDATE`) se expanden; las horas son de Madrid.
+- Si una asignatura compartida tiene un código por plan (p. ej. Arquitectura de Computadores: 350020 en GITT, 380000 en
+  GIT), se toma el numerado como el plan de la titulación. `data/codigos.csv` da ambos códigos a ambas titulaciones, así
+  que en los horarios GITT recibe 380000; queda pendiente corregirlo allí.
 - La asignatura sale del nombre del calendario en Google («1C1-610000 ÁLGEBRA») y del texto del evento en Outlook, casado con
   las guías y los horarios de la titulación y curso: código explícito, `data/alias.csv`, nombre completo (también en inglés),
   abreviaturas por prefijos («Estruct. Datos», «E. Potencia») y siglas («TDS», «SPI»). Las que no casan se listan al

@@ -89,12 +89,12 @@ button:hover { border-color: var(--accent); }
 .g-tit .cursos { display: flex; gap: 6px; }
 .g-tit .cursos label { display: flex; align-items: center; gap: 2px; cursor: pointer; }
 .g-resumen { margin-bottom: 10px; }
-.g-resumen .meta, #g-mapa .meta { color: var(--muted); font-size: 12px; }
+.g-resumen .meta, #s-mapa .meta { color: var(--muted); font-size: 12px; }
 .g-cifra { font-size: 16px; }
 .g-cifra b { font-size: 22px; color: var(--danger); }
 .g-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; font-size: 12px; }
 .g-chips span { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 1px 8px; }
-#g-mapa { margin-bottom: 14px; }
+#s-mapa { margin-bottom: 14px; }
 .g-mapa { border-collapse: collapse; background: var(--panel); font-size: 12px; min-width: 520px; }
 .g-mapa th { padding: 3px 8px; font-weight: 600; color: var(--muted); background: #f0f2f5; border: 1px solid var(--line); }
 .g-mapa tbody th { text-align: right; font-weight: normal; }
@@ -134,8 +134,8 @@ button:hover { border-color: var(--accent); }
 .panel input[type=date] { width: 100%; }
 
 /* Vista planificar prueba */
-.panel input#f-buscar { width: 100%; }
-#f-seleccion { margin-top: 6px; border-color: var(--accent); }
+.panel input#am-buscar { width: 100%; }
+#am-asig { margin-top: 6px; border-color: var(--accent); }
 .x-mes td.f-verde { background: #bbf7d0; }
 .x-mes td.f-naranja { background: #fed7aa; }
 .x-mes td.f-rojo { background: #fecaca; }
@@ -158,3 +158,13 @@ button:hover { border-color: var(--accent); }
 .f-ley.libre { background: #86efac; } .f-ley.clase { background: rgba(107, 114, 128, .45); } .f-ley.prueba { background: rgba(220, 38, 38, .7); }
 .x-dia h4 + .g-tabla, .x-dia .g-tabla + h4 { margin-top: 8px; }
 .x-dia h4 { margin-top: 10px; }
+
+/* Gestión: ámbito común y subvistas */
+.subtabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+.subtabs button { border: 1px solid transparent; border-bottom: none; border-radius: 6px 6px 0 0; background: none; color: var(--muted); padding: 7px 14px; margin-bottom: -1px; }
+.subtabs button.active { background: var(--panel); border-color: var(--line); color: var(--accent); font-weight: 600; }
+.am-resumen { font-size: 12px; line-height: 1.5; padding: 6px 8px; background: #f0f4ff; border-radius: 6px; margin-bottom: 4px; }
+#am-resultados { max-height: 220px; }
+.controls.chks { gap: 4px 14px; font-size: 12px; }
+.controls.chks label { flex-direction: row; align-items: center; gap: 4px; color: var(--text); }
+.x-mes td.nolect-borde .d { text-decoration: underline dotted; }
